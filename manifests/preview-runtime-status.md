@@ -1,0 +1,18 @@
+# Preview Runtime Status
+
+Historical selection / local usage recorded; not bundled or fresh-clone verified here.
+
+| Phase | 职责 | Primary / Compose | Fallback |
+|---|---|---|---|
+| F01 | 事实取证 | codebase-knowledge-builder | wtfismyrepo |
+| F02 | 叙事 | humanizer | writing-clearly-and-concisely |
+| F03 | 架构 | c4-architecture + mermaid-skill | design-doc-mermaid (license blocked) |
+| F04 | 流程 | ux-flow-designer | pretty-mermaid |
+| F05 | 数据 | strategy-consulting-visualization | tufte-claude-skill |
+| F06 | 视觉 | snap-x + og-image-design QA | og-image-generator |
+| F07 | 演示 | video-editing / ffmpeg | record |
+| F08 | 文档 | readme-skill | good-readme |
+| F09 | 安全 | secret-scanner | polish-repo |
+| F10 | 交付 | github-release | skill-creator |
+
+All listed child Skills: bundle = not yet vendored. F03 fallback: license blocked. External runtime versions and host capability permissions must be probed in the target host. GitHub Connector is a host capability, never a vendored credential.
