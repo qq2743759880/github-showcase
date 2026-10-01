@@ -55,4 +55,6 @@ description: 通用 GitHub 项目展示编排 Skill——按 project-contract �
 
 代码项目另外必填顶层 `source_release`，运行与验证依赖分开。F10 三步为 Package、Publish Backend、Remote Verification，见 `references/publish-backends.md`。
 
-F06 必须调用 `node scripts/snap-x.mjs check <design.mjs>` 和 `node scripts/snap-x.mjs render <design.mjs> --out <approved-output>`，wrapper 固定 CLI 版本与项目内缓存。先 `npm ci` 安装外部渲染依赖；不要执行上游示例里的未钉版 npx。方法学文件保留原文，执行配置以本条与 binding 为准。F10 只使用 skill-creator 的打包/校验链，不触发其可选描述优化或其他 Agent 会话消息。
+F06 必须调用 `node scripts/snap-x.mjs check <design.mjs>` 和 `node scripts/snap-x.mjs render <design.mjs> --out <approved-output>`，wrapper 固定 CLI 版本与项目内缓存。先 `npm ci` 安装外部渲染依赖；不要执行上游示例里的未钉版 npx。方法学文件保留原文，执行配置以本条与 binding 为准。F10 普通项目使用 scripts/package-project.py；只有 Skill 产物使用 scripts/package-release.py 调用 skill-creator，不触发可选描述优化或其他 Agent 会话消息。F08 整项目展示包采用已记录的 create_export：源 README 只读，在批准的 run 目录创建新版 README；目标已存在时仍需明确处理模式。
+
+F03 C4 渲染：根目录 `npm ci --ignore-scripts`，设置 `PUPPETEER_CACHE_DIR=<checkout>/.cache/puppeteer` 后执行 `node node_modules/puppeteer/install.mjs`，再 `node scripts/render-c4.mjs -i <diagram.mmd> -o <output.svg>`。必须检查真实渲染输出。F04 fallback 按 binding 在 vendor/pretty-mermaid 内安装固定 lock 的依赖；所有 npm cache 放 checkout/.cache。Node 要求 >=24。

@@ -11,6 +11,12 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def version(name, args):
     executable=shutil.which(name)
+    if name=='bash' and sys.platform=='win32':
+        git=shutil.which('git')
+        if git:
+            candidate=Path(git).resolve().parents[1]/'bin/bash.exe'
+            if candidate.is_file():
+                executable=str(candidate)
     if not executable:
         return {'status':'BLOCKED','reason':'not_installed'}
     try:
@@ -25,7 +31,7 @@ def main():
     parser.add_argument('--github-connector',choices=['unverified','read-only','write-verified'],default='unverified',help='Host probe receipt supplied by orchestrator; script cannot inspect host tools')
     args=parser.parse_args()
     probes={'python':{'status':'AVAILABLE','version':sys.version.split()[0]}}
-    for name,arguments in [('node',['--version']),('npm',['--version']),('ffmpeg',['-version']),('bash',['--version']),('jq',['--version']),('gh',['--version'])]:
+    for name,arguments in [('git',['--version']),('node',['--version']),('npm',['--version']),('ffmpeg',['-version']),('bash',['--version']),('jq',['--version']),('gh',['--version'])]:
         probes[name]=version(name,arguments)
     probes['pyyaml']={'status':'AVAILABLE' if importlib.util.find_spec('yaml') else 'BLOCKED'}
     snap=ROOT/'node_modules/.bin'/('snap-x.cmd' if sys.platform=='win32' else 'snap-x')
@@ -33,8 +39,15 @@ def main():
     pkg=ROOT/'node_modules/@snap-x/cli/package.json'
     if pkg.exists():
         installed=json.loads(pkg.read_text(encoding='utf-8')).get('version')
-        probes['snap-x']={'status':'AVAILABLE' if installed=='0.2.1' and snap.exists() else 'BLOCKED','package_version':installed,'required':'0.2.1'}
+        probes['snap-x']={'status':'BLOCKED','package_version':installed,'required':'0.2.1'}
+        if installed=='0.2.1' and snap.exists():
+            probes['snap-x'].update(version('node',[str(ROOT/'scripts/snap-x.mjs'),'--version']))
     probes['github_connector']={'status':'AVAILABLE' if args.github_connector=='write-verified' else 'BLOCKED','host_receipt':args.github_connector}
+    probes['mermaid-cli']=version('node',[str(ROOT/'scripts/render-c4.mjs'),'--version'])
+    browsers=list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-win64/chrome.exe'))+list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-linux64/chrome'))+list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-mac*/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'))
+    browsers+=list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-win64/chrome-headless-shell.exe'))+list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-linux64/chrome-headless-shell'))+list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-mac*/chrome-headless-shell'))
+    probes['mermaid-browser']={'status':'AVAILABLE' if browsers else 'BLOCKED','meaning':'project-local browser present; actual render still required'}
+    probes['pretty-mermaid-runtime']={'status':'AVAILABLE' if (ROOT/'vendor/pretty-mermaid/node_modules/beautiful-mermaid/package.json').is_file() else 'BLOCKED','optional':True}
     probes['github_auth']={'status':'BLOCKED','reason':'no_verified_write_backend'}
     if probes['gh']['status']=='AVAILABLE':
         try:
@@ -54,6 +67,7 @@ def main():
         missing=[n for n in bind['runtime_dependencies'] if probes.get(n,{}).get('status')!='AVAILABLE']
         phase_status[bind['phase']]={'status':'BLOCKED' if missing or errors else 'AVAILABLE','missing':missing,'meaning':'dependencies available; invocation and output validation still required'}
     phase_status['F07']['optional']=True
+    phase_status['F04.fallback']={'status':probes['pretty-mermaid-runtime']['status'],'meaning':'runtime presence only; actual fallback rendering required'}
     phase_status['F10.remote_publish']={'status':'AVAILABLE' if probes['github_connector']['status']=='AVAILABLE' or probes['github_auth']['status']=='AVAILABLE' else 'BLOCKED'}
     print(json.dumps({'probes':probes,'phases':phase_status},ensure_ascii=False,indent=2))
     return bool(errors)

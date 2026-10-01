@@ -793,7 +793,7 @@
       ],
       "hashes": {
         "vendor/readme-skill/LICENSE": "89f65d1b3af64d8feb5820eaaa8e0bdf71e8f2afb767b234fc030eac98f5615e",
-        "vendor/readme-skill/SKILL.md": "e2a7e7d3daecff3d1772aba8d2d8cdd8244606e4358f2486042bb1f171cf40d2",
+        "vendor/readme-skill/SKILL.md": "9e6f611d01563804bdd0a177017f14b3badbc45f283f7f467ab6f64a3bdd58a4",
         "vendor/readme-skill/references/badge-style.md": "27fb265e52c29a897bd98e940686de2abf2219d07d4a933768a0f6c3d09c0eb0",
         "vendor/readme-skill/references/image-generation.md": "9110185f078a52001ea450d0e0ff2f65a792895703434b3a82501aa31e820fcc",
         "vendor/readme-skill/references/quality-checklist.md": "72c5ae92207aafa8522ec3a59f2ab5881199e5a9600dfa3cbde93c5bf033c2e8",
@@ -807,7 +807,9 @@
         "spdx": "MIT",
         "path": "vendor/readme-skill/LICENSE"
       },
-      "modifications": []
+      "modifications": [
+        "SKILL.md: narrow create_export integration for a new approved output README; source files remain read-only; existing destination still requires handling-mode choice."
+      ]
     },
     {
       "name": "good-readme",

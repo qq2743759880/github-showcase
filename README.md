@@ -43,7 +43,7 @@ flowchart TD
 | F07 | 演示 | video-editing / ffmpeg | record |
 | F08 | 文档 | readme-skill | good-readme |
 | F09 | 安全 | secret-scanner | polish-repo |
-| F10 | 交付 | github-release | skill-creator |
+| F10 | 交付 | gated Git project archive / host backend | skill-creator（仅 Skill 包） |
 
 选型来自既有本地验证记录；每个子能力的历史验证范围不同，不能据此声称所有 fallback 都已完成真实切换。完整运行绑定仍在产品化，见 [运行状态](manifests/preview-runtime-status.md)。
 
@@ -65,8 +65,8 @@ flowchart TD
 
 ## 当前缺口
 
-- 子 Skill vendor、依赖闭包、文件 hash 与逐文件许可证治理仍在进行。
-- F03 的 design-doc-mermaid fallback 缺少明确许可证，禁止复制入包。
+- 20 个子实体已 vendored、hash-locked，逐文件许可证和本地修改记录随包；完整 E2E 尚在复验。
+- F03 无许可证候选已移除，不作为运行依赖。
 - GitHub Connector 优先、gh fallback 的后端适配与远端回读仍待产品化。
 - 外部 Python / Node / ffmpeg 等需要 doctor 探测；本仓不含这些二进制。
 - 运行依赖与验证依赖已在开发分支拆分；完整 E2E 仍待验证。
@@ -82,9 +82,11 @@ flowchart TD
 ```sh
 python scripts/verify-vendors.py
 python scripts/doctor.py
-npm ci
+npm ci --ignore-scripts
 node scripts/snap-x.mjs --version
 python -m unittest discover -s tests -v
 ```
 
 Markdown YAML adapter 与 skill-creator 的打包校验需要 PyYAML。按自己的项目 Python 环境安装 `requirements-verification.txt`；不要改变全局 Python。主入口仍是 `SKILL.md`，没有一个替代 Agent 的全自动命令。doctor 的 AVAILABLE 只表示依赖在场，不表示产物已验证。
+
+C4 图使用固定 Mermaid CLI 11.17.0 与 Puppeteer 25.12.0。将 `PUPPETEER_CACHE_DIR` 设置为本 checkout 的 `.cache/puppeteer`，运行 `node node_modules/puppeteer/install.mjs` 后使用 `node scripts/render-c4.mjs -i source.mmd -o output.svg`。所有 npm cache 也放 checkout `.cache`。Node 要求 >=24；Snap-X 固定 0.2.1，Windows 文件加载由本地兼容 hook 处理。`satori` 的 `fflate` 覆盖到 0.7.5 修复已确认的审计问题。

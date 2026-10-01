@@ -4,6 +4,13 @@
   "version": "0.2.0",
   "description": "Optional pinned rendering runtime; npm ci installs external packages, no binaries vendored",
   "dependencies": {
-    "@snap-x/cli": "0.2.1"
+    "@mermaid-js/mermaid-cli": "11.17.0",
+    "@snap-x/cli": "0.2.1",
+    "puppeteer": "25.12.0"
+  },
+  "overrides": {
+    "satori": {
+      "fflate": "0.7.5"
+    }
   }
 }

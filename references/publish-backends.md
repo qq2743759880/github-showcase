@@ -15,3 +15,5 @@
 读取 repo、visibility、default branch、提交、README、LICENSE、SKILL 与 manifest，逐文件与本地 hash/字节比对；若有 CI 则读取 status 与相关 run。非强制写入、保留远端父提交；读回不一致即失败。全部通过才 PUBLISHED_VERIFIED。
 
 本 Preview 的一次发布使用本机现有 Git 认证完成非强制 push，Connector 负责读回。它是本次 release engineering 通道；通用产品仍以 Connector / gh 为约定后端，不能声称 Connector 写入验证已通过。
+
+Ordinary project export: `python scripts/package-project.py <clean-export-git-root> <output.zip> --policy <policy.json>`. This runs F09 on an isolated Git archive and requires no SKILL.md. Skill artifacts use package-release.py. A local package does not authorize any remote write.

@@ -176,10 +176,10 @@
       "name": "skill-creator",
       "type": "vendored_skill",
       "required_for": [
-        "F10"
+        "F10.skill_package"
       ],
       "entry": "vendor/skill-creator/skills/skill-creator/SKILL.md",
-      "optional": false
+      "optional": true
     },
     {
       "name": "python",
@@ -196,9 +196,11 @@
       "required_for": [
         "F01.fallback",
         "F04.fallback",
-        "F06"
+        "F06",
+        "F03.render"
       ],
-      "optional": false
+      "optional": false,
+      "version_requirement": ">=24.0.0 (Windows ESM compatibility hook)"
     },
     {
       "name": "npm",
@@ -283,6 +285,35 @@
         "python",
         "imagemagick"
       ]
+    },
+    {
+      "name": "git",
+      "type": "external_runtime",
+      "required_for": [
+        "F10.package",
+        "generated_project.fresh_clone"
+      ],
+      "optional": false
+    },
+    {
+      "name": "mermaid-cli",
+      "type": "external_runtime",
+      "package": "@mermaid-js/mermaid-cli",
+      "version": "11.17.0",
+      "required_for": [
+        "F03.render"
+      ],
+      "optional": false,
+      "browser_cache": ".cache/puppeteer"
+    },
+    {
+      "name": "pretty-mermaid-runtime",
+      "type": "external_runtime",
+      "required_for": [
+        "F04.fallback"
+      ],
+      "optional": true,
+      "install": "npm ci --ignore-scripts in vendor/pretty-mermaid; checkout-local npm cache"
     }
   ]
 }

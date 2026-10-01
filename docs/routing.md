@@ -11,6 +11,6 @@
 | F07 | 演示 | video-editing / ffmpeg | record |
 | F08 | 文档 | readme-skill | good-readme |
 | F09 | 安全 | secret-scanner | polish-repo |
-| F10 | 交付 | github-release | skill-creator |
+| F10 | 交付 | gated Git archive / host backend | skill-creator（仅 Skill 包） |
 
 未预核事实先执行 F01。没有指标则不生成统计结论；没有演示则不制作运行证据。调用前探测依赖，调用后验证产物。Fallback 只处理允许的能力失败，不绕安全门。

@@ -144,7 +144,7 @@ The root MIT license covers original orchestration content. Each vendor retains 
 - Revision: `91956b2c1f031ce0df811b32c61c384a8961548b`
 - License: [MIT](vendor/readme-skill/LICENSE)
 - Attribution: Copyright (c) 2026 ZardLi1115; The above copyright notice and this permission notice shall be included in all
-- Changes: none; original source paths retained beneath entity directory.
+- Changes: SKILL.md adds narrow isolated create_export integration; source read-only and existing output handling-mode gate preserved. See vendors.lock.json.
 
 ## good-readme
 
@@ -184,3 +184,5 @@ The root MIT license covers original orchestration content. Each vendor retains 
 
 
 Mermaid syntax references identify mermaid-js/mermaid as their source; original headers are preserved. The writing-clearly-and-concisely reference collection includes historical Strunk text; original reference notices remain unchanged. Mermaid upstream MIT copyright is retained in `vendor/mermaid-skill/MERMAID-LICENSE`. The Wikipedia-derived article is separately marked CC-BY-SA-4.0 in `vendor/writing-clearly-and-concisely/WIKIPEDIA-NOTICE.md` and the per-file lock override; it is not covered by MIT.
+
+Local modification: readme-skill/SKILL.md adds isolated `create_export` integration, recorded in vendors.lock.json. Upstream MIT license is preserved.

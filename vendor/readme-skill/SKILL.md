@@ -7,6 +7,18 @@ description: Draft, improve, restructure, translate, or audit fact-based GitHub 
 
 Create accurate, readable GitHub README files by grounding every external claim in repository evidence or explicit user confirmation. Establish value first, provide a fast path to use, then route readers to deeper documentation.
 
+## Local integration: isolated export
+
+Local change: a user request to generate a GitHub showcase package authorizes a new
+README at `<approved-run-root>/public-export/README.md`. This applies only when
+the target does not exist and the source repository stays read-only. Existing
+source README files are evidence, not rewrite targets. Ground retained facts in
+code and actual command results; show the complete draft in the run's review
+report before writing the new export. Record this mode as `create_export` and
+the exact target in the adapter/trace. If a README already exists at that target,
+the original handling-mode question below still applies. Never overwrite it or
+infer an in-place rewrite mode. Explicit user restrictions override this default.
+
 ## Non-negotiable rules
 
 - **Drafts are shown in the conversation by default; do not create a draft file automatically.**
@@ -15,7 +27,7 @@ Create accurate, readable GitHub README files by grounding every external claim 
 - Never invent commands, APIs, links, badges, performance claims, compatibility promises, release data, community locations, license terms, architecture components, data flows, or repository ownership.
 - Never expose API keys in README content, commands committed to a repository, source files, or image URLs. Examples may reference environment variables only.
 - Every README draft must include a **Quick Start** section that shows the shortest verified path from availability or installation to a useful result. If that path cannot be verified from repository evidence or user confirmation, ask for the missing first-use details; do not invent, leave empty, or omit the section.
-- When the first discovery scan finds an existing README, stop and ask the user to choose one handling mode: **1) Replace completely** — ignore all existing README information; **2) Replace with selected existing information** — rewrite while retaining only user-approved accurate content; **3) Extend existing README** — preserve the existing README and add or improve content in place. Do not infer the mode from the original request.
+- Outside the isolated-export integration above, when the first discovery scan finds an existing README, stop and ask the user to choose one handling mode: **1) Replace completely** — ignore all existing README information; **2) Replace with selected existing information** — rewrite while retaining only user-approved accurate content; **3) Extend existing README** — preserve the existing README and add or improve content in place. Do not infer the mode from the original request.
 - Prefer questions with multiple explicit options. Use a selectable list whenever the decision can be reasonably anticipated; offer a free-form “Other” choice only when the available options cannot cover the user’s intent.
 - Keep a clear separation between **Verified from repository**, **Confirmed by user**, **Uncertain**, and **Missing** information.
 - Do not copy another repository’s wording, project-specific commands, branding, or content. Use only general information architecture and writing principles.
@@ -92,7 +104,7 @@ Perform a bounded scan. Do not read the entire codebase without a README-specifi
 2. Read existing README variants, `LICENSE*`, contribution and security files, plus the docs index.
 3. Read only manifests that are present, such as `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `pom.xml`, or language-equivalent metadata.
 4. Inspect CI, release/publishing, deployment configuration, examples, and public entry points only when needed to verify installation, first use, platform support, architecture, usage examples, or documentation links.
-5. If any README variant exists, ask the user to choose its handling mode before drafting:
+5. Outside the isolated-export integration above, if any README variant exists, ask the user to choose its handling mode before drafting:
    - **1) Replace completely:** write a new README without using any information from the existing README.
    - **2) Replace with selected existing information:** write a new README, retaining only accurate existing content that the user approves.
    - **3) Extend existing README:** preserve the existing README structure and accurate content, then add or improve content in place.

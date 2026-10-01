@@ -2,7 +2,7 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pkg=path.join(root, 'node_modules/@snap-x/cli/package.json');
@@ -13,7 +13,7 @@ try {
   process.stderr.write(`BLOCKED: ${error.message}. Install with npm ci in the Skill checkout.\n`);
   process.exit(2);
 }
-const result=spawnSync(process.execPath,[path.join(root,'node_modules/@snap-x/cli/bin.mjs'),...process.argv.slice(2)],{
+const result=spawnSync(process.execPath,['--import',pathToFileURL(path.join(root,'scripts/windows-esm.mjs')).href,path.join(root,'node_modules/@snap-x/cli/bin.mjs'),...process.argv.slice(2)],{
   stdio:'inherit',
   env:{...process.env,SNAP_X_CACHE_DIR:path.join(root,'.cache/snap-x')}
 });
