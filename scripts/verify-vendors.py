@@ -34,7 +34,8 @@ def verify(root=ROOT):
                 errors.append('missing '+name)
             elif hashlib.sha256(path.read_bytes()).hexdigest() != entity['hashes'].get(name):
                 errors.append('hash mismatch '+name)
-    actual={p.relative_to(root).as_posix() for p in (root/'vendor').rglob('*') if p.is_file()}
+    generated={'node_modules','__pycache__','.cache','.venv'}
+    actual={p.relative_to(root).as_posix() for p in (root/'vendor').rglob('*') if p.is_file() and not any(part in generated for part in p.relative_to(root/'vendor').parts)}
     errors.extend('unlocked file '+name for name in sorted(actual-expected))
     return errors
 

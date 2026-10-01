@@ -2,7 +2,7 @@
 
 ## F10-A Package
 
-包含源码、入口、配置示例、运行依赖与独立验证依赖。生成文件清单、逐文件 SHA256 与许可证 notices。只包含 F09 放行文件。代码输出仓必须 fresh clone 安装、配置、启动并通过测试。Skill 出厂打包可消费随包 skill-creator 的校验与 package 工具，不将其可选 claude eval 流程列为交付必需能力。
+包含源码、入口、配置示例、运行依赖与独立验证依赖。生成文件清单、逐文件 SHA256 与许可证 notices。只包含 F09 放行文件。代码输出仓必须 fresh clone 安装、配置、启动并通过测试。Skill 出厂打包通过 `scripts/package-release.py` 的隔离 tracked-file staging 消费随包 skill-creator 校验与 package 工具；不要直接对含 `.git` 或缓存的工作目录调用上游 packager。不将其可选 claude eval 流程列为交付必需能力。
 
 ## F10-B Publish Backend
 
