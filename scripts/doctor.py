@@ -2,6 +2,7 @@
 import argparse
 import importlib.util
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -46,6 +47,12 @@ def main():
     probes['mermaid-cli']=version('node',[str(ROOT/'scripts/render-c4.mjs'),'--version'])
     browsers=list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-win64/chrome.exe'))+list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-linux64/chrome'))+list((ROOT/'.cache/puppeteer').glob('chrome/*/chrome-mac*/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'))
     browsers+=list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-win64/chrome-headless-shell.exe'))+list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-linux64/chrome-headless-shell'))+list((ROOT/'.cache/puppeteer').glob('chrome-headless-shell/*/chrome-headless-shell-mac*/chrome-headless-shell'))
+    configured=os.environ.get('PUPPETEER_EXECUTABLE_PATH')
+    if configured and Path(configured).is_file():
+        browsers.append(Path(configured))
+    for base in ['ProgramFiles','ProgramFiles(x86)','LOCALAPPDATA']:
+        if os.environ.get(base):
+            browsers.extend(p for p in [Path(os.environ[base])/'Google/Chrome/Application/chrome.exe',Path(os.environ[base])/'Microsoft/Edge/Application/msedge.exe'] if p.is_file())
     probes['mermaid-browser']={'status':'AVAILABLE' if browsers else 'BLOCKED','meaning':'project-local browser present; actual render still required'}
     probes['pretty-mermaid-runtime']={'status':'AVAILABLE' if (ROOT/'vendor/pretty-mermaid/node_modules/beautiful-mermaid/package.json').is_file() else 'BLOCKED','optional':True}
     probes['github_auth']={'status':'BLOCKED','reason':'no_verified_write_backend'}

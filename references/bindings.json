@@ -239,7 +239,7 @@
         "python",
         "git"
       ],
-      "invocation": "Project export: commit the exact approved public file list in its own clean Git repository, then python scripts/package-project.py <export-root> <approved-output.zip> --policy <review-policy.json>. Review policy requires license_status PASS, explicit authorization and private_literals. Skill artifact only: python scripts/package-release.py <approved-output-dir> (calls vendored skill-creator). Never require or fabricate SKILL.md for ordinary project exports. Backend/readback: references/publish-backends.md.",
+      "invocation": "Project export: commit the exact approved public file list in its own clean Git repository, then python scripts/package-project.py <export-root> <approved-output.zip> --policy <review-policy.json>. Review policy requires license_status PASS, explicit authorization and private_literals. Skill artifact only: python scripts/package-release.py --output <approved-output-dir> (calls vendored skill-creator). Never require or fabricate SKILL.md for ordinary project exports. Backend/readback: references/publish-backends.md.",
       "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
       "successCheck": "F10A: gate PASS, package exists with hash, archive contents match approved export commit, generated code fresh-clone install/run/check PASS. F10B/C: only with explicit APPROVED authorization; actual remote write and readback required for PUBLISHED_VERIFIED. NOT_AUTHORIZED permits local PACKAGE_PASS / READY_FOR_APPROVAL only.",
       "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
