@@ -9,6 +9,13 @@ import os
 
 ROOT=Path(__file__).resolve().parents[1]
 
+def filesystem_path(path):
+    """Support deep vendored resource paths on Windows without global settings."""
+    absolute=str(path.absolute())
+    if os.name=='nt' and not absolute.startswith('\\\\?\\'):
+        return Path('\\\\?\\'+absolute)
+    return Path(absolute)
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
@@ -21,8 +28,8 @@ def main():
         raise ValueError('release files must be committed before packaging')
     environment={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1','PYTHONIOENCODING':'utf-8'}
     # Temporary staging is beneath the caller's approved output, never in user-home caches.
-    with tempfile.TemporaryDirectory(prefix='package-',dir=output) as directory:
-        stage=Path(directory)/'github-project-showcase'
+    with tempfile.TemporaryDirectory(prefix='package-',dir=filesystem_path(output)) as directory:
+        stage=filesystem_path(Path(directory)/'github-project-showcase')
         stage.mkdir()
         for name in names:
             relative=Path(name)
@@ -33,7 +40,7 @@ def main():
                 raise ValueError('unsafe tracked file: '+name)
             target=stage/relative
             target.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(source,target)
+            shutil.copyfile(filesystem_path(source),target)
         scan=subprocess.run([sys.executable,str(ROOT/'vendor/secret-scanner/skills/secret-scanner/engine.py'),str(stage),'--json'],capture_output=True,text=True,errors='replace',env=environment)
         if scan.returncode != 0:
             print('F09 BLOCK: package secret scan did not pass')
@@ -44,7 +51,7 @@ def main():
             print(result.stdout)
             print(result.stderr)
             return result.returncode
-        print('PACKAGE_PASS: '+str(output/'github-project-showcase.skill'))
+    print('PACKAGE_PASS: '+str(output/'github-project-showcase.skill'))
     return 0
 
 if __name__=='__main__':
