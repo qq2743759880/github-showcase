@@ -24,11 +24,13 @@ source_release:
   entry_points: [server.py, requirements.txt, config.example.yaml]
   excluded: [credentials, runtime-config, caches, binaries]
   fresh_clone_verify:
-    deps_cmd: "python -m pip install -r requirements.txt"
+    runtime_deps_cmd: "python -m pip install -r requirements.txt"
+    verification_deps_cmd: "python -m pip install pytest==9.1.1"
+    setup_steps: ["按 config.example.yaml 创建运行配置；将项目路径设为 fresh clone 的真实目录"]
     run_cmd: "python server.py --check"
     check_cmd: "python -m pytest tests -q"
 domain_profiles: []
 run_ledger: {dir: "usage/current"}
 ```
 
-代码示例的验证需要额外 pytest；Preview 尚未将验证依赖拆成独立字段。启动前按示例配置填写 clone 本身的真实目录；测试范围以项目实际条件为准。
+代码示例把 pytest 单独作为验证依赖安装。启动前按示例配置填写 clone 本身的真实目录；测试范围以项目实际条件为准。

@@ -1,0 +1,40 @@
+# --- C / C++ ---
+# Object & intermediate
+*.o
+*.obj
+*.ko
+*.lo
+*.slo
+*.gch
+*.pch
+
+# Libraries
+*.a
+*.la
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+a.out
+
+# Build dirs / CMake
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.in
+
+# Debug
+*.dSYM/
+*.su
+*.idb
+*.pdb
+core
+vgcore.*

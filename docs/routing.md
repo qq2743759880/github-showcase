@@ -4,7 +4,7 @@
 |---|---|---|---|
 | F01 | 事实取证 | codebase-knowledge-builder | wtfismyrepo |
 | F02 | 叙事 | humanizer | writing-clearly-and-concisely |
-| F03 | 架构 | c4-architecture + mermaid-skill | design-doc-mermaid (license blocked) |
+| F03 | 架构 | c4-architecture + mermaid-skill | —（无许可证候选已移除） |
 | F04 | 流程 | ux-flow-designer | pretty-mermaid |
 | F05 | 数据 | strategy-consulting-visualization | tufte-claude-skill |
 | F06 | 视觉 | snap-x + og-image-design QA | og-image-generator |

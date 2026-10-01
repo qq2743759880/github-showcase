@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "bindings": [
+    {
+      "phase": "F01",
+      "primary": {
+        "name": "codebase-knowledge-builder",
+        "entry": "vendor/codebase-knowledge-builder/skills/codebase-knowledge-builder/SKILL.md",
+        "root": "vendor/codebase-knowledge-builder/skills/codebase-knowledge-builder",
+        "revision": "b01f40c5aef4eb8f6c52c664fe19b33e661c7abd"
+      },
+      "fallback": {
+        "name": "wtfismyrepo",
+        "entry": "vendor/wtfismyrepo/SKILL.md",
+        "root": "vendor/wtfismyrepo",
+        "revision": "d8ed133c36640f779c9de0c5976e53fd8fa611aa"
+      },
+      "compose": [],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Nonempty provenance/evidence/unknowns; each substantive claim cites source relative path and lines; project remains unchanged.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F02",
+      "primary": {
+        "name": "humanizer",
+        "entry": "vendor/humanizer/SKILL.md",
+        "root": "vendor/humanizer",
+        "revision": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
+      },
+      "fallback": {
+        "name": "writing-clearly-and-concisely",
+        "entry": "vendor/writing-clearly-and-concisely/skills/writing-clearly-and-concisely/SKILL.md",
+        "root": "vendor/writing-clearly-and-concisely/skills/writing-clearly-and-concisely",
+        "revision": "3027f20f3181758385a1bb8c022d4041dfb4de84"
+      },
+      "compose": [],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "No invented facts, numbers or implementation claims; only approved narrative inputs used; source meaning preserved.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F03",
+      "primary": {
+        "name": "c4-architecture",
+        "entry": "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+        "root": "vendor/c4-architecture/skills/c4-architecture",
+        "revision": "3027f20f3181758385a1bb8c022d4041dfb4de84"
+      },
+      "fallback": null,
+      "compose": [
+        {
+          "name": "mermaid-skill",
+          "entry": "vendor/mermaid-skill/.claude/skills/mermaid/SKILL.md",
+          "root": "vendor/mermaid-skill/.claude/skills/mermaid",
+          "revision": "982d9035231312c527197501a882cf6c8f4394cc"
+        }
+      ],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Every node and edge maps to architecture_spec; editable Mermaid retained; rendered version checked for legibility and syntax.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "No fallback: design-doc-mermaid removed for missing license. If primary + compose cannot produce verified output, BLOCK F03."
+    },
+    {
+      "phase": "F04",
+      "primary": {
+        "name": "ux-flow-designer",
+        "entry": "vendor/ux-flow-designer/SKILL.md",
+        "root": "vendor/ux-flow-designer",
+        "revision": "4d2052b3cb69884758a8f1f823ed9ecbb571c60a"
+      },
+      "fallback": {
+        "name": "pretty-mermaid",
+        "entry": "vendor/pretty-mermaid/SKILL.md",
+        "root": "vendor/pretty-mermaid",
+        "revision": "e234ab73c2992f03c36db04fd55ebb90abca9c45"
+      },
+      "compose": [],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "All documented user steps and alternate/error paths map to workflow_spec; render validated.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F05",
+      "primary": {
+        "name": "strategy-consulting-visualization",
+        "entry": "vendor/strategy-consulting-visualization/SKILL.md",
+        "root": "vendor/strategy-consulting-visualization",
+        "revision": "49d1370ba2a02d22ea4c2213f3e6f1e717823193"
+      },
+      "fallback": {
+        "name": "tufte-claude-skill",
+        "entry": "vendor/tufte-claude-skill/SKILL.md",
+        "root": "vendor/tufte-claude-skill",
+        "revision": "a145acf0c158f822d70ccdc2590164abb83b39cb"
+      },
+      "compose": [],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Each number has evidence and as_of; no invented percentages; empty metrics means no quantified chart.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F06",
+      "primary": {
+        "name": "snap-x",
+        "entry": "vendor/snap-x/skills/snap-x/SKILL.md",
+        "root": "vendor/snap-x/skills/snap-x",
+        "revision": "5755c1a1793c46e72180b5d2ee0863746f5ca1b1"
+      },
+      "fallback": {
+        "name": "og-image-generator",
+        "entry": "vendor/og-image-generator/SKILL.md",
+        "root": "vendor/og-image-generator",
+        "revision": "48151862f4f5a7c772b42ea8edcf9fe504a23cd8"
+      },
+      "compose": [
+        {
+          "name": "og-image-design",
+          "entry": "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md",
+          "root": "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design",
+          "revision": "7222fbde2150808be720aa25450561ff8ee8d620"
+        }
+      ],
+      "runtime_dependencies": [
+        "node",
+        "snap-x"
+      ],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments. Render with locally installed @snap-x/cli@0.2.1; never use unversioned npx. The pinned package lock fixes transitive dependencies.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Exact target dimensions, readable thumbnail, actual render output and source; check result recorded.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F07",
+      "primary": {
+        "name": "video-editing",
+        "entry": "vendor/video-editing/skills/video-editing/SKILL.md",
+        "root": "vendor/video-editing/skills/video-editing",
+        "revision": "c70874fae9eb0e5ad0365beb7e2955899fd1d30f"
+      },
+      "fallback": {
+        "name": "record",
+        "entry": "vendor/record/SKILL.md",
+        "root": "vendor/record",
+        "revision": "bda64737759779e029c6129f4bfc543731867ff3"
+      },
+      "compose": [],
+      "runtime_dependencies": [
+        "ffmpeg"
+      ],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Actual approved footage only; ffprobe verifies media; unavailable demo skips phase, fabricated recording prohibited.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F08",
+      "primary": {
+        "name": "readme-skill",
+        "entry": "vendor/readme-skill/SKILL.md",
+        "root": "vendor/readme-skill",
+        "revision": "91956b2c1f031ce0df811b32c61c384a8961548b"
+      },
+      "fallback": {
+        "name": "good-readme",
+        "entry": "vendor/good-readme/skills/good-readme/SKILL.md",
+        "root": "vendor/good-readme/skills/good-readme",
+        "revision": "8631fbc0f457776cb976915930cb1fd621dca476"
+      },
+      "compose": [],
+      "runtime_dependencies": [],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "README commands and files exist in output; all claims grounded; links checked; design distinguished from implementation.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F09",
+      "primary": {
+        "name": "secret-scanner",
+        "entry": "vendor/secret-scanner/skills/secret-scanner/SKILL.md",
+        "root": "vendor/secret-scanner/skills/secret-scanner",
+        "revision": "8fb5c18368cba6c0002175ea74453fa11f579291"
+      },
+      "fallback": {
+        "name": "polish-repo",
+        "entry": "vendor/polish-repo/SKILL.md",
+        "root": "vendor/polish-repo",
+        "revision": "0c2774b82223e4b20bc8c3b7bef35456476dc205"
+      },
+      "compose": [],
+      "runtime_dependencies": [
+        "python"
+      ],
+      "invocation": "Explicitly read the locked SKILL.md and its required local resources, then perform the documented workflow. CLI tools must run in the entity root with approved project/output arguments. Run python vendor/secret-scanner/skills/secret-scanner/engine.py <export-root> --json. Scanner covers credentials; orchestrator separately checks privacy, paths, license and authorization.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Secret scanner exit 0 and privacy/path/license/authorization checks PASS; any hard rejection produces BLOCK.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    },
+    {
+      "phase": "F10",
+      "primary": {
+        "name": "skill-creator",
+        "entry": "vendor/skill-creator/skills/skill-creator/SKILL.md",
+        "root": "vendor/skill-creator/skills/skill-creator",
+        "revision": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+      },
+      "fallback": null,
+      "compose": [],
+      "runtime_dependencies": [
+        "python",
+        "pyyaml"
+      ],
+      "invocation": "Package: from vendor/skill-creator/skills/skill-creator run python -m scripts.package_skill <skill-root> <approved-output>. Backend and remote verification: references/publish-backends.md. Optional upstream claude eval/description optimization is outside required runtime closure.",
+      "inputMapping": "Use only the corresponding generic adapter fields; product documentation is not project evidence.",
+      "successCheck": "Package file/hash/license checks, generated code fresh-clone verification, explicit publish authorization and remote readback all PASS.",
+      "failurePolicy": "Do not claim output verified until successCheck passes. On secret/privacy/license/authorization rejection STOP; do not invoke fallback.",
+      "fallbackCondition": "Dependency, compatibility, media or functional coverage failure only; record the failed primary and actual fallback invocation."
+    }
+  ]
+}

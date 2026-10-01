@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "dependencies": [
+    {
+      "name": "codebase-knowledge-builder",
+      "type": "vendored_skill",
+      "required_for": [
+        "F01"
+      ],
+      "entry": "vendor/codebase-knowledge-builder/skills/codebase-knowledge-builder/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "wtfismyrepo",
+      "type": "vendored_skill",
+      "required_for": [
+        "F01"
+      ],
+      "entry": "vendor/wtfismyrepo/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "humanizer",
+      "type": "vendored_skill",
+      "required_for": [
+        "F02"
+      ],
+      "entry": "vendor/humanizer/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "writing-clearly-and-concisely",
+      "type": "vendored_skill",
+      "required_for": [
+        "F02"
+      ],
+      "entry": "vendor/writing-clearly-and-concisely/skills/writing-clearly-and-concisely/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "c4-architecture",
+      "type": "vendored_skill",
+      "required_for": [
+        "F03"
+      ],
+      "entry": "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "mermaid-skill",
+      "type": "vendored_skill",
+      "required_for": [
+        "F03"
+      ],
+      "entry": "vendor/mermaid-skill/.claude/skills/mermaid/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "ux-flow-designer",
+      "type": "vendored_skill",
+      "required_for": [
+        "F04"
+      ],
+      "entry": "vendor/ux-flow-designer/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "pretty-mermaid",
+      "type": "vendored_skill",
+      "required_for": [
+        "F04"
+      ],
+      "entry": "vendor/pretty-mermaid/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "strategy-consulting-visualization",
+      "type": "vendored_skill",
+      "required_for": [
+        "F05"
+      ],
+      "entry": "vendor/strategy-consulting-visualization/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "tufte-claude-skill",
+      "type": "vendored_skill",
+      "required_for": [
+        "F05"
+      ],
+      "entry": "vendor/tufte-claude-skill/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "snap-x",
+      "type": "vendored_skill",
+      "required_for": [
+        "F06"
+      ],
+      "entry": "vendor/snap-x/skills/snap-x/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "og-image-design",
+      "type": "vendored_skill",
+      "required_for": [
+        "F06"
+      ],
+      "entry": "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "og-image-generator",
+      "type": "vendored_skill",
+      "required_for": [
+        "F06"
+      ],
+      "entry": "vendor/og-image-generator/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "video-editing",
+      "type": "vendored_skill",
+      "required_for": [
+        "F07"
+      ],
+      "entry": "vendor/video-editing/skills/video-editing/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "record",
+      "type": "vendored_skill",
+      "required_for": [
+        "F07"
+      ],
+      "entry": "vendor/record/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "readme-skill",
+      "type": "vendored_skill",
+      "required_for": [
+        "F08"
+      ],
+      "entry": "vendor/readme-skill/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "good-readme",
+      "type": "vendored_skill",
+      "required_for": [
+        "F08"
+      ],
+      "entry": "vendor/good-readme/skills/good-readme/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "secret-scanner",
+      "type": "vendored_skill",
+      "required_for": [
+        "F09"
+      ],
+      "entry": "vendor/secret-scanner/skills/secret-scanner/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "polish-repo",
+      "type": "vendored_skill",
+      "required_for": [
+        "F09"
+      ],
+      "entry": "vendor/polish-repo/SKILL.md",
+      "optional": true
+    },
+    {
+      "name": "skill-creator",
+      "type": "vendored_skill",
+      "required_for": [
+        "F10"
+      ],
+      "entry": "vendor/skill-creator/skills/skill-creator/SKILL.md",
+      "optional": false
+    },
+    {
+      "name": "python",
+      "type": "external_runtime",
+      "required_for": [
+        "F09",
+        "F10.package"
+      ],
+      "optional": false
+    },
+    {
+      "name": "node",
+      "type": "external_runtime",
+      "required_for": [
+        "F01.fallback",
+        "F04.fallback",
+        "F06"
+      ],
+      "optional": false
+    },
+    {
+      "name": "npm",
+      "type": "external_runtime",
+      "required_for": [
+        "F04.fallback",
+        "F06"
+      ],
+      "optional": false
+    },
+    {
+      "name": "ffmpeg",
+      "type": "external_runtime",
+      "required_for": [
+        "F07"
+      ],
+      "optional": true
+    },
+    {
+      "name": "bash",
+      "type": "external_runtime",
+      "required_for": [
+        "F09.fallback"
+      ],
+      "optional": true
+    },
+    {
+      "name": "jq",
+      "type": "external_runtime",
+      "required_for": [
+        "F09.fallback"
+      ],
+      "optional": true
+    },
+    {
+      "name": "gh",
+      "type": "external_runtime",
+      "required_for": [
+        "F10.remote_publish"
+      ],
+      "optional": true
+    },
+    {
+      "name": "pyyaml",
+      "type": "external_runtime",
+      "required_for": [
+        "F10.package",
+        "adapter.yaml"
+      ],
+      "optional": true
+    },
+    {
+      "name": "snap-x",
+      "type": "external_runtime",
+      "required_for": [
+        "F06"
+      ],
+      "version": "0.2.1",
+      "package": "@snap-x/cli",
+      "optional": false
+    },
+    {
+      "name": "github_connector",
+      "type": "host_capability",
+      "required_for": [
+        "F10.remote_publish"
+      ],
+      "optional": true,
+      "fallback": "gh_cli"
+    },
+    {
+      "name": "record_posix",
+      "type": "optional_external",
+      "required_for": [
+        "F07.fallback"
+      ],
+      "optional": true,
+      "dependencies": [
+        "zsh",
+        "asciinema",
+        "agg",
+        "python",
+        "imagemagick"
+      ]
+    }
+  ]
+}

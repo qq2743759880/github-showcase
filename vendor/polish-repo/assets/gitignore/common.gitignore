@@ -1,0 +1,42 @@
+# --- OS ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Editors / IDEs ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.history/
+*.iml
+.fleet/
+.nova/
+*.sublime-workspace
+
+# --- Env / secrets (NEVER commit real values) ---
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# --- Logs / temp ---
+*.log
+logs/
+tmp/
+.tmp/
+.cache/
+
+# --- Polish quarantine (review then delete) ---
+.polish-quarantine/

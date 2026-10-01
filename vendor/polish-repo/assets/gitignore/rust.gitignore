@@ -1,0 +1,5 @@
+# --- Rust ---
+/target/
+**/*.rs.bk
+*.pdb
+# Keep Cargo.lock for binaries; libraries may choose to ignore it.

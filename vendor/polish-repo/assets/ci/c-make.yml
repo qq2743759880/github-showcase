@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        cc: [gcc, clang]
+    env:
+      CC: ${{ matrix.cc }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: sudo apt-get update && sudo apt-get install -y build-essential clang
+
+      - name: Build
+        run: make
+
+      # Adjust to your Makefile: `make test` if you have a test target,
+      # otherwise this smoke-tests that the binary builds and runs.
+      - name: Test / run
+        run: make test || make run || true

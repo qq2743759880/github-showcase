@@ -24,7 +24,9 @@ source_release:
   entry_points: []
   excluded: [credentials, runtime-config, caches, binaries]
   fresh_clone_verify:
-    deps_cmd: ""
+    runtime_deps_cmd: ""
+    verification_deps_cmd: ""
+    setup_steps: []
     run_cmd: ""
     check_cmd: ""
 domain_profiles: []

@@ -1,0 +1,58 @@
+{
+  "name": "wtfismyrepo",
+  "version": "1.0.0",
+  "description": "Stop being lost in a codebase. A CLI + Claude Code skill that builds an import graph, runs PageRank to find the files that hold a repo together, scores fragility from git churn, reads GitHub PRs/issues, then uses the ADHD divergent-ideation engine to explain it from the best angle for you.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "wtfismyrepo": "bin/wtfismyrepo.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node bin/wtfismyrepo.mjs",
+    "self": "node bin/wtfismyrepo.mjs ."
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "onboarding",
+    "codebase",
+    "code-understanding",
+    "pagerank",
+    "import-graph",
+    "developer-experience",
+    "code-tour",
+    "github",
+    "cli",
+    "adhd",
+    "divergent-ideation"
+  ],
+  "author": "Nandni Jaiswal (https://github.com/nandnijaiswal)",
+  "license": "MIT",
+  "optionalDependencies": {
+    "adhd-agent": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandnijaiswal/wtfismyrepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nandnijaiswal/wtfismyrepo/issues"
+  },
+  "homepage": "https://github.com/nandnijaiswal/wtfismyrepo#readme",
+  "files": [
+    "bin/",
+    "src/",
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

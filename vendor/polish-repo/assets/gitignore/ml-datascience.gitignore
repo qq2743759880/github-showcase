@@ -1,0 +1,50 @@
+# --- ML / Data Science artifacts ---
+# These are usually too big and/or regenerable to belong in git.
+# Document how to fetch/produce them in the README instead.
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.onnx
+*.pb
+*.tflite
+*.gguf
+*.bin
+checkpoints/
+weights/
+
+# Training output
+runs/
+outputs/
+output/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+events.out.tfevents.*
+
+# Datasets (commit a small sample + a fetch script, not the whole set)
+data/
+datasets/
+Datasets/
+*.csv
+*.tsv
+*.parquet
+*.npy
+*.npz
+*.zip
+*.tar
+*.tar.gz
+
+# Generated media / results
+result_*.jpg
+result_*.png
+*_result.*
+output.json
+
+# Notebooks: prefer committing without output (nbstripout)
+.ipynb_checkpoints/

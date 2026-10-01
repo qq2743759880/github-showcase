@@ -1,0 +1,17 @@
+# Keep dependencies and CI actions up to date.
+# Set `package-ecosystem` to match the project's stack:
+#   pip | npm | cargo | gomod | bundler | gradle | maven | composer | docker
+version: 2
+updates:
+  # --- Application/library dependencies (EDIT the ecosystem) ---
+  - package-ecosystem: "PACKAGE_ECOSYSTEM"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  # --- GitHub Actions (keep workflow actions current) ---
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

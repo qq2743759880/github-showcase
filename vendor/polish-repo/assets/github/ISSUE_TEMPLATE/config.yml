@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+# Optional: point people to discussions/docs instead of empty issues.
+# contact_links:
+#   - name: Questions & discussion
+#     url: https://github.com/OWNER/REPO/discussions
+#     about: Ask and answer usage questions here.

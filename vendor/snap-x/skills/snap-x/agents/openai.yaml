@@ -1,0 +1,4 @@
+interface:
+  display_name: "Snap-X Graphics"
+  short_description: "Create branded graphics sized for each platform"
+  default_prompt: "Use $snap-x to create a branded image pack for this project."

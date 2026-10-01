@@ -7,11 +7,11 @@ Status: Generic V0.2 Preview
 Design: Verified
 Usage: Verified on 3 project shapes
 Generated code-project deployability: Verified (one recorded case)
-Self-contained child-skill bundle: In Progress
+Self-contained child-skill bundle: In Progress (20 vendored entities)
 Remote publish backend: In Progress
 ```
 
-这是产品结构预览。子 Skill 尚未随包，clone 本仓后不能独立运行全部流程。
+这是产品化开发版本。20 个子实体已固定版本随包，外部运行时仍需安装或探测；完整 fresh-clone E2E 尚在验收，不能称为稳定版。
 
 ## 为什么需要它
 
@@ -36,7 +36,7 @@ flowchart TD
 |---|---|---|---|
 | F01 | 事实取证 | codebase-knowledge-builder | wtfismyrepo |
 | F02 | 叙事 | humanizer | writing-clearly-and-concisely |
-| F03 | 架构 | c4-architecture + mermaid-skill | design-doc-mermaid (license blocked) |
+| F03 | 架构 | c4-architecture + mermaid-skill | —（无许可证候选已移除） |
 | F04 | 流程 | ux-flow-designer | pretty-mermaid |
 | F05 | 数据 | strategy-consulting-visualization | tufte-claude-skill |
 | F06 | 视觉 | snap-x + og-image-design QA | og-image-generator |
@@ -69,10 +69,22 @@ flowchart TD
 - F03 的 design-doc-mermaid fallback 缺少明确许可证，禁止复制入包。
 - GitHub Connector 优先、gh fallback 的后端适配与远端回读仍待产品化。
 - 外部 Python / Node / ffmpeg 等需要 doctor 探测；本仓不含这些二进制。
-- 运行依赖与验证依赖尚待在契约中拆分。
+- 运行依赖与验证依赖已在开发分支拆分；完整 E2E 仍待验证。
 
 见 [路线图](docs/roadmap.md)、[路由](docs/routing.md) 和 [安全边界](docs/security.md)。
 
 ## 许可
 
-本 Preview 未包含第三方原始 Skill 文件；子 Skill 各自遵循上游许可证。本项目自有内容采用维护者选定的 [MIT License](LICENSE)。该许可证不覆盖未随包的第三方子 Skill。
+第三方实体保留各自上游许可证，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)；其中有 MIT、Apache-2.0、GPL-3.0 和逐文件 CC-BY-SA-4.0。本项目自有内容采用维护者选定的 [MIT License](LICENSE)。该许可证不覆盖未随包的第三方子 Skill。
+
+## 开发分支运行检查
+
+```sh
+python scripts/verify-vendors.py
+python scripts/doctor.py
+npm ci
+node scripts/snap-x.mjs --version
+python -m unittest discover -s tests -v
+```
+
+Markdown YAML adapter 与 skill-creator 的打包校验需要 PyYAML。按自己的项目 Python 环境安装 `requirements-verification.txt`；不要改变全局 Python。主入口仍是 `SKILL.md`，没有一个替代 Agent 的全自动命令。doctor 的 AVAILABLE 只表示依赖在场，不表示产物已验证。

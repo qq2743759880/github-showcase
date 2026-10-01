@@ -10,7 +10,7 @@ description: 通用 GitHub 项目展示编排 Skill——按 project-contract �
 
 ## 1. Project Contract（先读）
 
-任何 run 开始：**选定 adapter**（用户指名项目 → `adapters/` 下自声明该项目的 adapter），读 `references/project-contract.md` 的字段语义，然后读该 adapter 的字段填充。十项契约字段：`project_roots[] / facts_source / public_narrative / architecture_spec / workflow_spec / metrics / demo_scenario / publication_policy / domain_profiles / run_ledger`。adapter 未提供的字段 = 该项目暂无此事实，对应产物按「无数据」规则处理（结构化展示/如实声明），**禁止编造**。
+任何 run 开始：**选定 adapter**（优先读用户提供的 adapter；新项目从 `adapters/template/adapter.md` 创建当前 run 的 adapter，路径全部以用户给定项目为根），读 `references/project-contract.md` 的字段语义，然后读该 adapter 的字段填充。基础契约字段：`project_roots[] / facts_source / public_narrative / architecture_spec / workflow_spec / metrics / demo_scenario / publication_policy / domain_profiles / run_ledger`。adapter 未提供的字段 = 该项目暂无此事实，对应产物按「无数据」规则处理（结构化展示/如实声明），**禁止编造**。
 
 ## 2. 数据流边界
 
@@ -33,6 +33,8 @@ description: 通用 GitHub 项目展示编排 Skill——按 project-contract �
 | 公开范围审查 | F09 | references/bindings.md | `publication_policy` + 待审目录 fixture |
 | 打包/发布 | F10 | references/bindings.md | 隔离 staging（未授权=只 dry-run） |
 
+整项目「GitHub 展示包」默认路由 F01/F02/F03/F04/F06/F08/F09/F10；F05 仅在指标有证据时路由，F07 仅在存在获批演示素材时路由。局部请求按需求缩小集合。
+
 规则：按用户需求路由 phase 集合（无预核事实源的项目 **F01 必须先行**，其产出回填 facts/narrative 字段）；多 phase 串联共用同一事实输入，显式文件传递；每 run 独立目录 `usage/<run-id>/`（route-plan/逐 phase trace/final-verdict/output）。
 
 ## 4. 执行契约
@@ -47,6 +49,10 @@ description: 通用 GitHub 项目展示编排 Skill——按 project-contract �
 
 `publication_policy.authorization != APPROVED` 时零远程写入，只到本地 private-review/public-export 与 READY_FOR_APPROVAL；批准并执行发布后，远端 read-back 全核过才称 PUBLISHED_VERIFIED。
 
-## 6. Preview 状态
+## 6. 运行入口与状态
 
-本包只含主编排与可移植示例，未含第三方子 Skill。运行状态唯一来源为 `manifests/preview-runtime-status.md`；产品绑定索引为 `references/bindings.md`。子实体不在场时 BLOCKED，不依赖作者研究目录或历史会话。
+本包包含 20 个固定版本子实体。调用权威为 `references/bindings.json`；先读该 phase 的 binding，再真实加载 primary.entry 及其资源。文件完整性用 `python scripts/verify-vendors.py`；环境用 `python scripts/doctor.py`；状态见 `manifests/preview-runtime-status.md`。没有历史会话也应能完成路由，不能依赖作者研究目录。缺子实体、依赖或产物验收时 BLOCKED。
+
+代码项目另外必填顶层 `source_release`，运行与验证依赖分开。F10 三步为 Package、Publish Backend、Remote Verification，见 `references/publish-backends.md`。
+
+F06 必须调用 `node scripts/snap-x.mjs check <design.mjs>` 和 `node scripts/snap-x.mjs render <design.mjs> --out <approved-output>`，wrapper 固定 CLI 版本与项目内缓存。先 `npm ci` 安装外部渲染依赖；不要执行上游示例里的未钉版 npx。方法学文件保留原文，执行配置以本条与 binding 为准。F10 只使用 skill-creator 的打包/校验链，不触发其可选描述优化或其他 Agent 会话消息。
