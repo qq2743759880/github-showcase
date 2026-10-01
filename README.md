@@ -7,11 +7,11 @@ Status: Generic V0.2 Preview
 Design: Verified
 Usage: Verified on 3 project shapes
 Generated code-project deployability: Verified (one recorded case)
-Self-contained child-skill bundle: In Progress (20 vendored entities)
-Remote publish backend: In Progress
+Self-contained child-skill bundle: Verified on fresh Hello CLI fixture (20 entities)
+Remote publish backend: Host dependent; local package verified
 ```
 
-这是产品化开发版本。20 个子实体已固定版本随包，外部运行时仍需安装或探测；完整 fresh-clone E2E 尚在验收，不能称为稳定版。
+这是产品化开发版本。20 个子实体已固定版本随包，外部运行时仍需安装或探测；Hello CLI 的独立 Fresh Agent E2E 已通过；可选媒体能力与远端写后端仍取决于宿主，尚未提升为稳定版。
 
 ## 为什么需要它
 
@@ -65,11 +65,11 @@ flowchart TD
 
 ## 当前缺口
 
-- 20 个子实体已 vendored、hash-locked，逐文件许可证和本地修改记录随包；完整 E2E 尚在复验。
+- 20 个子实体已 vendored、hash-locked，逐文件许可证和本地修改记录随包；Fresh Agent E2E 已通过，范围见 [验收摘要](docs/verification.md)。
 - F03 无许可证候选已移除，不作为运行依赖。
 - GitHub Connector 优先、gh fallback 的后端适配与远端回读仍待产品化。
 - 外部 Python / Node / ffmpeg 等需要 doctor 探测；本仓不含这些二进制。
-- 运行依赖与验证依赖已在开发分支拆分；完整 E2E 仍待验证。
+- 运行依赖与验证依赖已在开发分支拆分；Hello CLI fresh-clone E2E 已通过，完整结果与限制见 [验收摘要](docs/verification.md)。
 
 见 [路线图](docs/roadmap.md)、[路由](docs/routing.md) 和 [安全边界](docs/security.md)。
 
@@ -82,7 +82,7 @@ flowchart TD
 ```sh
 python scripts/verify-vendors.py
 python scripts/doctor.py
-npm ci --ignore-scripts
+npm ci --ignore-scripts --cache .cache/npm
 node scripts/snap-x.mjs --version
 python -m unittest discover -s tests -v
 ```

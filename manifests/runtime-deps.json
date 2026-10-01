@@ -314,6 +314,17 @@
       ],
       "optional": true,
       "install": "npm ci --ignore-scripts in vendor/pretty-mermaid; checkout-local npm cache"
+    },
+    {
+      "name": "mermaid-browser",
+      "type": "external_runtime",
+      "required_for": [
+        "F03.render"
+      ],
+      "optional": false,
+      "resolution": "PUPPETEER_EXECUTABLE_PATH, installed Chrome/Edge, or project-local Puppeteer Chrome",
+      "profile_directory": ".cache/puppeteer/tmp",
+      "binary_vendored": false
     }
   ]
 }

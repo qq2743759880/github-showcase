@@ -34,6 +34,13 @@ def main():
     probes={'python':{'status':'AVAILABLE','version':sys.version.split()[0]}}
     for name,arguments in [('git',['--version']),('node',['--version']),('npm',['--version']),('ffmpeg',['-version']),('bash',['--version']),('jq',['--version']),('gh',['--version'])]:
         probes[name]=version(name,arguments)
+    node=probes['node']
+    if node['status']=='AVAILABLE':
+        try:
+            if int(node['version'].lstrip('v').split('.')[0])<24:
+                node.update(status='BLOCKED',reason='unsupported_version',required='>=24')
+        except (ValueError,KeyError):
+            node.update(status='BLOCKED',reason='unrecognized_version')
     probes['pyyaml']={'status':'AVAILABLE' if importlib.util.find_spec('yaml') else 'BLOCKED'}
     snap=ROOT/'node_modules/.bin'/('snap-x.cmd' if sys.platform=='win32' else 'snap-x')
     probes['snap-x']={'status':'BLOCKED','reason':'not_installed'}
@@ -53,7 +60,7 @@ def main():
     for base in ['ProgramFiles','ProgramFiles(x86)','LOCALAPPDATA']:
         if os.environ.get(base):
             browsers.extend(p for p in [Path(os.environ[base])/'Google/Chrome/Application/chrome.exe',Path(os.environ[base])/'Microsoft/Edge/Application/msedge.exe'] if p.is_file())
-    probes['mermaid-browser']={'status':'AVAILABLE' if browsers else 'BLOCKED','meaning':'project-local browser present; actual render still required'}
+    probes['mermaid-browser']={'status':'AVAILABLE' if browsers else 'BLOCKED','meaning':'project-local or configured/installed host browser present; actual render still required'}
     probes['pretty-mermaid-runtime']={'status':'AVAILABLE' if (ROOT/'vendor/pretty-mermaid/node_modules/beautiful-mermaid/package.json').is_file() else 'BLOCKED','optional':True}
     probes['github_auth']={'status':'BLOCKED','reason':'no_verified_write_backend'}
     if probes['gh']['status']=='AVAILABLE':
