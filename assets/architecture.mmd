@@ -1,0 +1,39 @@
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Segoe UI, Microsoft YaHei, sans-serif", "fontSize": "14px"}, "flowchart": {"nodeSpacing": 36, "rankSpacing": 44}}}%%
+flowchart TB
+  subgraph IN["输入层（用户）"]
+    TASK["任务书 / 项目目录<br/>（只读）"]
+    ADP["adapter 契约字段<br/>project_roots · facts_source · public_narrative<br/>architecture_spec · workflow_spec · metrics<br/>demo_scenario · publication_policy · source_release"]
+  end
+
+  subgraph ORCH["编排层（本 Skill 本体）"]
+    SKILL["主编排 Skill<br/>需求解析 → phase 路由<br/>数据流边界 · 执行契约 · 发布闸"]
+    GATE["质量门 release-gate<br/>① 资产消费门 ② 读者理解门<br/>③ 表层分 ④ 自展示门"]
+  end
+
+  subgraph CAP["能力层（20 件固定版本子实体，冻结于 vendor/）"]
+    F0102["F01 取证 · F02 叙事"]
+    F0306["F03 架构 · F04 流程<br/>F05 数据 · F06 视觉"]
+    F07["F07 演示<br/>（仅获批素材时路由）"]
+    F08C["F08 README 组装<br/>（Showcase Composition）"]
+  end
+
+  subgraph EXIT["验收与出口层"]
+    SC["逐产物 successCheck<br/>验不过 = 不产出"]
+    F09["F09 公开范围审查<br/>secret / privacy / license / authorization"]
+    F10["F10 打包<br/>git commit · zip · fresh clone 复检"]
+    PKG["本地展示成品包<br/>README + docs + assets + 台账<br/>READY_FOR_APPROVAL"]
+  end
+
+  TASK --> ADP
+  ADP --> SKILL
+  SKILL -->|"binding：PRIMARY/FALLBACK<br/>显式加载 · 真实调用形态"| F0102
+  SKILL --> F0306
+  SKILL -.->|"无获批素材 → 跳过"| F07
+  F0102 --> SC
+  F0306 --> SC
+  F07 -.-> SC
+  SC -->|"validated output<br/>全部被 README/docs 消费"| F08C
+  F08C --> F09
+  F09 -->|"PASS 才放行；<br/>BLOCK → F10 STOP"| F10
+  F10 --> GATE
+  GATE -->|"四门全过且授权未批准：<br/>零远程写入"| PKG

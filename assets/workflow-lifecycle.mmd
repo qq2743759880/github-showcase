@@ -1,0 +1,29 @@
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Segoe UI, Microsoft YaHei, sans-serif", "fontSize": "14px"}, "flowchart": {"nodeSpacing": 30, "rankSpacing": 40}}}%%
+flowchart TD
+  S0["① 读契约 · 选 adapter<br/>（新项目从模板创建本 run 的 adapter）"]
+  S1["② 填契约字段<br/>缺字段 = 无数据，如实声明，禁编造"]
+  S2["③ F01 取证（无预核事实源时先行）<br/>产出回填 facts/narrative"]
+  S3["④ F02 叙事 + F03 架构 + F04 流程<br/>+ F05 数据（有证据才路由）+ F06 视觉"]
+  S4{"⑤ 逐产物 successCheck"}
+  S5["⑥ F08 README 组装（Showcase Composition）<br/>F02-F07 资产 + F09 边界全部进入展示面"]
+  S6["⑦ F09 公开范围审查<br/>secret 扫描 · privacy · license · KEEP/EXCLUDE/REVIEW"]
+  S7{"⑧ 审查裁决"}
+  S8["⑨ F10 打包<br/>git commit · zip · fresh clone 复检"]
+  S9["⑩ 质量门 release-gate（四门机检）"]
+  S10["本地展示成品包 READY_FOR_APPROVAL<br/>（授权未批准：零远程写入）"]
+  B1["代码项目支线：<br/>include_code=true · entry_points 全部随包"]
+  B2["全新 clone 实测：<br/>装运行依赖 → 启动检查 → 装验证依赖 → 测试"]
+  X1["验不过 = 不产出，修后重验"]
+  X2["判 BLOCK 的内容：<br/>F10 对其 STOP，不得绕过"]
+
+  S0 --> S1 --> S2 --> S3 --> S4
+  S4 -->|"PASS"| S5
+  S4 -->|"FAIL"| X1
+  X1 -.->|修复重验| S3
+  S5 --> S6 --> S7
+  S7 -->|"PASS"| S8
+  S7 -->|"发现不公开内容"| X2
+  S8 --> S9
+  S9 -->|"四门全过"| S10
+  B1 -.->|fresh_clone_verify 硬规则| B2
+  B2 -.->|实测输出写 trace| S8

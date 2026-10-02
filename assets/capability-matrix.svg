@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="十槽位 × 三轴：本 run 实测矩阵">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <text x="80.0" y="96.0" font-family="Georgia, 'Times New Roman', 'Hiragino Mincho ProN', 'Yu Mincho', serif" font-size="40" fill="#000000" font-weight="bold" text-anchor="start">十槽位 × 三轴：本 run 实测矩阵</text>
+  <text x="80.0" y="124.0" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="20" fill="#6B7280" font-weight="normal" text-anchor="start">路由 / 产物验收 / 进入展示面 —— 全部取自本 run 落盘 trace 与导出树，可逐格复算</text>
+  <text x="441.7" y="223.0" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#6B7280" font-weight="600" text-anchor="middle">本 run 路由</text>
+  <text x="745.0" y="223.0" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#6B7280" font-weight="600" text-anchor="middle">产物 successCheck</text>
+  <text x="1048.3" y="223.0" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#6B7280" font-weight="600" text-anchor="middle">进入展示面</text>
+  <text x="80.0" y="256.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F01 取证</title>F01 取证</text>
+  <rect x="292.0" y="236.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="256.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="236.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="256.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="236.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="256.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="288.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F02 叙事</title>F02 叙事</text>
+  <rect x="292.0" y="268.2" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="288.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="268.2" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="288.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="268.2" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="288.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="320.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F03 架构图</title>F03 架构图</text>
+  <rect x="292.0" y="300.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="320.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="300.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="320.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="300.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="320.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="352.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F04 流程图</title>F04 流程图</text>
+  <rect x="292.0" y="332.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="352.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="332.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="352.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="332.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="352.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="384.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F05 数据图</title>F05 数据图</text>
+  <rect x="292.0" y="364.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="384.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="364.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="384.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="364.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="384.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="417.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F06 首屏视觉</title>F06 首屏视觉</text>
+  <rect x="292.0" y="397.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="417.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="397.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="417.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="397.0" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="417.1" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="449.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F07 演示</title>F07 演示</text>
+  <rect x="292.0" y="429.2" width="299.3" height="28.2" fill="#EFF3FB" stroke="none"/>
+  <text x="441.7" y="449.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#000000" font-weight="600" text-anchor="middle">0</text>
+  <rect x="595.3" y="429.2" width="299.3" height="28.2" fill="#EFF3FB" stroke="none"/>
+  <text x="745.0" y="449.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#000000" font-weight="600" text-anchor="middle">0</text>
+  <rect x="898.7" y="429.2" width="299.3" height="28.2" fill="#EFF3FB" stroke="none"/>
+  <text x="1048.3" y="449.3" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#000000" font-weight="600" text-anchor="middle">0</text>
+  <text x="80.0" y="481.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F08 README 组装</title>F08 README 组装</text>
+  <rect x="292.0" y="461.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="481.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="461.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="481.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="461.4" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="481.5" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="513.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F09 范围审查</title>F09 范围审查</text>
+  <rect x="292.0" y="493.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="513.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="493.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="513.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="493.6" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="513.7" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="545.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#374151" font-weight="normal" text-anchor="start"><title>F10 打包/发布</title>F10 打包/发布</text>
+  <rect x="292.0" y="525.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="441.7" y="545.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="595.3" y="525.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="745.0" y="545.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <rect x="898.7" y="525.8" width="299.3" height="28.2" fill="#15296B" stroke="none"/>
+  <text x="1048.3" y="545.9" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="18" fill="#FFFFFF" font-weight="600" text-anchor="middle">1</text>
+  <text x="80.0" y="692.0" font-family="'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', 'Meiryo', sans-serif" font-size="13" fill="#6B7280" font-weight="normal" text-anchor="start">来源：step17-self-dogfood run trace（route-plan + f0X-trace）与导出树 asset-consumption-ledger · 2026-10-02</text>
+</svg>
