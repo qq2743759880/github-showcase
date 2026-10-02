@@ -18,7 +18,7 @@
 | 轴 | 方法 | 结果 |
 |---|---|---|
 | secret | 凭据扫描引擎真实子进程扫全导出树（含全部文件） | 命中 `[]`，EXIT=0 |
-| privacy | 盘符路径 grep、Owner 称谓 grep、内部点目录扫描 | 盘符 0；Owner 命中 1 = [skill/SKILL.md](../skill/SKILL.md) 契约原文的禁令条款本身（逐字投影，非称谓使用，登记 REVIEW/KEEP）；点目录 0（assets 内曾再生一个簿记点目录，已清除并复查为 0） |
+| privacy | 盘符路径 grep、Owner 称谓 grep、内部点目录扫描 | 盘符 0；Owner 命中 1 = [skill/SKILL.md](../../skill/SKILL.md) 契约原文的禁令条款本身（逐字投影，非称谓使用，登记 REVIEW/KEEP）；点目录 0（assets 内曾再生一个簿记点目录，已清除并复查为 0） |
 | secret 值形态抽查 | 高危凭据形态正则抽查 | 0 |
 | 首屏表层分 | README 首屏九类违禁模式机检（哈希/样本/实体计数/依赖版本/渲染内核/内部运行编号/审计词等） | 0 命中 |
 | 断链 | 导出树全 md 相对链接机检 | 最终态 0 断链（见收尾质量门输出） |
@@ -28,9 +28,9 @@
 
 | 文件 | 校验 | 结果 |
 |---|---|---|
-| [skill/SKILL.md](../skill/SKILL.md) | sha256 与 Skill 本体包源文件比对 | MATCH |
-| [skill/references/project-contract.md](../skill/references/project-contract.md) | 同上 | MATCH |
-| [skill/references/bindings.json](../skill/references/bindings.json) | 同上 | MATCH |
+| [skill/SKILL.md](../../skill/SKILL.md) | sha256 与 Skill 本体包源文件比对 | MATCH |
+| [skill/references/project-contract.md](../../skill/references/project-contract.md) | 同上 | MATCH |
+| [skill/references/bindings.json](../../skill/references/bindings.json) | 同上 | MATCH |
 | [LICENSE](../../LICENSE) | 同上（MIT） | MATCH |
 
 ## 4. 打包与全新 clone 复检（F10）
