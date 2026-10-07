@@ -1,0 +1,24 @@
+{
+  "phase": "F03",
+  "workflow": "references/workflows/diagrams.md",
+  "capabilities": [
+    {
+      "name": "c4-architecture",
+      "role": "architect",
+      "entry": "vendor/c4-architecture/skills/c4-architecture/SKILL.md"
+    },
+    {
+      "name": "archify",
+      "role": "integrated",
+      "entry": "vendor/archify/SKILL.md"
+    }
+  ],
+  "runtime_dependencies": [
+    "node",
+    "chrome-or-chromium",
+    "mermaid-cli",
+    "mermaid-browser"
+  ],
+  "role": "semantic-model-and-interactive-delivery",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

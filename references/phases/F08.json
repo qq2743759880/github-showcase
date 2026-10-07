@@ -1,0 +1,14 @@
+{
+  "phase": "F08",
+  "workflow": "references/workflows/readme.md",
+  "capabilities": [
+    {
+      "name": "readme-skill",
+      "role": "composer",
+      "entry": "vendor/readme-skill/SKILL.md"
+    }
+  ],
+  "runtime_dependencies": [],
+  "role": "composer",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

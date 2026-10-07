@@ -1,0 +1,12 @@
+C4Context
+title github-showcase: System Context
+Person(owner,"Project owner","Sets public scope and approves publishing")
+System(method,"github-showcase","Host-loaded method and local tool processes")
+System_Ext(host,"Agent host","File and tool access")
+SystemDb_Ext(project,"Target project","Approved source and output files")
+System_Ext(github,"GitHub","Repository, Release and Pages")
+Rel(owner,method,"Sets scope and approval","User request")
+Rel(host,method,"Loads method","Skill files")
+Rel(method,project,"Reads source and writes approved output","Filesystem")
+Rel(method,github,"Publishes only when authorized","Git / HTTPS")
+UpdateLayoutConfig($c4ShapeInRow="3",$c4BoundaryInRow="1")

@@ -1,0 +1,192 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Publication: approved package to readback",
+    "output": "publication/publication.html",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    {
+      "id": "publish",
+      "label": "Authorized publication"
+    },
+    {
+      "id": "exception",
+      "label": "Stop and recovery",
+      "variant": "exception"
+    }
+  ],
+  "mainPath": [
+    "local",
+    "authorization",
+    "export",
+    "push",
+    "release",
+    "readback"
+  ],
+  "nodes": [
+    {
+      "id": "local",
+      "lane": "publish",
+      "col": 0,
+      "type": "backend",
+      "label": "Local Package",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "authorization",
+      "lane": "publish",
+      "col": 1,
+      "type": "security",
+      "label": "Authorization",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "export",
+      "lane": "publish",
+      "col": 2,
+      "type": "backend",
+      "label": "Public Export",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "push",
+      "lane": "publish",
+      "col": 3,
+      "type": "backend",
+      "label": "Git Push",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "release",
+      "lane": "publish",
+      "col": 4,
+      "type": "backend",
+      "label": "Pre-release",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "readback",
+      "lane": "publish",
+      "col": 5,
+      "type": "backend",
+      "label": "Remote Readback",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "denied",
+      "lane": "exception",
+      "col": 1,
+      "type": "security",
+      "label": "Local only",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "retry",
+      "lane": "exception",
+      "col": 3,
+      "type": "backend",
+      "label": "Inspect / retry",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "failed",
+      "lane": "exception",
+      "col": 5,
+      "type": "security",
+      "label": "Publication FAIL",
+      "sublabel": "",
+      "width": 110
+    }
+  ],
+  "edges": [
+    {
+      "id": "package",
+      "from": "local",
+      "to": "authorization"
+    },
+    {
+      "id": "approval",
+      "from": "authorization",
+      "to": "export",
+      "label": "APPROVED"
+    },
+    {
+      "id": "clean",
+      "from": "export",
+      "to": "push",
+      "label": "local gate PASS"
+    },
+    {
+      "id": "commit",
+      "from": "push",
+      "to": "release",
+      "label": "public commit"
+    },
+    {
+      "id": "asset",
+      "from": "release",
+      "to": "readback",
+      "label": "sealed ZIP"
+    },
+    {
+      "id": "no-consent",
+      "from": "authorization",
+      "to": "denied",
+      "label": "not authorized",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "transport-fail",
+      "from": "push",
+      "to": "retry",
+      "label": "transport fail",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "retry-push",
+      "from": "retry",
+      "to": "push",
+      "label": "safe retry",
+      "role": "return",
+      "variant": "dashed"
+    },
+    {
+      "id": "mismatch",
+      "from": "readback",
+      "to": "failed",
+      "label": "bytes / QA differ",
+      "role": "error",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Immutable identity",
+      "items": [
+        "Preserve Git history; never force push or move a version tag.",
+        "Upload the exact frozen Runtime archive as a non-latest prerelease."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Completion",
+      "items": [
+        "Read back main, tag, Release, asset digest and Pages bytes.",
+        "Fresh remote clone and installation must work before published PASS."
+      ]
+    }
+  ]
+}

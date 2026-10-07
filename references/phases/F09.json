@@ -1,0 +1,10 @@
+{
+  "phase": "F09",
+  "workflow": "references/workflows/delivery.md",
+  "capabilities": [],
+  "runtime_dependencies": [
+    "python"
+  ],
+  "role": "internal",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

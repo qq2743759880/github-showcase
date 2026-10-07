@@ -1,0 +1,212 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Project Showcase: evidence to package",
+    "output": "showcase-fixed.html",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    {
+      "id": "author",
+      "label": "Evidence and authoring"
+    },
+    {
+      "id": "exception",
+      "label": "Stop and repair",
+      "variant": "exception"
+    },
+    {
+      "id": "deliver",
+      "label": "Review and delivery"
+    }
+  ],
+  "mainPath": [
+    "evidence",
+    "route",
+    "author",
+    "native",
+    "review",
+    "gate",
+    "package"
+  ],
+  "nodes": [
+    {
+      "id": "evidence",
+      "lane": "author",
+      "col": 0,
+      "type": "backend",
+      "label": "Evidence",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "route",
+      "lane": "author",
+      "col": 1,
+      "type": "backend",
+      "label": "Route",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "author",
+      "lane": "author",
+      "col": 2,
+      "type": "backend",
+      "label": "Author",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "native",
+      "lane": "author",
+      "col": 3,
+      "type": "backend",
+      "label": "Native Skills",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "review",
+      "lane": "deliver",
+      "col": 3,
+      "type": "backend",
+      "label": "Review",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "gate",
+      "lane": "deliver",
+      "col": 4,
+      "type": "security",
+      "label": "Gate",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "package",
+      "lane": "deliver",
+      "col": 5,
+      "type": "backend",
+      "label": "Package",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "gap",
+      "lane": "exception",
+      "col": 0,
+      "type": "security",
+      "label": "Missing facts",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "repair",
+      "lane": "exception",
+      "col": 3,
+      "type": "backend",
+      "label": "Bounded repair",
+      "sublabel": "",
+      "width": 110
+    },
+    {
+      "id": "stop",
+      "lane": "exception",
+      "col": 4,
+      "type": "security",
+      "label": "Stop / retain",
+      "sublabel": "",
+      "width": 110
+    }
+  ],
+  "edges": [
+    {
+      "id": "facts",
+      "from": "evidence",
+      "to": "route",
+      "label": "supported"
+    },
+    {
+      "id": "select",
+      "from": "route",
+      "to": "author",
+      "label": "applicable only"
+    },
+    {
+      "id": "produce",
+      "from": "author",
+      "to": "native"
+    },
+    {
+      "id": "inspect",
+      "from": "native",
+      "to": "review",
+      "label": "native PASS"
+    },
+    {
+      "id": "evidence-pass",
+      "from": "review",
+      "to": "gate",
+      "label": "meaning reviewed"
+    },
+    {
+      "id": "package-pass",
+      "from": "gate",
+      "to": "package",
+      "label": "all gates PASS"
+    },
+    {
+      "id": "unknown",
+      "from": "evidence",
+      "to": "gap",
+      "label": "insufficient",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "native-fail",
+      "from": "native",
+      "to": "repair",
+      "label": "presentation fail",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "retry",
+      "from": "repair",
+      "to": "native",
+      "label": "bounded retry",
+      "role": "return",
+      "variant": "dashed"
+    },
+    {
+      "id": "reject",
+      "from": "gate",
+      "to": "stop",
+      "label": "safety / QA fail",
+      "role": "error",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Conditional generation",
+      "items": [
+        "No metrics: categorical capabilities; no invented chart.",
+        "No real media need: video is skipped."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Failure and recovery",
+      "items": [
+        "Missing consequential facts block dependent outputs.",
+        "After bounded repairs, preserve evidence and stop; never weaken a gate."
+      ]
+    }
+  ]
+}

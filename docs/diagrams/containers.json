@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "C4 Container: local execution",
+    "output": "containers/containers.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "host",
+      "type": "frontend",
+      "label": "Agent host",
+      "sublabel": "Loads method; judges meaning",
+      "pos": [
+        40,
+        190
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "python",
+      "type": "backend",
+      "label": "Python tools",
+      "sublabel": "Routes, gates and packages",
+      "pos": [
+        410,
+        190
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "git",
+      "type": "database",
+      "label": "Git / filesystem",
+      "sublabel": "Source and local commit",
+      "pos": [
+        410,
+        400
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "node",
+      "type": "backend",
+      "label": "Node render runtime",
+      "sublabel": "Archify / Snap-X / Mermaid",
+      "pos": [
+        410,
+        20
+      ],
+      "size": [
+        240,
+        76
+      ]
+    },
+    {
+      "id": "browser",
+      "type": "frontend",
+      "label": "Browser",
+      "sublabel": "Checks and explores HTML",
+      "pos": [
+        790,
+        20
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "project",
+      "type": "database",
+      "label": "Target project",
+      "sublabel": "Approved files / output tree",
+      "pos": [
+        790,
+        190
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "github",
+      "type": "cloud",
+      "label": "GitHub",
+      "sublabel": "Authorized remote surfaces",
+      "pos": [
+        790,
+        400
+      ],
+      "size": [
+        220,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "cli",
+      "from": "host",
+      "to": "python",
+      "label": "invokes CLI"
+    },
+    {
+      "id": "native",
+      "from": "host",
+      "to": "node",
+      "label": "invokes CLI"
+    },
+    {
+      "id": "chrome",
+      "from": "node",
+      "to": "browser",
+      "label": "HTML / DevTools"
+    },
+    {
+      "id": "files",
+      "from": "python",
+      "to": "project",
+      "label": "checks bytes"
+    },
+    {
+      "id": "commit",
+      "from": "python",
+      "to": "git",
+      "label": "packages commit"
+    },
+    {
+      "id": "push",
+      "from": "git",
+      "to": "github",
+      "label": "authorized Git"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Method, not a service",
+      "items": [
+        "github-showcase and vendor Skills are host-loaded method resources.",
+        "Python and Node are independently runnable local CLI processes."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Truth boundary",
+      "items": [
+        "The Agent supplies semantic judgment and approved scope.",
+        "Deterministic tools bind files and recorded evidence; no host-wide enforcement."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "phase": "F02",
+  "workflow": "references/workflows/narrative.md",
+  "capabilities": [],
+  "runtime_dependencies": [],
+  "role": "internal",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

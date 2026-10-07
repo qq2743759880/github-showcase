@@ -1,0 +1,17 @@
+{
+  "phase": "F06",
+  "workflow": "references/workflows/visual.md",
+  "capabilities": [
+    {
+      "name": "snap-x",
+      "role": "producer",
+      "entry": "vendor/snap-x/skills/snap-x/SKILL.md"
+    }
+  ],
+  "runtime_dependencies": [
+    "node",
+    "snap-x"
+  ],
+  "role": "producer",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

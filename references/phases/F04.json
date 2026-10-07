@@ -1,0 +1,17 @@
+{
+  "phase": "F04",
+  "workflow": "references/workflows/diagrams.md",
+  "capabilities": [
+    {
+      "name": "archify",
+      "role": "integrated",
+      "entry": "vendor/archify/SKILL.md"
+    }
+  ],
+  "runtime_dependencies": [
+    "node",
+    "chrome-or-chromium"
+  ],
+  "role": "semantic-model-and-interactive-delivery",
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}

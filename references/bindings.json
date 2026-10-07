@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "bindings": [
+    {
+      "phase": "F01",
+      "binding": "references/phases/F01.json"
+    },
+    {
+      "phase": "F02",
+      "binding": "references/phases/F02.json"
+    },
+    {
+      "phase": "F03",
+      "binding": "references/phases/F03.json"
+    },
+    {
+      "phase": "F04",
+      "binding": "references/phases/F04.json"
+    },
+    {
+      "phase": "F05",
+      "binding": "references/phases/F05.json"
+    },
+    {
+      "phase": "F06",
+      "binding": "references/phases/F06.json"
+    },
+    {
+      "phase": "F07",
+      "binding": "references/phases/F07.json"
+    },
+    {
+      "phase": "F08",
+      "binding": "references/phases/F08.json"
+    },
+    {
+      "phase": "F09",
+      "binding": "references/phases/F09.json"
+    },
+    {
+      "phase": "F10",
+      "binding": "references/phases/F10.json"
+    }
+  ],
+  "integrated": [
+    "c4-architecture",
+    "snap-x",
+    "readme-skill",
+    "archify"
+  ],
+  "reviewer_references": [
+    "good-readme",
+    "humanizer",
+    "og-image-design",
+    "tufte-claude-skill"
+  ],
+  "utility": [
+    "secret-scanner"
+  ],
+  "extensions": "references/extensions.json"
+}

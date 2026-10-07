@@ -1,0 +1,42 @@
+{
+  "c4-architecture": {
+    "entry": "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+    "obligations": [
+      "audience-and-levels",
+      "code-evidence",
+      "context-and-container",
+      "semantics-and-relationships",
+      "document-and-render-review"
+    ]
+  },
+  "snap-x": {
+    "entry": "vendor/snap-x/skills/snap-x/SKILL.md",
+    "obligations": [
+      "inspect-nine-answers",
+      "plan-formats-and-brand",
+      "self-contained-designs",
+      "native-check",
+      "render-view-deliver"
+    ]
+  },
+  "readme-skill": {
+    "entry": "vendor/readme-skill/SKILL.md",
+    "obligations": [
+      "bounded-fact-discovery",
+      "fact-classification",
+      "audience-language-and-options",
+      "draft-and-handling-mode",
+      "write-and-native-quality-check"
+    ]
+  },
+  "archify": {
+    "entry": "vendor/archify/SKILL.md",
+    "obligations": [
+      "type-schema-and-authoring",
+      "source-grounded-typed-ir",
+      "native-finalize-showcase",
+      "browser-and-perceptual-review",
+      "interactive-static-and-consumption"
+    ]
+  }
+}

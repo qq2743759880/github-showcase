@@ -1,0 +1,118 @@
+{
+  "schema_version": 2,
+  "dependencies": [
+    {
+      "name": "python",
+      "classification": "Required",
+      "required_for": [
+        "F01",
+        "F09",
+        "F10"
+      ]
+    },
+    {
+      "name": "node",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F03",
+        "F04",
+        "F06"
+      ]
+    },
+    {
+      "name": "chrome-or-chromium",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F03",
+        "F04"
+      ]
+    },
+    {
+      "name": "snap-x",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F06"
+      ]
+    },
+    {
+      "name": "archify",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F03",
+        "F04"
+      ]
+    },
+    {
+      "name": "mermaid-cli",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F03"
+      ]
+    },
+    {
+      "name": "git",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F03",
+        "F04",
+        "F10"
+      ]
+    },
+    {
+      "name": "ffmpeg",
+      "classification": "Phase-specific",
+      "required_for": [
+        "F07"
+      ]
+    },
+    {
+      "name": "github-backend",
+      "classification": "Optional",
+      "required_for": [
+        "remote publication"
+      ]
+    }
+  ],
+  "vendor_roles": [
+    {
+      "name": "humanizer",
+      "role": "reviewer_reference",
+      "entry": "vendor/humanizer/SKILL.md"
+    },
+    {
+      "name": "c4-architecture",
+      "role": "architect",
+      "entry": "vendor/c4-architecture/skills/c4-architecture/SKILL.md"
+    },
+    {
+      "name": "tufte-claude-skill",
+      "role": "reviewer_reference",
+      "entry": "vendor/tufte-claude-skill/SKILL.md"
+    },
+    {
+      "name": "snap-x",
+      "role": "producer",
+      "entry": "vendor/snap-x/skills/snap-x/SKILL.md"
+    },
+    {
+      "name": "og-image-design",
+      "role": "reviewer_reference",
+      "entry": "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md"
+    },
+    {
+      "name": "readme-skill",
+      "role": "composer",
+      "entry": "vendor/readme-skill/SKILL.md"
+    },
+    {
+      "name": "good-readme",
+      "role": "reviewer_reference",
+      "entry": "vendor/good-readme/skills/good-readme/SKILL.md"
+    },
+    {
+      "name": "secret-scanner",
+      "role": "deterministic_utility",
+      "entry": "vendor/secret-scanner/skills/secret-scanner/engine.py"
+    }
+  ]
+}

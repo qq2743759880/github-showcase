@@ -1,0 +1,2464 @@
+{
+  "schema_version": 1,
+  "name": "github-showcase",
+  "version": "1.0.0-rc3",
+  "execution": [
+    "SKILL.md",
+    "adapters/template/adapter.md",
+    "manifests/runtime-deps.json",
+    "package-lock.json",
+    "package.json",
+    "references/agent-skill-readme-profile.md",
+    "references/bindings.json",
+    "references/bindings.md",
+    "references/core-contracts.json",
+    "references/distribution-surfaces.md",
+    "references/extensions.json",
+    "references/phases/F01.json",
+    "references/phases/F02.json",
+    "references/phases/F03.json",
+    "references/phases/F04.json",
+    "references/phases/F05.json",
+    "references/phases/F06.json",
+    "references/phases/F07.json",
+    "references/phases/F08.json",
+    "references/phases/F09.json",
+    "references/phases/F10.json",
+    "references/portable-runtime.md",
+    "references/project-contract.md",
+    "references/public-copy.md",
+    "references/publish-backends.md",
+    "references/workflows/archify.md",
+    "references/workflows/capabilities.md",
+    "references/workflows/delivery.md",
+    "references/workflows/demo.md",
+    "references/workflows/diagrams.md",
+    "references/workflows/fact-escalation.md",
+    "references/workflows/facts.md",
+    "references/workflows/narrative.md",
+    "references/workflows/readme.md",
+    "references/workflows/visual.md",
+    "requirements-verification.txt",
+    "scripts/archify-localize.mjs",
+    "scripts/archify-routing.py",
+    "scripts/doctor.py",
+    "scripts/evidence.py",
+    "scripts/export-visual-runtime.py",
+    "scripts/package-project.py",
+    "scripts/package-release.py",
+    "scripts/portable-runtime.py",
+    "scripts/public-copy.py",
+    "scripts/release-gate.py",
+    "scripts/render-c4.mjs",
+    "scripts/route-plan.py",
+    "scripts/runtime-package.py",
+    "scripts/skill-fidelity.py",
+    "scripts/snap-x.mjs",
+    "scripts/validate-adapter.py",
+    "scripts/verify-vendors.py",
+    "scripts/windows-esm.mjs",
+    "vendor/archify/SKILL.md",
+    "vendor/archify/assets/template.html",
+    "vendor/archify/bin/archify.mjs",
+    "vendor/archify/bin/delivery-update.mjs",
+    "vendor/archify/bin/finalize.mjs",
+    "vendor/archify/bin/open-artifact.mjs",
+    "vendor/archify/bin/preview.mjs",
+    "vendor/archify/bin/recover-output.mjs",
+    "vendor/archify/bin/visual-check.mjs",
+    "vendor/archify/brand-marks/README.md",
+    "vendor/archify/brand-marks/catalog.json",
+    "vendor/archify/delta/architecture-delta.mjs",
+    "vendor/archify/examples/agent-run.lifecycle.json",
+    "vendor/archify/examples/agent-tool-call.workflow.json",
+    "vendor/archify/examples/async-job-roundtrip.sequence.json",
+    "vendor/archify/examples/brand-aware-delivery.architecture.json",
+    "vendor/archify/examples/cache-miss-request.sequence.json",
+    "vendor/archify/examples/checkout-platform.base.architecture.json",
+    "vendor/archify/examples/checkout-platform.head.architecture.json",
+    "vendor/archify/examples/dataflow-product-analytics.html",
+    "vendor/archify/examples/deployment-release.lifecycle.json",
+    "vendor/archify/examples/event-stream.dataflow.json",
+    "vendor/archify/examples/holiday-planning.workflow.json",
+    "vendor/archify/examples/incident-response.workflow.json",
+    "vendor/archify/examples/lifecycle-agent-run.html",
+    "vendor/archify/examples/locales/de.json",
+    "vendor/archify/examples/locales/es.json",
+    "vendor/archify/examples/locales/fr.json",
+    "vendor/archify/examples/locales/fr.partial.json",
+    "vendor/archify/examples/locales/it.json",
+    "vendor/archify/examples/locales/ja.json",
+    "vendor/archify/examples/locales/ko.json",
+    "vendor/archify/examples/locales/pt.json",
+    "vendor/archify/examples/locales/ru.json",
+    "vendor/archify/examples/product-analytics.dataflow.json",
+    "vendor/archify/examples/production-deployment.architecture.json",
+    "vendor/archify/examples/release-delivery.workflow.json",
+    "vendor/archify/examples/sequence-cache-miss-request.html",
+    "vendor/archify/examples/web-app-rendered.html",
+    "vendor/archify/examples/web-app.architecture.json",
+    "vendor/archify/examples/workflow-agent-tool-call-rendered.html",
+    "vendor/archify/migrations/workflow-v2.mjs",
+    "vendor/archify/package.json",
+    "vendor/archify/recipes/scenarios.mjs",
+    "vendor/archify/references/architecture-layout-repair.md",
+    "vendor/archify/references/authoring-contract.md",
+    "vendor/archify/references/authoring-defaults.md",
+    "vendor/archify/references/brand-marks.md",
+    "vendor/archify/references/delivery-contract.md",
+    "vendor/archify/references/repository-authoring.md",
+    "vendor/archify/references/update-awareness.md",
+    "vendor/archify/references/viewer-runtime.md",
+    "vendor/archify/renderers/architecture/grid.mjs",
+    "vendor/archify/renderers/architecture/labels.mjs",
+    "vendor/archify/renderers/architecture/render-architecture.mjs",
+    "vendor/archify/renderers/architecture/routing.mjs",
+    "vendor/archify/renderers/dataflow/README.md",
+    "vendor/archify/renderers/dataflow/render-dataflow.mjs",
+    "vendor/archify/renderers/lifecycle/README.md",
+    "vendor/archify/renderers/lifecycle/grid-routing.mjs",
+    "vendor/archify/renderers/lifecycle/render-lifecycle.mjs",
+    "vendor/archify/renderers/sequence/README.md",
+    "vendor/archify/renderers/sequence/render-sequence.mjs",
+    "vendor/archify/renderers/shared/atomic-output.mjs",
+    "vendor/archify/renderers/shared/brand-marks.mjs",
+    "vendor/archify/renderers/shared/cli.mjs",
+    "vendor/archify/renderers/shared/desktop-readability.mjs",
+    "vendor/archify/renderers/shared/diagnostics.mjs",
+    "vendor/archify/renderers/shared/engineering-profiles.mjs",
+    "vendor/archify/renderers/shared/generated-brand-marks.mjs",
+    "vendor/archify/renderers/shared/generated-validators.mjs",
+    "vendor/archify/renderers/shared/geometry.mjs",
+    "vendor/archify/renderers/shared/i18n.mjs",
+    "vendor/archify/renderers/shared/layout-report.mjs",
+    "vendor/archify/renderers/shared/legend.mjs",
+    "vendor/archify/renderers/shared/output-path.mjs",
+    "vendor/archify/renderers/shared/path-semantics.mjs",
+    "vendor/archify/renderers/shared/portable-path.mjs",
+    "vendor/archify/renderers/shared/repository-evidence.mjs",
+    "vendor/archify/renderers/shared/repository-location.mjs",
+    "vendor/archify/renderers/shared/route-quality.mjs",
+    "vendor/archify/renderers/shared/sidecar-path.mjs",
+    "vendor/archify/renderers/shared/spatial-grid.mjs",
+    "vendor/archify/renderers/shared/text-fit.mjs",
+    "vendor/archify/renderers/shared/utils.mjs",
+    "vendor/archify/renderers/shared/validator.mjs",
+    "vendor/archify/renderers/workflow/README.md",
+    "vendor/archify/renderers/workflow/render-workflow.mjs",
+    "vendor/archify/renderers/workflow/workflow-compiler.mjs",
+    "vendor/archify/renderers/workflow/workflow-migration-geometry.mjs",
+    "vendor/archify/schemas/README.md",
+    "vendor/archify/schemas/architecture.schema.json",
+    "vendor/archify/schemas/common.schema.json",
+    "vendor/archify/schemas/dataflow.schema.json",
+    "vendor/archify/schemas/lifecycle.schema.json",
+    "vendor/archify/schemas/sequence.schema.json",
+    "vendor/archify/schemas/workflow.schema.json",
+    "vendor/archify/scripts/check-render-output.mjs",
+    "vendor/archify/scripts/check-update.mjs",
+    "vendor/archify/scripts/delivery-update-child.mjs",
+    "vendor/archify/scripts/render-examples.mjs",
+    "vendor/archify/scripts/update-contract.mjs",
+    "vendor/archify/skill-release.json",
+    "vendor/c4-architecture/skills/c4-architecture/README.md",
+    "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/advanced-patterns.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/c4-syntax.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/common-mistakes.md",
+    "vendor/good-readme/skills/good-readme/SKILL.md",
+    "vendor/good-readme/skills/good-readme/references/anatomy.md",
+    "vendor/good-readme/skills/good-readme/references/anti-patterns.md",
+    "vendor/good-readme/skills/good-readme/references/cloudflare.md",
+    "vendor/good-readme/skills/good-readme/references/examples.md",
+    "vendor/good-readme/skills/good-readme/references/quality-checklist.md",
+    "vendor/humanizer/SKILL.md",
+    "vendor/humanizer/scripts/validate-package.py",
+    "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md",
+    "vendor/readme-skill/SKILL.md",
+    "vendor/readme-skill/references/badge-style.md",
+    "vendor/readme-skill/references/image-generation.md",
+    "vendor/readme-skill/references/quality-checklist.md",
+    "vendor/readme-skill/references/readme-structure.md",
+    "vendor/readme-skill/scripts/generate-image.py",
+    "vendor/readme-skill/templates/README.bilingual.md",
+    "vendor/readme-skill/templates/README.en.md",
+    "vendor/readme-skill/templates/README.zh-CN.md",
+    "vendor/secret-scanner/skills/secret-scanner/engine.py",
+    "vendor/snap-x/skills/snap-x/SKILL.md",
+    "vendor/snap-x/skills/snap-x/agents/openai.yaml",
+    "vendor/snap-x/skills/snap-x/references/design-principles.md",
+    "vendor/snap-x/skills/snap-x/references/formats.md",
+    "vendor/snap-x/skills/snap-x/references/step-1-inspect.md",
+    "vendor/snap-x/skills/snap-x/references/step-2-plan.md",
+    "vendor/snap-x/skills/snap-x/references/step-3-design.md",
+    "vendor/snap-x/skills/snap-x/references/step-4-render.md",
+    "vendor/tufte-claude-skill/README.md",
+    "vendor/tufte-claude-skill/SKILL.md",
+    "vendor/tufte-claude-skill/chart-selection.md",
+    "vendor/tufte-claude-skill/checklist.md",
+    "vendor/tufte-claude-skill/kill-list.md",
+    "vendor/tufte-claude-skill/presets/html-svg.md",
+    "vendor/tufte-claude-skill/presets/react.md",
+    "vendor/tufte-claude-skill/principles.md",
+    "vendor/tufte-claude-skill/report-voice.md",
+    "vendors.lock.json"
+  ],
+  "redistribution": [
+    "LICENSE",
+    "SKILL.md",
+    "THIRD_PARTY_NOTICES.md",
+    "adapters/template/adapter.md",
+    "manifests/runtime-deps.json",
+    "package-lock.json",
+    "package.json",
+    "references/agent-skill-readme-profile.md",
+    "references/bindings.json",
+    "references/bindings.md",
+    "references/core-contracts.json",
+    "references/distribution-surfaces.md",
+    "references/extensions.json",
+    "references/phases/F01.json",
+    "references/phases/F02.json",
+    "references/phases/F03.json",
+    "references/phases/F04.json",
+    "references/phases/F05.json",
+    "references/phases/F06.json",
+    "references/phases/F07.json",
+    "references/phases/F08.json",
+    "references/phases/F09.json",
+    "references/phases/F10.json",
+    "references/portable-runtime.md",
+    "references/project-contract.md",
+    "references/public-copy.md",
+    "references/publish-backends.md",
+    "references/workflows/archify.md",
+    "references/workflows/capabilities.md",
+    "references/workflows/delivery.md",
+    "references/workflows/demo.md",
+    "references/workflows/diagrams.md",
+    "references/workflows/fact-escalation.md",
+    "references/workflows/facts.md",
+    "references/workflows/narrative.md",
+    "references/workflows/readme.md",
+    "references/workflows/visual.md",
+    "requirements-verification.txt",
+    "scripts/archify-localize.mjs",
+    "scripts/archify-routing.py",
+    "scripts/doctor.py",
+    "scripts/evidence.py",
+    "scripts/export-visual-runtime.py",
+    "scripts/package-project.py",
+    "scripts/package-release.py",
+    "scripts/portable-runtime.py",
+    "scripts/public-copy.py",
+    "scripts/release-gate.py",
+    "scripts/render-c4.mjs",
+    "scripts/route-plan.py",
+    "scripts/runtime-package.py",
+    "scripts/skill-fidelity.py",
+    "scripts/snap-x.mjs",
+    "scripts/validate-adapter.py",
+    "scripts/verify-vendors.py",
+    "scripts/windows-esm.mjs",
+    "tests/test_adapter.py",
+    "tests/test_archify_delivery.py",
+    "tests/test_portability.py",
+    "tests/test_project_package.py",
+    "tests/test_public_copy.py",
+    "tests/test_publication_integrity.py",
+    "tests/test_rc2.py",
+    "tests/test_release_gate.py",
+    "tests/test_skill_distribution.py",
+    "tests/test_vendor_integrity.py",
+    "tests/test_vnext.py",
+    "vendor/archify/LICENSE",
+    "vendor/archify/SKILL.md",
+    "vendor/archify/THIRD_PARTY_NOTICES.md",
+    "vendor/archify/assets/JetBrainsMono-OFL.txt",
+    "vendor/archify/assets/template.html",
+    "vendor/archify/bin/archify.mjs",
+    "vendor/archify/bin/delivery-update.mjs",
+    "vendor/archify/bin/finalize.mjs",
+    "vendor/archify/bin/open-artifact.mjs",
+    "vendor/archify/bin/preview.mjs",
+    "vendor/archify/bin/recover-output.mjs",
+    "vendor/archify/bin/visual-check.mjs",
+    "vendor/archify/brand-marks/README.md",
+    "vendor/archify/brand-marks/catalog.json",
+    "vendor/archify/delta/architecture-delta.mjs",
+    "vendor/archify/examples/agent-run.lifecycle.json",
+    "vendor/archify/examples/agent-tool-call.workflow.json",
+    "vendor/archify/examples/async-job-roundtrip.sequence.json",
+    "vendor/archify/examples/brand-aware-delivery.architecture.json",
+    "vendor/archify/examples/cache-miss-request.sequence.json",
+    "vendor/archify/examples/checkout-platform.base.architecture.json",
+    "vendor/archify/examples/checkout-platform.head.architecture.json",
+    "vendor/archify/examples/dataflow-product-analytics.html",
+    "vendor/archify/examples/deployment-release.lifecycle.json",
+    "vendor/archify/examples/event-stream.dataflow.json",
+    "vendor/archify/examples/holiday-planning.workflow.json",
+    "vendor/archify/examples/incident-response.workflow.json",
+    "vendor/archify/examples/lifecycle-agent-run.html",
+    "vendor/archify/examples/locales/de.json",
+    "vendor/archify/examples/locales/es.json",
+    "vendor/archify/examples/locales/fr.json",
+    "vendor/archify/examples/locales/fr.partial.json",
+    "vendor/archify/examples/locales/it.json",
+    "vendor/archify/examples/locales/ja.json",
+    "vendor/archify/examples/locales/ko.json",
+    "vendor/archify/examples/locales/pt.json",
+    "vendor/archify/examples/locales/ru.json",
+    "vendor/archify/examples/product-analytics.dataflow.json",
+    "vendor/archify/examples/production-deployment.architecture.json",
+    "vendor/archify/examples/release-delivery.workflow.json",
+    "vendor/archify/examples/sequence-cache-miss-request.html",
+    "vendor/archify/examples/web-app-rendered.html",
+    "vendor/archify/examples/web-app.architecture.json",
+    "vendor/archify/examples/workflow-agent-tool-call-rendered.html",
+    "vendor/archify/migrations/workflow-v2.mjs",
+    "vendor/archify/package.json",
+    "vendor/archify/recipes/scenarios.mjs",
+    "vendor/archify/references/architecture-layout-repair.md",
+    "vendor/archify/references/authoring-contract.md",
+    "vendor/archify/references/authoring-defaults.md",
+    "vendor/archify/references/brand-marks.md",
+    "vendor/archify/references/delivery-contract.md",
+    "vendor/archify/references/repository-authoring.md",
+    "vendor/archify/references/update-awareness.md",
+    "vendor/archify/references/viewer-runtime.md",
+    "vendor/archify/renderers/architecture/grid.mjs",
+    "vendor/archify/renderers/architecture/labels.mjs",
+    "vendor/archify/renderers/architecture/render-architecture.mjs",
+    "vendor/archify/renderers/architecture/routing.mjs",
+    "vendor/archify/renderers/dataflow/README.md",
+    "vendor/archify/renderers/dataflow/render-dataflow.mjs",
+    "vendor/archify/renderers/lifecycle/README.md",
+    "vendor/archify/renderers/lifecycle/grid-routing.mjs",
+    "vendor/archify/renderers/lifecycle/render-lifecycle.mjs",
+    "vendor/archify/renderers/sequence/README.md",
+    "vendor/archify/renderers/sequence/render-sequence.mjs",
+    "vendor/archify/renderers/shared/atomic-output.mjs",
+    "vendor/archify/renderers/shared/brand-marks.mjs",
+    "vendor/archify/renderers/shared/cli.mjs",
+    "vendor/archify/renderers/shared/desktop-readability.mjs",
+    "vendor/archify/renderers/shared/diagnostics.mjs",
+    "vendor/archify/renderers/shared/engineering-profiles.mjs",
+    "vendor/archify/renderers/shared/generated-brand-marks.mjs",
+    "vendor/archify/renderers/shared/generated-validators.mjs",
+    "vendor/archify/renderers/shared/geometry.mjs",
+    "vendor/archify/renderers/shared/i18n.mjs",
+    "vendor/archify/renderers/shared/layout-report.mjs",
+    "vendor/archify/renderers/shared/legend.mjs",
+    "vendor/archify/renderers/shared/output-path.mjs",
+    "vendor/archify/renderers/shared/path-semantics.mjs",
+    "vendor/archify/renderers/shared/portable-path.mjs",
+    "vendor/archify/renderers/shared/repository-evidence.mjs",
+    "vendor/archify/renderers/shared/repository-location.mjs",
+    "vendor/archify/renderers/shared/route-quality.mjs",
+    "vendor/archify/renderers/shared/sidecar-path.mjs",
+    "vendor/archify/renderers/shared/spatial-grid.mjs",
+    "vendor/archify/renderers/shared/text-fit.mjs",
+    "vendor/archify/renderers/shared/utils.mjs",
+    "vendor/archify/renderers/shared/validator.mjs",
+    "vendor/archify/renderers/workflow/README.md",
+    "vendor/archify/renderers/workflow/render-workflow.mjs",
+    "vendor/archify/renderers/workflow/workflow-compiler.mjs",
+    "vendor/archify/renderers/workflow/workflow-migration-geometry.mjs",
+    "vendor/archify/schemas/README.md",
+    "vendor/archify/schemas/architecture.schema.json",
+    "vendor/archify/schemas/common.schema.json",
+    "vendor/archify/schemas/dataflow.schema.json",
+    "vendor/archify/schemas/lifecycle.schema.json",
+    "vendor/archify/schemas/sequence.schema.json",
+    "vendor/archify/schemas/workflow.schema.json",
+    "vendor/archify/scripts/check-render-output.mjs",
+    "vendor/archify/scripts/check-update.mjs",
+    "vendor/archify/scripts/delivery-update-child.mjs",
+    "vendor/archify/scripts/render-examples.mjs",
+    "vendor/archify/scripts/update-contract.mjs",
+    "vendor/archify/skill-release.json",
+    "vendor/c4-architecture/LICENSE",
+    "vendor/c4-architecture/skills/c4-architecture/README.md",
+    "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/advanced-patterns.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/c4-syntax.md",
+    "vendor/c4-architecture/skills/c4-architecture/references/common-mistakes.md",
+    "vendor/good-readme/LICENSE",
+    "vendor/good-readme/skills/good-readme/SKILL.md",
+    "vendor/good-readme/skills/good-readme/references/anatomy.md",
+    "vendor/good-readme/skills/good-readme/references/anti-patterns.md",
+    "vendor/good-readme/skills/good-readme/references/cloudflare.md",
+    "vendor/good-readme/skills/good-readme/references/examples.md",
+    "vendor/good-readme/skills/good-readme/references/quality-checklist.md",
+    "vendor/humanizer/LICENSE",
+    "vendor/humanizer/SKILL.md",
+    "vendor/humanizer/scripts/validate-package.py",
+    "vendor/og-image-design/LICENSE",
+    "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md",
+    "vendor/readme-skill/LICENSE",
+    "vendor/readme-skill/SKILL.md",
+    "vendor/readme-skill/references/badge-style.md",
+    "vendor/readme-skill/references/image-generation.md",
+    "vendor/readme-skill/references/quality-checklist.md",
+    "vendor/readme-skill/references/readme-structure.md",
+    "vendor/readme-skill/scripts/generate-image.py",
+    "vendor/readme-skill/templates/README.bilingual.md",
+    "vendor/readme-skill/templates/README.en.md",
+    "vendor/readme-skill/templates/README.zh-CN.md",
+    "vendor/secret-scanner/LICENSE",
+    "vendor/secret-scanner/skills/secret-scanner/engine.py",
+    "vendor/snap-x/LICENSE",
+    "vendor/snap-x/skills/snap-x/SKILL.md",
+    "vendor/snap-x/skills/snap-x/agents/openai.yaml",
+    "vendor/snap-x/skills/snap-x/references/design-principles.md",
+    "vendor/snap-x/skills/snap-x/references/formats.md",
+    "vendor/snap-x/skills/snap-x/references/step-1-inspect.md",
+    "vendor/snap-x/skills/snap-x/references/step-2-plan.md",
+    "vendor/snap-x/skills/snap-x/references/step-3-design.md",
+    "vendor/snap-x/skills/snap-x/references/step-4-render.md",
+    "vendor/tufte-claude-skill/LICENSE",
+    "vendor/tufte-claude-skill/README.md",
+    "vendor/tufte-claude-skill/SKILL.md",
+    "vendor/tufte-claude-skill/chart-selection.md",
+    "vendor/tufte-claude-skill/checklist.md",
+    "vendor/tufte-claude-skill/kill-list.md",
+    "vendor/tufte-claude-skill/presets/html-svg.md",
+    "vendor/tufte-claude-skill/presets/react.md",
+    "vendor/tufte-claude-skill/principles.md",
+    "vendor/tufte-claude-skill/report-voice.md",
+    "vendors.lock.json"
+  ],
+  "verification": [
+    "tests/test_adapter.py",
+    "tests/test_archify_delivery.py",
+    "tests/test_portability.py",
+    "tests/test_project_package.py",
+    "tests/test_public_copy.py",
+    "tests/test_publication_integrity.py",
+    "tests/test_rc2.py",
+    "tests/test_release_gate.py",
+    "tests/test_skill_distribution.py",
+    "tests/test_vendor_integrity.py",
+    "tests/test_vnext.py"
+  ],
+  "classifications": {
+    "LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "SKILL.md": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "adapters/template/adapter.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "manifests/runtime-deps.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "package-lock.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "package.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/agent-skill-readme-profile.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/bindings.json": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "references/bindings.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/core-contracts.json": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "references/distribution-surfaces.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/extensions.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F01.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F02.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F03.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F04.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F05.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F06.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F07.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F08.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F09.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/phases/F10.json": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/portable-runtime.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/project-contract.md": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "references/public-copy.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/publish-backends.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/archify.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/capabilities.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/delivery.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/demo.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/diagrams.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/fact-escalation.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/facts.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/narrative.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/readme.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/workflows/visual.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "requirements-verification.txt": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/archify-localize.mjs": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/archify-routing.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/doctor.py": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "scripts/evidence.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/export-visual-runtime.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/package-project.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/package-release.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/portable-runtime.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/public-copy.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/release-gate.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/render-c4.mjs": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/route-plan.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/runtime-package.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/skill-fidelity.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/snap-x.mjs": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/validate-adapter.py": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "scripts/verify-vendors.py": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    },
+    "scripts/windows-esm.mjs": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "tests/test_adapter.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_archify_delivery.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_portability.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_project_package.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_public_copy.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_publication_integrity.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_rc2.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_release_gate.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_skill_distribution.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_vendor_integrity.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_vnext.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "vendor/archify/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/archify/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/THIRD_PARTY_NOTICES.md": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/archify/assets/JetBrainsMono-OFL.txt": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/archify/assets/template.html": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/archify.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/delivery-update.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/finalize.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/open-artifact.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/preview.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/recover-output.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/bin/visual-check.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/brand-marks/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/brand-marks/catalog.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/delta/architecture-delta.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/examples/agent-run.lifecycle.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/agent-tool-call.workflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/async-job-roundtrip.sequence.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/brand-aware-delivery.architecture.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/cache-miss-request.sequence.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/checkout-platform.base.architecture.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/checkout-platform.head.architecture.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/dataflow-product-analytics.html": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/deployment-release.lifecycle.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/event-stream.dataflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/holiday-planning.workflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/incident-response.workflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/lifecycle-agent-run.html": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/de.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/es.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/fr.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/fr.partial.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/it.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/ja.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/ko.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/pt.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/locales/ru.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/product-analytics.dataflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/production-deployment.architecture.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/release-delivery.workflow.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/sequence-cache-miss-request.html": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/web-app-rendered.html": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/web-app.architecture.json": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/examples/workflow-agent-tool-call-rendered.html": {
+      "classification": "NATIVE_EXAMPLE_REQUIRED",
+      "consumer": "Locked original Skill type/scenario/localization authoring references and CLI proof examples"
+    },
+    "vendor/archify/migrations/workflow-v2.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/package.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/recipes/scenarios.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/architecture-layout-repair.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/authoring-contract.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/authoring-defaults.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/brand-marks.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/delivery-contract.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/repository-authoring.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/update-awareness.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/references/viewer-runtime.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/architecture/grid.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/architecture/labels.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/architecture/render-architecture.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/architecture/routing.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/dataflow/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/dataflow/render-dataflow.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/lifecycle/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/lifecycle/grid-routing.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/lifecycle/render-lifecycle.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/sequence/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/sequence/render-sequence.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/atomic-output.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/brand-marks.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/cli.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/desktop-readability.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/diagnostics.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/engineering-profiles.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/generated-brand-marks.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/generated-validators.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/geometry.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/i18n.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/layout-report.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/legend.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/output-path.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/path-semantics.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/portable-path.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/repository-evidence.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/repository-location.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/route-quality.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/sidecar-path.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/spatial-grid.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/text-fit.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/utils.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/shared/validator.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/workflow/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/workflow/render-workflow.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/workflow/workflow-compiler.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/renderers/workflow/workflow-migration-geometry.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/architecture.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/common.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/dataflow.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/lifecycle.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/sequence.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/schemas/workflow.schema.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/scripts/check-render-output.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/scripts/check-update.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/scripts/delivery-update-child.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/scripts/render-examples.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/scripts/update-contract.mjs": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/archify/skill-release.json": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/c4-architecture/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/c4-architecture/skills/c4-architecture/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/c4-architecture/skills/c4-architecture/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/c4-architecture/skills/c4-architecture/references/advanced-patterns.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/c4-architecture/skills/c4-architecture/references/c4-syntax.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/c4-architecture/skills/c4-architecture/references/common-mistakes.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/good-readme/skills/good-readme/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/skills/good-readme/references/anatomy.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/skills/good-readme/references/anti-patterns.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/skills/good-readme/references/cloudflare.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/skills/good-readme/references/examples.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/good-readme/skills/good-readme/references/quality-checklist.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/humanizer/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/humanizer/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/humanizer/scripts/validate-package.py": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/og-image-design/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/readme-skill/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/references/badge-style.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/references/image-generation.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/references/quality-checklist.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/references/readme-structure.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/scripts/generate-image.py": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/templates/README.bilingual.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/templates/README.en.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/readme-skill/templates/README.zh-CN.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/secret-scanner/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/secret-scanner/skills/secret-scanner/engine.py": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/snap-x/skills/snap-x/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/agents/openai.yaml": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/design-principles.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/formats.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/step-1-inspect.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/step-2-plan.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/step-3-design.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/snap-x/skills/snap-x/references/step-4-render.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/LICENSE": {
+      "classification": "LEGAL_ONLY",
+      "consumer": "Redistribution copyright / license obligations"
+    },
+    "vendor/tufte-claude-skill/README.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/SKILL.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/chart-selection.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/checklist.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/kill-list.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/presets/html-svg.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/presets/react.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/principles.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendor/tufte-claude-skill/report-voice.md": {
+      "classification": "VENDOR_NATIVE_REQUIRED",
+      "consumer": "Locked original integrated / reviewer / optional method or native CLI import/resource closure"
+    },
+    "vendors.lock.json": {
+      "classification": "ALWAYS_RUNTIME",
+      "consumer": "Entry, route contracts or installation integrity and dependency diagnosis"
+    }
+  },
+  "showcase": [],
+  "publication": [],
+  "build_evidence": [],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1090,
+      "sha256": "708daee5669f7dff68513bfcb685d5410e222c2322dbbbe68e8d3454956bb7b7"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 6304,
+      "sha256": "e8d1f4bd2afddc02a3c85bf8cac9b7fe806f476f50d45f9250e64b2b5ab6ca7a"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2887,
+      "sha256": "cebc0779dee5bfff29e1fc492d294acfd577162a3fa3702e15e0c753d8838c94"
+    },
+    {
+      "path": "adapters/template/adapter.md",
+      "bytes": 1141,
+      "sha256": "0dc3bb73b92ed505e4852837baf5f2fe451706f69c152ded91d90829213ffaa4"
+    },
+    {
+      "path": "manifests/runtime-deps.json",
+      "bytes": 2571,
+      "sha256": "1b3edf2fcb6601acb2a50e10cc49e7516fb90ea306578a45bd5f804febf49ba1"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 120649,
+      "sha256": "3841ed653baf47a5422ec24406f23e8de12cdb8ceceb7c83f90aaa01a420e002"
+    },
+    {
+      "path": "package.json",
+      "bytes": 402,
+      "sha256": "1485bf8ef3b05252ddba36b8b0e43900e8f6758e8422bfc97977e2f5f5f6823d"
+    },
+    {
+      "path": "references/agent-skill-readme-profile.md",
+      "bytes": 5253,
+      "sha256": "834b5548b7192bd6cf46e47bbf6d00875ffce4483ab4f755bcf58af05ad53d0f"
+    },
+    {
+      "path": "references/bindings.json",
+      "bytes": 1214,
+      "sha256": "17834829facc9120f557875a3aaf9c723e2252cc1df38103d073462eb4856c39"
+    },
+    {
+      "path": "references/bindings.md",
+      "bytes": 957,
+      "sha256": "39db410d680064ecf7e1feeb4b20fd68a7024e71478aafb0ae893efee8bd6d19"
+    },
+    {
+      "path": "references/core-contracts.json",
+      "bytes": 1110,
+      "sha256": "7962455555bd1cdddd2ea62b708dd3623479eff9b5f1cbcc79672ebcf3f2e7a9"
+    },
+    {
+      "path": "references/distribution-surfaces.md",
+      "bytes": 10075,
+      "sha256": "db85f226be6f322f575b05455be15d45020b3f700dbf53f3ae191044d4f28e90"
+    },
+    {
+      "path": "references/extensions.json",
+      "bytes": 2394,
+      "sha256": "8e4ba90130c51d1a95921099846e02d10f5b0ec434f0182dce80da8614d9b7fb"
+    },
+    {
+      "path": "references/phases/F01.json",
+      "bytes": 599,
+      "sha256": "19daf5d4bb73186b9bdfb39078df6d90ba74cca2098cf99ead1ba2a6c2b75610"
+    },
+    {
+      "path": "references/phases/F02.json",
+      "bytes": 262,
+      "sha256": "f71ae6fd588a5b15a6834dbdfbb7c86a5f69df9c97679455e9f3ee74f3c4fa1a"
+    },
+    {
+      "path": "references/phases/F03.json",
+      "bytes": 644,
+      "sha256": "bda8f8d524b3fcffa0d7bedd1812568a1bd15cd6b0e29655ae929cd2e5d21a6c"
+    },
+    {
+      "path": "references/phases/F04.json",
+      "bytes": 450,
+      "sha256": "0ae7675eae6ea46bfe9017e35c6463ec99be0d26b230a2170c00236fad5e8f68"
+    },
+    {
+      "path": "references/phases/F05.json",
+      "bytes": 265,
+      "sha256": "4fd59d52f1fb6298cee8ff704dc06a5c3ce1272e7381e779796e9f09e217471d"
+    },
+    {
+      "path": "references/phases/F06.json",
+      "bytes": 415,
+      "sha256": "f9d2f154ae2d31e4cc85a98ca164f800ac7efa3b122a23d17c6fe9fd464d6f75"
+    },
+    {
+      "path": "references/phases/F07.json",
+      "bytes": 275,
+      "sha256": "28d0b8da438244c1c7c23034e8accddeffb19add1053c8c41d0f823c6131de90"
+    },
+    {
+      "path": "references/phases/F08.json",
+      "bytes": 382,
+      "sha256": "1e56a16f56552cb0c1e953dd2430164029786cf5c0c907c28af107ce7f6b50dc"
+    },
+    {
+      "path": "references/phases/F09.json",
+      "bytes": 279,
+      "sha256": "cf815ae42574c9ca1695a7df6274cb5d692309dcf18ddee093db356ec7e2002d"
+    },
+    {
+      "path": "references/phases/F10.json",
+      "bytes": 291,
+      "sha256": "9c312a324477fce48dbe2eb198dace616f5810861463d710b2738d48eb63cd0c"
+    },
+    {
+      "path": "references/portable-runtime.md",
+      "bytes": 3768,
+      "sha256": "5ad794dd2819e0a591a9a98f0a2be67430c4435bae497c8e27f7cee38f3a681c"
+    },
+    {
+      "path": "references/project-contract.md",
+      "bytes": 10537,
+      "sha256": "3ba9e96db2c1957afc96d81c4372719318553760f9fb1d8a61398b788f33c152"
+    },
+    {
+      "path": "references/public-copy.md",
+      "bytes": 3356,
+      "sha256": "b516d98dcee9192ad296edd9d8f738f87bf51f3838e24be3d1ad2caa817ec528"
+    },
+    {
+      "path": "references/publish-backends.md",
+      "bytes": 4149,
+      "sha256": "425de3e7f0610c868254411e435da86cdd68afb9f190823d7272438a13a4a8eb"
+    },
+    {
+      "path": "references/workflows/archify.md",
+      "bytes": 10209,
+      "sha256": "7803647d5cbf910312335752008fef5d6dcada0992fe6505581c283156df33e2"
+    },
+    {
+      "path": "references/workflows/capabilities.md",
+      "bytes": 683,
+      "sha256": "bdcb684bccac2206ecef685ac696fa09bb07603ba0592053cb0716da19aad73c"
+    },
+    {
+      "path": "references/workflows/delivery.md",
+      "bytes": 5412,
+      "sha256": "8eba976f85bc98bd23430e5a37304bc64f74db40f79ec2f8733b0e1af28093cf"
+    },
+    {
+      "path": "references/workflows/demo.md",
+      "bytes": 542,
+      "sha256": "3f15dfabe724b7efc5549e0bb3d8aed76a1a4bdb580ece315e3e5a5919fe4c47"
+    },
+    {
+      "path": "references/workflows/diagrams.md",
+      "bytes": 9991,
+      "sha256": "78d534f33971e0899212a06315c4197b7697cb003136230601947ee9df6e4fdc"
+    },
+    {
+      "path": "references/workflows/fact-escalation.md",
+      "bytes": 4316,
+      "sha256": "c9cb8248498509ec23446acc443c604aaaec524d8d1fefeee18ece0161ee517c"
+    },
+    {
+      "path": "references/workflows/facts.md",
+      "bytes": 3370,
+      "sha256": "fd50629f0608916b5e324c765a3934bbc055c307513e8d387af24c30884fb2d9"
+    },
+    {
+      "path": "references/workflows/narrative.md",
+      "bytes": 1182,
+      "sha256": "41428866b2235f685b7d52a3fbc8886aac903424b43b1c6ca098de452307be98"
+    },
+    {
+      "path": "references/workflows/readme.md",
+      "bytes": 11751,
+      "sha256": "c458f5f6e59ec5ae3c3ae3b31a06eaf5bf8f19f368d384f8cc9714c98fa056a0"
+    },
+    {
+      "path": "references/workflows/visual.md",
+      "bytes": 8207,
+      "sha256": "e59037531418dc50922073156e31215c07786f86f00460d5271e74c4248ae6d1"
+    },
+    {
+      "path": "requirements-verification.txt",
+      "bytes": 30,
+      "sha256": "8053ac297889b2e5b08a387187f4e806859fe2137e2afd95baf647e15daed754"
+    },
+    {
+      "path": "scripts/archify-localize.mjs",
+      "bytes": 1027,
+      "sha256": "03c3edfbae8cdfb9fb221b2e836245cdac3cfecf0be970a62d8e13ab15b0d6a9"
+    },
+    {
+      "path": "scripts/archify-routing.py",
+      "bytes": 9572,
+      "sha256": "8515b541394878cacb116f9c0ee90e789b3f87779961a8c7a9db49ff3996002c"
+    },
+    {
+      "path": "scripts/doctor.py",
+      "bytes": 5379,
+      "sha256": "10613f752565d2370648112f1f790d34e7b53a07dc051b509b6f145ebaf5b74e"
+    },
+    {
+      "path": "scripts/evidence.py",
+      "bytes": 6602,
+      "sha256": "c7b0e2d710255cd4565e85734a1a5966e4f89794a41399ccabe24fc3f7479cd4"
+    },
+    {
+      "path": "scripts/export-visual-runtime.py",
+      "bytes": 3901,
+      "sha256": "be8017d6908902a2995390d8ecc5ae4f581066e4c564638f69f17962a540da85"
+    },
+    {
+      "path": "scripts/package-project.py",
+      "bytes": 4221,
+      "sha256": "792d24a793ca00795dbd564b8c70c648bdd189ed929b219fa7611510dc3dad68"
+    },
+    {
+      "path": "scripts/package-release.py",
+      "bytes": 1369,
+      "sha256": "a9c83555ed6ff5ea99ef3943245e9d7fa7df585427f8f37a8666397e981c91a2"
+    },
+    {
+      "path": "scripts/portable-runtime.py",
+      "bytes": 6044,
+      "sha256": "4269b78324d8a6b1053b1d2533a7255abfde2a95953e005ea4ca83f1a90433d5"
+    },
+    {
+      "path": "scripts/public-copy.py",
+      "bytes": 4903,
+      "sha256": "103392a49f0da6d2d3ebbea5579f1920be41a636a34240d160bb8840c03878df"
+    },
+    {
+      "path": "scripts/release-gate.py",
+      "bytes": 36285,
+      "sha256": "6cd6af078eb3d69d74e5ea5229d0d9d6b4d76eadd7544983c4e8df425ec2b02f"
+    },
+    {
+      "path": "scripts/render-c4.mjs",
+      "bytes": 1579,
+      "sha256": "653caf67a56986709c1d877e191b8d17fdf6e5b9b70fe0f4fbf989cf3ba28711"
+    },
+    {
+      "path": "scripts/route-plan.py",
+      "bytes": 3235,
+      "sha256": "31ed59b9fa41137a8b303ad91ee1ba3d51a66b310c6e0895c1f1de08daa8188d"
+    },
+    {
+      "path": "scripts/runtime-package.py",
+      "bytes": 8462,
+      "sha256": "64a90883c1b4f45554782d3f6215881dd73ac77a6824be90de17a973cf666bf3"
+    },
+    {
+      "path": "scripts/skill-fidelity.py",
+      "bytes": 4326,
+      "sha256": "f19df23e6306819b2550e8c94abb6ec0280e1ca2be9859fc097a5025006b614d"
+    },
+    {
+      "path": "scripts/snap-x.mjs",
+      "bytes": 1118,
+      "sha256": "bbdefadc7bf24970b04688dd0a5489b40eab6dd91bd35a7313930286db911738"
+    },
+    {
+      "path": "scripts/validate-adapter.py",
+      "bytes": 4181,
+      "sha256": "eaa5907354609c753b56d19bf6fe3e161a587d99122d5d53491a8d58cc2d4dac"
+    },
+    {
+      "path": "scripts/verify-vendors.py",
+      "bytes": 2213,
+      "sha256": "1451979a0740a2e92c1deb7a39a48c566e6b2f0d536daf0dbb9bf2a74a374afd"
+    },
+    {
+      "path": "scripts/windows-esm.mjs",
+      "bytes": 638,
+      "sha256": "919ac0bae0ff2a24b904cb24b282e165a5d6e308a0bd97e05713faaf38ab6cda"
+    },
+    {
+      "path": "tests/test_adapter.py",
+      "bytes": 2237,
+      "sha256": "c80687c0f7354896cdf0843b38a5949f3a54391366096ef0ff8481264de93527"
+    },
+    {
+      "path": "tests/test_archify_delivery.py",
+      "bytes": 1733,
+      "sha256": "c531acfd8b2283d81c8aeb5782b67bac8f65c06e0535ab1b00e901e924dbb737"
+    },
+    {
+      "path": "tests/test_portability.py",
+      "bytes": 3191,
+      "sha256": "7e480e1665b494c189158c1efc67ffb30adb3f11fa8177d538cc3c6879232364"
+    },
+    {
+      "path": "tests/test_project_package.py",
+      "bytes": 5599,
+      "sha256": "8e0433011bf18879de510cd90e97f955fe6de7fb2d891e806e6b19ef1b15ae5f"
+    },
+    {
+      "path": "tests/test_public_copy.py",
+      "bytes": 5171,
+      "sha256": "414be695d24673adf0c31ddc1dc2f8ee359f2aac446420add9e36f8732e91dce"
+    },
+    {
+      "path": "tests/test_publication_integrity.py",
+      "bytes": 11962,
+      "sha256": "ffcfc6d51c5e258fc64a261cc26eecfdc2c2a351c796e76463a161d59cc6d93f"
+    },
+    {
+      "path": "tests/test_rc2.py",
+      "bytes": 10846,
+      "sha256": "acd30f4fa53e06af78cf7b259f8381442caf05b6d513a1f00b9427c293f640dc"
+    },
+    {
+      "path": "tests/test_release_gate.py",
+      "bytes": 7010,
+      "sha256": "6e930f1fe4eb402bdb9a777e3a5d9abcdaf0189a5da161c29fa42f123972cef5"
+    },
+    {
+      "path": "tests/test_skill_distribution.py",
+      "bytes": 7635,
+      "sha256": "60be604857624de88dfbdfb62f6ad588470baf78236cc266d7f984c306c476ef"
+    },
+    {
+      "path": "tests/test_vendor_integrity.py",
+      "bytes": 1752,
+      "sha256": "640fe1f96bad743aade46a859ff360844a5882089869aa4c3f100f7446387ace"
+    },
+    {
+      "path": "tests/test_vnext.py",
+      "bytes": 7202,
+      "sha256": "3450943e29c980d69a53fc4d9a94e9d50fea4564d68cd2ea5e6e501f794fe844"
+    },
+    {
+      "path": "vendor/archify/LICENSE",
+      "bytes": 1102,
+      "sha256": "b799ab081703e7821ae5096d2c1abdf14bbdc75e8ea1c4045998c36ed6db9706"
+    },
+    {
+      "path": "vendor/archify/SKILL.md",
+      "bytes": 10897,
+      "sha256": "66dfe99b35d7ceff95bcbdb00f138b8b3ec8094629acf69efba1eeda1013aaf3"
+    },
+    {
+      "path": "vendor/archify/THIRD_PARTY_NOTICES.md",
+      "bytes": 5248,
+      "sha256": "0b7fb59365dc21c93b0f62526d74ee913aeec9ae532c112bc76afa7edcd56e14"
+    },
+    {
+      "path": "vendor/archify/assets/JetBrainsMono-OFL.txt",
+      "bytes": 4398,
+      "sha256": "c1ab7c666206842a02b35b30770dac0d7a10156ed401c9defc3f02a754d89e90"
+    },
+    {
+      "path": "vendor/archify/assets/template.html",
+      "bytes": 727976,
+      "sha256": "b0b550d644b77cad401bbc4b21375919ef01db45d235122a0ee42b732cb34233"
+    },
+    {
+      "path": "vendor/archify/bin/archify.mjs",
+      "bytes": 267055,
+      "sha256": "97788086acaac4122aafc56c48acfe5fde1979d6aaa67db73aa1f4ab70b34390"
+    },
+    {
+      "path": "vendor/archify/bin/delivery-update.mjs",
+      "bytes": 3702,
+      "sha256": "d5ad7d6d7d949a8a8c37af4f80d79a8b4e057245e30ba11866efb40c6771dafa"
+    },
+    {
+      "path": "vendor/archify/bin/finalize.mjs",
+      "bytes": 40375,
+      "sha256": "c62710a0e80dc11b79e2c6a1a163fd9f6df46e13de141e3dd4d506554170d824"
+    },
+    {
+      "path": "vendor/archify/bin/open-artifact.mjs",
+      "bytes": 4144,
+      "sha256": "b0ab5f37c4f4556f76040dc862744afe9d4b65f319f35e1f9b505e0344b9c409"
+    },
+    {
+      "path": "vendor/archify/bin/preview.mjs",
+      "bytes": 36517,
+      "sha256": "2d01245850ab259500f0ff1782bef9f9c6f9caad0d13ad82061ef75a20fbaedb"
+    },
+    {
+      "path": "vendor/archify/bin/recover-output.mjs",
+      "bytes": 1367,
+      "sha256": "b3f7db21b3fc5341326207c1259aa787730120f42179eff50e481b0c6ad1e2d4"
+    },
+    {
+      "path": "vendor/archify/bin/visual-check.mjs",
+      "bytes": 112914,
+      "sha256": "93d07354e6b94725a8da354f90b7781f2739101f336afccd532ac6de9895a24c"
+    },
+    {
+      "path": "vendor/archify/brand-marks/README.md",
+      "bytes": 1449,
+      "sha256": "8b771a16322ce9ea47fdc00b9935e33adf0f3af608f2d735235443e15ef622e2"
+    },
+    {
+      "path": "vendor/archify/brand-marks/catalog.json",
+      "bytes": 14162,
+      "sha256": "e1a6c555cbf8ea36fb8100a4a25824e7ab87bebe9871e450ba05b6dea3b036d6"
+    },
+    {
+      "path": "vendor/archify/delta/architecture-delta.mjs",
+      "bytes": 78582,
+      "sha256": "94ad7ac625202759386e4ff06431902d0c198c32b62bc99ebf894616cb94deca"
+    },
+    {
+      "path": "vendor/archify/examples/agent-run.lifecycle.json",
+      "bytes": 3405,
+      "sha256": "230242a7557663877766c43a9fe7cffe8b4fb66e4866457dccd24c63175b4917"
+    },
+    {
+      "path": "vendor/archify/examples/agent-tool-call.workflow.json",
+      "bytes": 4939,
+      "sha256": "d67965d50872c97e4ff3476271e645bf19fab6b3ab44e111bdb44b063e3aa36f"
+    },
+    {
+      "path": "vendor/archify/examples/async-job-roundtrip.sequence.json",
+      "bytes": 3766,
+      "sha256": "b8c6c52f1763ede2933c77deb8da59b3e06917bc41d27e66df896136456b859a"
+    },
+    {
+      "path": "vendor/archify/examples/brand-aware-delivery.architecture.json",
+      "bytes": 2789,
+      "sha256": "211c126ebdc5f0124617b1067cecfb858143a1a18fd10621d01f5765c7de3b5d"
+    },
+    {
+      "path": "vendor/archify/examples/cache-miss-request.sequence.json",
+      "bytes": 3805,
+      "sha256": "f8486daa803fff6c295cecca4604c561fbbf9acb2e83326022b5a87639e8afe6"
+    },
+    {
+      "path": "vendor/archify/examples/checkout-platform.base.architecture.json",
+      "bytes": 2279,
+      "sha256": "81d55a2e86fc39f6473b32dfba986a12d3b7a705a95821844865b1dc831c9fe7"
+    },
+    {
+      "path": "vendor/archify/examples/checkout-platform.head.architecture.json",
+      "bytes": 2413,
+      "sha256": "eb4ae056035dd3316414a5d7f6599525107b5d1af7bedbd905460ade77daf5c6"
+    },
+    {
+      "path": "vendor/archify/examples/dataflow-product-analytics.html",
+      "bytes": 764604,
+      "sha256": "6d6790f1fa3631241dba4065e33ba2ce947a1da032cdd6d7d44c7190f85d3f5d"
+    },
+    {
+      "path": "vendor/archify/examples/deployment-release.lifecycle.json",
+      "bytes": 3507,
+      "sha256": "f565a8acfebdb21453e2bccd82d3760b4736e38fe194fb2f0804b57817eba813"
+    },
+    {
+      "path": "vendor/archify/examples/event-stream.dataflow.json",
+      "bytes": 4769,
+      "sha256": "3bdd77674282009c7c68d588cf8a3c495bc98a3be1b9c45327fd1801a6f83a23"
+    },
+    {
+      "path": "vendor/archify/examples/holiday-planning.workflow.json",
+      "bytes": 3019,
+      "sha256": "b98354f921ca45842fed235db09fd4f19d94adc16865876f438c0d699d05e1ea"
+    },
+    {
+      "path": "vendor/archify/examples/incident-response.workflow.json",
+      "bytes": 4723,
+      "sha256": "630be98449925d2716ecb8439f404b2bff5fe65ba905b0ad0baea6d96890c526"
+    },
+    {
+      "path": "vendor/archify/examples/lifecycle-agent-run.html",
+      "bytes": 758914,
+      "sha256": "0874c0723b10104ea03c566d1d63d958b6f93a6788c0075c1d1d162ccdb4054c"
+    },
+    {
+      "path": "vendor/archify/examples/locales/de.json",
+      "bytes": 26529,
+      "sha256": "d1cf160d3ada814676566b787f203c2aee99f8f5d5b51d2e3e0b3c03f55a33df"
+    },
+    {
+      "path": "vendor/archify/examples/locales/es.json",
+      "bytes": 27199,
+      "sha256": "1389068b7dddb5e72ed425d12084ca9104942bef933440a16113d60619f1daf3"
+    },
+    {
+      "path": "vendor/archify/examples/locales/fr.json",
+      "bytes": 27334,
+      "sha256": "805495b259b417ccc03744023e5bf803811752c0c4e8fc5be7433e2ac73e875d"
+    },
+    {
+      "path": "vendor/archify/examples/locales/fr.partial.json",
+      "bytes": 959,
+      "sha256": "8958a8354ffccce2ce63ac21b3f8a0f131086f532832445a3fe7feff02200397"
+    },
+    {
+      "path": "vendor/archify/examples/locales/it.json",
+      "bytes": 26907,
+      "sha256": "76e45186196675e7a0e2e2281073da38c0971596e6ed6eae11ccc479ceda6eae"
+    },
+    {
+      "path": "vendor/archify/examples/locales/ja.json",
+      "bytes": 30557,
+      "sha256": "79418f8eb65dc6c4928a4cab54e4515b4bfffd867814323eda6c8aa3c96fac33"
+    },
+    {
+      "path": "vendor/archify/examples/locales/ko.json",
+      "bytes": 28552,
+      "sha256": "958db2030014f6835a0bf62813f58fb80ea66b48a13af6d2586805704709616f"
+    },
+    {
+      "path": "vendor/archify/examples/locales/pt.json",
+      "bytes": 26556,
+      "sha256": "efbae92eebc09636e2c3bbc6786a666a6336258bd8c2d451bd78b2921042ab67"
+    },
+    {
+      "path": "vendor/archify/examples/locales/ru.json",
+      "bytes": 34542,
+      "sha256": "3bd0eadf6cdfe65511e81a11f04b61bb33cc94e1b89044203d191e4296a3f40d"
+    },
+    {
+      "path": "vendor/archify/examples/product-analytics.dataflow.json",
+      "bytes": 5035,
+      "sha256": "8a635db9e51a5b1a8d2955b9d66f5b9a450e0a298432ce8f2e2f0be11f372e05"
+    },
+    {
+      "path": "vendor/archify/examples/production-deployment.architecture.json",
+      "bytes": 4734,
+      "sha256": "cb54bad2dfd0c2d02aa5b496bde6839789a0f07f23062343c4458b8d38806c13"
+    },
+    {
+      "path": "vendor/archify/examples/release-delivery.workflow.json",
+      "bytes": 4510,
+      "sha256": "dbd5c174af66296caec372e7214cf4df7158b50a563508e16826b95ab8d1cd6c"
+    },
+    {
+      "path": "vendor/archify/examples/sequence-cache-miss-request.html",
+      "bytes": 762310,
+      "sha256": "307951a168d2492eb0c41f318260d0a866f6e6057df5253d3528c32a23084ea3"
+    },
+    {
+      "path": "vendor/archify/examples/web-app-rendered.html",
+      "bytes": 762310,
+      "sha256": "8233f4f600c89559b64ac650ad11b66ee1423103e8b6c5e53f63740afc06f6da"
+    },
+    {
+      "path": "vendor/archify/examples/web-app.architecture.json",
+      "bytes": 3197,
+      "sha256": "95e051b27a9e4a3307e194c0f666fca4af51470be7e2228d400ff48aea5b353b"
+    },
+    {
+      "path": "vendor/archify/examples/workflow-agent-tool-call-rendered.html",
+      "bytes": 767770,
+      "sha256": "3edbb38a05430865ee2f620c35de49f8e78dfd8788be14840d9e134b5912230d"
+    },
+    {
+      "path": "vendor/archify/migrations/workflow-v2.mjs",
+      "bytes": 9204,
+      "sha256": "0eec02057b8490afca9b093de5ea6e636c7fad2361cd28a04cf2f3e4b6197434"
+    },
+    {
+      "path": "vendor/archify/package.json",
+      "bytes": 349,
+      "sha256": "dbf1082f0bed9a4a93b031fb9daf00d07e095b066f8e61a2d4070cd97ce2b60a"
+    },
+    {
+      "path": "vendor/archify/recipes/scenarios.mjs",
+      "bytes": 38167,
+      "sha256": "6c655f643dd198cc76a6cfd0f5b945dac1388eaed10bf00f195dcd9f077401b4"
+    },
+    {
+      "path": "vendor/archify/references/architecture-layout-repair.md",
+      "bytes": 4449,
+      "sha256": "6c90caa232c004fa43b8770c745b83672919deaf8909f2592a3ad5fcd4031953"
+    },
+    {
+      "path": "vendor/archify/references/authoring-contract.md",
+      "bytes": 27105,
+      "sha256": "b5d521401b6d38d2792b2feb18906ad2b9d50a1c265acd42be51b3d49f456eb8"
+    },
+    {
+      "path": "vendor/archify/references/authoring-defaults.md",
+      "bytes": 7827,
+      "sha256": "7277ebf440c568fac425af5ad085ff60976ec401fe694c0ea984efff192961b0"
+    },
+    {
+      "path": "vendor/archify/references/brand-marks.md",
+      "bytes": 3345,
+      "sha256": "304d48735e07673197715856271532cd2dfb7fbada184936a15dea3b40ec1f06"
+    },
+    {
+      "path": "vendor/archify/references/delivery-contract.md",
+      "bytes": 42416,
+      "sha256": "aa167fd1d2c5ab48cf7c53cd25dc9f49a8b52059e848d71d76b2489aa5b68780"
+    },
+    {
+      "path": "vendor/archify/references/repository-authoring.md",
+      "bytes": 6578,
+      "sha256": "da8fa6d2bbc4572e5253e53bbc2d08088568f4d5350e61aa4e2029b2a5d2beb1"
+    },
+    {
+      "path": "vendor/archify/references/update-awareness.md",
+      "bytes": 1358,
+      "sha256": "57750c5c730b1804b6b1ece3af972d47cfe4d06ef7920fba4418c5b09c842b41"
+    },
+    {
+      "path": "vendor/archify/references/viewer-runtime.md",
+      "bytes": 3235,
+      "sha256": "cabdf042069f0029f449755229335248d1568681542ec331e181fdc91efee14a"
+    },
+    {
+      "path": "vendor/archify/renderers/architecture/grid.mjs",
+      "bytes": 2071,
+      "sha256": "f6de99c32436feed3378b0ddef516bb4732ff27a89c543b50635d4d14a15a55a"
+    },
+    {
+      "path": "vendor/archify/renderers/architecture/labels.mjs",
+      "bytes": 10645,
+      "sha256": "7cf5bb20c3039f49683fe81a461110c42de0a006a58c867c47fdd3089a58bbbc"
+    },
+    {
+      "path": "vendor/archify/renderers/architecture/render-architecture.mjs",
+      "bytes": 47714,
+      "sha256": "3831899e2e12cedd2e8225285fc9e50e8cd032f036fac87264b0bd5ddc60fda6"
+    },
+    {
+      "path": "vendor/archify/renderers/architecture/routing.mjs",
+      "bytes": 54784,
+      "sha256": "b952b3ec0364827fa7fbff10a28e2a83f0ba11921c67f5ee224e5ef58c833cbb"
+    },
+    {
+      "path": "vendor/archify/renderers/dataflow/README.md",
+      "bytes": 4204,
+      "sha256": "5e380fa7fe32c93a2f978a2db5ad7d2e91afa5fc3cae62c4d27c4a2c81502873"
+    },
+    {
+      "path": "vendor/archify/renderers/dataflow/render-dataflow.mjs",
+      "bytes": 24550,
+      "sha256": "a8540e7b1a4794c6da6b64707ce17e970ca5e876544fd29554d2503c196f1dde"
+    },
+    {
+      "path": "vendor/archify/renderers/lifecycle/README.md",
+      "bytes": 8760,
+      "sha256": "2ce9bcd31529e97c176701a4dceb2f82f70f04a9483441779341eeeb79c54a9a"
+    },
+    {
+      "path": "vendor/archify/renderers/lifecycle/grid-routing.mjs",
+      "bytes": 20516,
+      "sha256": "81ae4d3a90aed30471f23dbc3083768d4979e96cf96544f9465713c2cd09e13f"
+    },
+    {
+      "path": "vendor/archify/renderers/lifecycle/render-lifecycle.mjs",
+      "bytes": 43122,
+      "sha256": "1ed2e359a5eab6a2bd9473c36c6184498d68748e9175cddf6894aa7b2ba3f670"
+    },
+    {
+      "path": "vendor/archify/renderers/sequence/README.md",
+      "bytes": 5911,
+      "sha256": "51d78bc944d10e06ded74ede3ca5b78f916db3e8e45ae099eabc204e4d316ef3"
+    },
+    {
+      "path": "vendor/archify/renderers/sequence/render-sequence.mjs",
+      "bytes": 25503,
+      "sha256": "46ed05a34655fbe6c421586366aa81480bca893233d61b9391e21afc667f15a1"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/atomic-output.mjs",
+      "bytes": 70372,
+      "sha256": "f804d66d1801ac2dadc9d0a4c334645cfbb7a8cd1a7de112ddfb952c056a580b"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/brand-marks.mjs",
+      "bytes": 27274,
+      "sha256": "5cfc3c517ca6fe7e867c208101059dd7747ca3de3c9934b17583d6cf20336620"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/cli.mjs",
+      "bytes": 20881,
+      "sha256": "097f968a614008b07972f56de995e5b933c61ee0ba0d16d967c0a97c6d92e9d7"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/desktop-readability.mjs",
+      "bytes": 6873,
+      "sha256": "de68f2ed92573ae714659d556f97eca01296f4e0063b94c429370efcc38f909a"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/diagnostics.mjs",
+      "bytes": 6828,
+      "sha256": "d052a0e72eec2a2bf29c70dacdd3350100e2c76fc2627d14f79234077c571e3f"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/engineering-profiles.mjs",
+      "bytes": 6936,
+      "sha256": "7e99f9d5423f66cc9ab6224da56dc2d5aa6c6faec29178034794e9db6b5b2889"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/generated-brand-marks.mjs",
+      "bytes": 163612,
+      "sha256": "0f157d229c12df6f53763a3b88684baa5803a52484c49c4d34ec40b8743beea2"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/generated-validators.mjs",
+      "bytes": 530554,
+      "sha256": "33697207b90a0eb0d0566a1c46eaf3cb58f85cef0f43caeec991017ade34c2b9"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/geometry.mjs",
+      "bytes": 83595,
+      "sha256": "b25d849e6e256b1eef37fa3bb88712d0617d6eb646a2355a934505fcaa9be75d"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/i18n.mjs",
+      "bytes": 43162,
+      "sha256": "03f5356110a08b2cf684a484af5502bb392482de1ef61123707c6da2724c5201"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/layout-report.mjs",
+      "bytes": 1130,
+      "sha256": "4b5fa6e1af2b2efdd57d7fac16359089a059a745cc19ad1595ba42c3e483aec7"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/legend.mjs",
+      "bytes": 8669,
+      "sha256": "1cc5033a188690fc5f5fef1bd7915a275e6c790bb3061c63c00a97b234625cbe"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/output-path.mjs",
+      "bytes": 19029,
+      "sha256": "7422139101abd93493918898a97bed06f2212bfd411d3514cd229b6d57a3797e"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/path-semantics.mjs",
+      "bytes": 32406,
+      "sha256": "4ef002af9061c06634a07de6d199fd7d13e6c50561c792fd018118bf3e065f52"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/portable-path.mjs",
+      "bytes": 12543,
+      "sha256": "26130cbcdae9b9f082486aeb5feec9c5fe57905d2ed8e30c8081b9710e2e8ac3"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/repository-evidence.mjs",
+      "bytes": 17545,
+      "sha256": "19c652af2afec5604e9ce23d356f3cc2c5d6146592531036da20e79f4db3ed1d"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/repository-location.mjs",
+      "bytes": 3552,
+      "sha256": "9ee8294c39d1be40f5aca3334fdfc7527ef9b224d6c1e69ca57aefc6a8c77856"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/route-quality.mjs",
+      "bytes": 23585,
+      "sha256": "0ae7e16210f8e00bb615da34d5323dee65efe52ceb11a40ea49fdd10b5257daa"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/sidecar-path.mjs",
+      "bytes": 1269,
+      "sha256": "c23cac8bcc265a74e2920c58d0968d1ffa06c1328bdd9cfd07755d4df2f22974"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/spatial-grid.mjs",
+      "bytes": 2440,
+      "sha256": "e728bf6a729972f95ae09e368ea370490d10ff94d49debe2fab2e9bac923ee1a"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/text-fit.mjs",
+      "bytes": 5195,
+      "sha256": "ebd499072ef4fe31c9aabf45a01c204a9c2c142d45f087c3240673f90f477038"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/utils.mjs",
+      "bytes": 12556,
+      "sha256": "422b66c6945de473b1f96e4f3641339b6a24c8ccef60795a38ca2386e10bc26b"
+    },
+    {
+      "path": "vendor/archify/renderers/shared/validator.mjs",
+      "bytes": 3508,
+      "sha256": "7460d7fcbcdf710649256c5e96142ae26d807a655d3296ee8caf7f5e158622cc"
+    },
+    {
+      "path": "vendor/archify/renderers/workflow/README.md",
+      "bytes": 15260,
+      "sha256": "c3ca0e258d3bba43390eda95f308d12388b1c778db972bbd936a5f5ad3344142"
+    },
+    {
+      "path": "vendor/archify/renderers/workflow/render-workflow.mjs",
+      "bytes": 1207,
+      "sha256": "df6cb1330231616dcb83592c3cc1dbf4b3e45567779836ae031ff57d2d517b89"
+    },
+    {
+      "path": "vendor/archify/renderers/workflow/workflow-compiler.mjs",
+      "bytes": 195655,
+      "sha256": "25646b0a7ee13d62ed7b21c915d40665608ffd57c69af263a8ec4250ceb9214e"
+    },
+    {
+      "path": "vendor/archify/renderers/workflow/workflow-migration-geometry.mjs",
+      "bytes": 5299,
+      "sha256": "ebfc5085dd008ae63802f500402fb7bf8ca0ae28460997d867f45e5493b8fbe6"
+    },
+    {
+      "path": "vendor/archify/schemas/README.md",
+      "bytes": 14723,
+      "sha256": "eeb4d75e4864128493939f277481ade4c5f023932ed5c0846cc539fdac9ae6aa"
+    },
+    {
+      "path": "vendor/archify/schemas/architecture.schema.json",
+      "bytes": 6024,
+      "sha256": "aef992b585a18a4016b8207254fe43a6227b0d45322a1ba95e0f69a80fc8f8c1"
+    },
+    {
+      "path": "vendor/archify/schemas/common.schema.json",
+      "bytes": 5755,
+      "sha256": "60912458e44224647a147a4dfccf0b40e0ea9c631767aabdeb5e82456f27c4e6"
+    },
+    {
+      "path": "vendor/archify/schemas/dataflow.schema.json",
+      "bytes": 6320,
+      "sha256": "f01b2faafa5fd6e300f6b5045eeca70f70226552411180442d6e528dd45172f1"
+    },
+    {
+      "path": "vendor/archify/schemas/lifecycle.schema.json",
+      "bytes": 7038,
+      "sha256": "6b310026a3bc5d4eb7f36a1ed862b8c95d88ce57246ce078ba3094e0d6ff3c90"
+    },
+    {
+      "path": "vendor/archify/schemas/sequence.schema.json",
+      "bytes": 6055,
+      "sha256": "411dcda121d7e95170a6850fb1cec51bec2e78222ce74b8465e11bcbd8e6e41a"
+    },
+    {
+      "path": "vendor/archify/schemas/workflow.schema.json",
+      "bytes": 10165,
+      "sha256": "e13a1ce3b841376c8c6f6b9cb8152f8c0c7d70a77a2960fecdfe9025de83dc25"
+    },
+    {
+      "path": "vendor/archify/scripts/check-render-output.mjs",
+      "bytes": 61661,
+      "sha256": "6ca0507cbbe442e5fa709477e7257b31a3fa929aa7f1a56ddbcbb3328df87a7d"
+    },
+    {
+      "path": "vendor/archify/scripts/check-update.mjs",
+      "bytes": 58935,
+      "sha256": "5a1add913beee623cdc9c009bad1980f4538bae1b9862bf92e41c83dd8a90666"
+    },
+    {
+      "path": "vendor/archify/scripts/delivery-update-child.mjs",
+      "bytes": 1101,
+      "sha256": "23b2cf0cb79935b90238558b511966bdf04c4158605c0651b1ccdc90b1736e5f"
+    },
+    {
+      "path": "vendor/archify/scripts/render-examples.mjs",
+      "bytes": 1178,
+      "sha256": "a173a053fb26c0ac3cd72eb9b4e50411e67ca8c50bec57f05d4ca8ba79db2c0b"
+    },
+    {
+      "path": "vendor/archify/scripts/update-contract.mjs",
+      "bytes": 6750,
+      "sha256": "7c5d34c5fa2e08fcd0b42e33a0f3b4685fcecf3ac88f1ed820528df8fdc46cbc"
+    },
+    {
+      "path": "vendor/archify/skill-release.json",
+      "bytes": 260,
+      "sha256": "93a31980e200d0749d887982eba8b6c3b33452a14e3a04d4e6969b9c42c7eacf"
+    },
+    {
+      "path": "vendor/c4-architecture/LICENSE",
+      "bytes": 1072,
+      "sha256": "4b4447da5344f8b2d3a8a19ba8366d1ac7a24d9ab4690bd04576dc772ddf8321"
+    },
+    {
+      "path": "vendor/c4-architecture/skills/c4-architecture/README.md",
+      "bytes": 7072,
+      "sha256": "e3fcab85719e96c9acf9eba3e5bdce6894b68b735ff1d64a6aa884d557539ee8"
+    },
+    {
+      "path": "vendor/c4-architecture/skills/c4-architecture/SKILL.md",
+      "bytes": 10575,
+      "sha256": "e27b4bac48f6da02183013f5ae8e35573774d96a3c5bf1ca24870a045135d1a6"
+    },
+    {
+      "path": "vendor/c4-architecture/skills/c4-architecture/references/advanced-patterns.md",
+      "bytes": 18346,
+      "sha256": "d7cfb170acbb2b8ff31b36d67715ca8d0ef8123e4da9dde18c04c9f618acb650"
+    },
+    {
+      "path": "vendor/c4-architecture/skills/c4-architecture/references/c4-syntax.md",
+      "bytes": 14564,
+      "sha256": "8c9d1f3af34b4af66b395a7b731dbdeba912b08e5535c7cc471f7048b160b96c"
+    },
+    {
+      "path": "vendor/c4-architecture/skills/c4-architecture/references/common-mistakes.md",
+      "bytes": 12441,
+      "sha256": "608b39dd6ece1c2d4367fb06f3bd7d190332291e279391bfedb82f4749ced414"
+    },
+    {
+      "path": "vendor/good-readme/LICENSE",
+      "bytes": 1060,
+      "sha256": "e38eed9deb7da40a4fa5a61090ffb6c77fc061a239ccf7ebe0c284f88c018d6a"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/SKILL.md",
+      "bytes": 7459,
+      "sha256": "33dac048d1d9b0a1b4a9069933f40b1e025eb2867d13354940afd8c29d29663b"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/references/anatomy.md",
+      "bytes": 27374,
+      "sha256": "2d9012d982468891b24f8c857047fba473cebe7a875d5861916b557f76337019"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/references/anti-patterns.md",
+      "bytes": 14690,
+      "sha256": "34836aea4fa43fd07d8ea30075ceea3319cae24f34bbe90323bb72a70e45677d"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/references/cloudflare.md",
+      "bytes": 2103,
+      "sha256": "f204bbc2b26b13f0fae2033e2b226d6bc31af2412cbbf37d54f14590aa0cad17"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/references/examples.md",
+      "bytes": 22913,
+      "sha256": "fb2073b6858f69b905417cd6bc080539ae951c5ec92f2d4794c9486487865e36"
+    },
+    {
+      "path": "vendor/good-readme/skills/good-readme/references/quality-checklist.md",
+      "bytes": 22776,
+      "sha256": "eac84421c5ffbb398babf8de0efeb413fd13e460fb4f5db7477c5182c97d8e6d"
+    },
+    {
+      "path": "vendor/humanizer/LICENSE",
+      "bytes": 1066,
+      "sha256": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96"
+    },
+    {
+      "path": "vendor/humanizer/SKILL.md",
+      "bytes": 32348,
+      "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+    },
+    {
+      "path": "vendor/humanizer/scripts/validate-package.py",
+      "bytes": 5418,
+      "sha256": "941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
+    },
+    {
+      "path": "vendor/og-image-design/LICENSE",
+      "bytes": 1069,
+      "sha256": "f7ef42dec824d89d18d7b82bad0c1835429c1590d5cc1538b65cb5ebf4d673ef"
+    },
+    {
+      "path": "vendor/og-image-design/plugins/heyimjames-design/skills/og-image-design/SKILL.md",
+      "bytes": 32837,
+      "sha256": "45c41a2f880c23b22a88e73dd328e042dacce36fbb303637c41044d74fb058f4"
+    },
+    {
+      "path": "vendor/readme-skill/LICENSE",
+      "bytes": 1067,
+      "sha256": "89f65d1b3af64d8feb5820eaaa8e0bdf71e8f2afb767b234fc030eac98f5615e"
+    },
+    {
+      "path": "vendor/readme-skill/SKILL.md",
+      "bytes": 15479,
+      "sha256": "9e6f611d01563804bdd0a177017f14b3badbc45f283f7f467ab6f64a3bdd58a4"
+    },
+    {
+      "path": "vendor/readme-skill/references/badge-style.md",
+      "bytes": 3257,
+      "sha256": "27fb265e52c29a897bd98e940686de2abf2219d07d4a933768a0f6c3d09c0eb0"
+    },
+    {
+      "path": "vendor/readme-skill/references/image-generation.md",
+      "bytes": 4528,
+      "sha256": "9110185f078a52001ea450d0e0ff2f65a792895703434b3a82501aa31e820fcc"
+    },
+    {
+      "path": "vendor/readme-skill/references/quality-checklist.md",
+      "bytes": 7342,
+      "sha256": "72c5ae92207aafa8522ec3a59f2ab5881199e5a9600dfa3cbde93c5bf033c2e8"
+    },
+    {
+      "path": "vendor/readme-skill/references/readme-structure.md",
+      "bytes": 9441,
+      "sha256": "abebd5ab02cf60f87f23831f95039f5462ef9453e884e8e48ad3b6704cdbb43d"
+    },
+    {
+      "path": "vendor/readme-skill/scripts/generate-image.py",
+      "bytes": 4599,
+      "sha256": "9671c2f1ce4b6236cee8e545a8a90084d7a83c84dd1d4ad2f5649f2e3eb10ea4"
+    },
+    {
+      "path": "vendor/readme-skill/templates/README.bilingual.md",
+      "bytes": 2193,
+      "sha256": "cdf94f5e973e3cf63d0f2a5ec9f4dbe9d92e7281ea4d72327b296cccb5ef8ece"
+    },
+    {
+      "path": "vendor/readme-skill/templates/README.en.md",
+      "bytes": 4393,
+      "sha256": "e4a64c50aac82f85f6944b6bc49e17d11a8a6abea43067d36096f5f37b873fa9"
+    },
+    {
+      "path": "vendor/readme-skill/templates/README.zh-CN.md",
+      "bytes": 4211,
+      "sha256": "5f1a73cc3413589057db3bef9d3a5194e7ab0c494c719c400d55b84d95d97143"
+    },
+    {
+      "path": "vendor/secret-scanner/LICENSE",
+      "bytes": 1092,
+      "sha256": "1b31371cec42679218bf8e12d4cace1fe33d5f7cd744bfa8af201554158dfb8a"
+    },
+    {
+      "path": "vendor/secret-scanner/skills/secret-scanner/engine.py",
+      "bytes": 12121,
+      "sha256": "030ce469e8ec8f1171814ece955fe4724528fb9bee28c89684ebd072969b6231"
+    },
+    {
+      "path": "vendor/snap-x/LICENSE",
+      "bytes": 1068,
+      "sha256": "ebaf0fa0785984770e9e2db24fb30ae3263d7af319b986775c83418305cdeb20"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/SKILL.md",
+      "bytes": 4970,
+      "sha256": "47f60265fcfd69cbe7968ccf4c52ce05535559c88397fa44ea63db0ab8fef330"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/agents/openai.yaml",
+      "bytes": 197,
+      "sha256": "0507764a025ba792a9c84a0d24b22f80bade1e269cee444e0cef3e4d0ac63431"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/design-principles.md",
+      "bytes": 3509,
+      "sha256": "2fcb6abd168d0b0d7f96672817a318a9a943ae6ea94f8c115b59b5e5f7cb8950"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/formats.md",
+      "bytes": 5142,
+      "sha256": "c411155f82d5e9e5f8fe1c28164997087507a6928cec890a6ae3763385f8d3e2"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/step-1-inspect.md",
+      "bytes": 8432,
+      "sha256": "1e4f8822462893bcb091da69db0f3e2fa5662357693ba2cc06e8f547e9d9d73c"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/step-2-plan.md",
+      "bytes": 5180,
+      "sha256": "85fcf1ef02e9f27322b809a075a1be1c6ee1b88ae6b278dba7e397b16be4be00"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/step-3-design.md",
+      "bytes": 9361,
+      "sha256": "53f99a85adad681d8e1b138b2495f64ea7876f5a92d81fcbf665a97401be45d2"
+    },
+    {
+      "path": "vendor/snap-x/skills/snap-x/references/step-4-render.md",
+      "bytes": 3922,
+      "sha256": "d7ff9119ebfa475ab066d049f62861313205c24bc26ade114ed10779a6b97298"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/LICENSE",
+      "bytes": 1088,
+      "sha256": "ae3e3131bdce360a4f2900e8a3336e8b42d437d112991b20e31abe06cad29042"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/README.md",
+      "bytes": 10657,
+      "sha256": "2210cfbe2366098c7c631e9bf6c805396c5fafbd5016221d4b2257d3ee85d339"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/SKILL.md",
+      "bytes": 5095,
+      "sha256": "9ff08dd7dfe9b1d3c8db8740fa5fc9ed790f9a8cc737f930eb8b38b6fbe2da21"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/chart-selection.md",
+      "bytes": 3597,
+      "sha256": "718cc18a59923a5b2a680effafd7d107add42062a1a0cda25648771888a516c2"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/checklist.md",
+      "bytes": 1713,
+      "sha256": "5224c9f1a93be3c372e0b7ff177f2d79b10066e5a9686cc943bff2bca5680277"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/kill-list.md",
+      "bytes": 4152,
+      "sha256": "e3d31ee01321ea36462a13d149814549fc105592d926f6f3c67e078c87dd82cd"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/presets/html-svg.md",
+      "bytes": 6476,
+      "sha256": "4f64e00b11def496bc1a0d5b9831988f4fcb6ac65ac45453008bd620d63eecca"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/presets/react.md",
+      "bytes": 7792,
+      "sha256": "bd4342ecd3c8d55e1ac85b7902ead4b914fe6331433ff9b396573bbad8858fb8"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/principles.md",
+      "bytes": 6063,
+      "sha256": "c3b77c0c46de5238571114346d6d576bea86fb189ae2283d1ac1237904db015e"
+    },
+    {
+      "path": "vendor/tufte-claude-skill/report-voice.md",
+      "bytes": 1837,
+      "sha256": "199f96a980c6436a8d1ab08230468a6e9ea6383b5af530efa42838a6e86cb5ac"
+    },
+    {
+      "path": "vendors.lock.json",
+      "bytes": 33631,
+      "sha256": "2197cfa2e0b4c5ae2f3f04c3f3ca508d4fb5ac22aee07d891fa2a7aaaf202cd0"
+    }
+  ],
+  "closure_basis": {
+    "owned": "entry, contracts, phases, adapter template and deterministic scripts",
+    "vendor": "exact current vendors.lock union with full methods and original legal files",
+    "verification": "product regression sources only; no historical fixtures/results",
+    "dependencies": "pinned package/optional YAML requirements; installed binaries and caches excluded; mixed YAML/verification requirements have a real phase installation consumer"
+  }
+}

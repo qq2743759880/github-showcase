@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "policy": "Not installed or integrated. Resolve a complete extension only for its explicit task request or documented conditional trigger inside existing approved scope; preserve original workflow and license. No fallback equivalence or authority expansion.",
+  "extensions": [
+    {
+      "name": "codebase-knowledge-builder",
+      "role": "Optional",
+      "upstream": "https://github.com/OthmanAdi/codebase-knowledge-builder",
+      "revision": "b01f40c5aef4eb8f6c52c664fe19b33e661c7abd",
+      "license": "MIT",
+      "entry": "skills/codebase-knowledge-builder/SKILL.md",
+      "trigger": "F01 ESCALATE_CKB after bounded recon leaves a consequential question with a deeper evidence trail inside approved scope; or an explicit full codebase study",
+      "workflow": "references/workflows/fact-escalation.md",
+      "default_load": false,
+      "resource_hashes": {
+        "LICENSE": "e816ddabe1c1726a44754297dfa04ae1d735ddf7b56218409b2047f600c7a190",
+        "skills/codebase-knowledge-builder/SKILL.md": "0ffe66576d3a90c2c39f314a473cf8d0f528bd7fa068826ac8c4f85f13733141",
+        "skills/codebase-knowledge-builder/references/deep-dive-methodology.md": "95a10215160cd5260049ed4e911fa92da6dbcd9fde8f143b350b813e3f5427a6",
+        "skills/codebase-knowledge-builder/references/recon-checklist.md": "cca2756fd5c294cb7e4c078b21b0a623c8453c4cd5eb3527c96bf7c2842230f5",
+        "skills/codebase-knowledge-builder/templates/knowledge_artifact.md": "417ca7338e541b4b45d7018df524f5dd9218ddad57552209a381578ae5846a5d"
+      }
+    },
+    {
+      "name": "ux-flow-designer",
+      "upstream": "https://github.com/ThomasPraun/ux-flow-designer",
+      "revision": "4d2052b3cb69884758a8f1f823ed9ecbb571c60a",
+      "license": "MIT",
+      "trigger": "Full UX design including clickable wireframes"
+    },
+    {
+      "name": "video-editing",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "revision": "c70874fae9eb0e5ad0365beb7e2955899fd1d30f",
+      "license": "MIT",
+      "trigger": "Real multi-stage editing with approved footage"
+    },
+    {
+      "name": "record",
+      "upstream": "https://github.com/TGPSKI/record",
+      "revision": "bda64737759779e029c6129f4bfc543731867ff3",
+      "license": "GPL-3.0",
+      "trigger": "Real CLI/TUI recording in a sanitized environment with explicit scope"
+    }
+  ]
+}

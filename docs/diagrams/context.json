@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "C4 Context: github-showcase",
+    "output": "context/context.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "owner",
+      "type": "external",
+      "label": "Project owner",
+      "sublabel": "Person: scope and approval",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        180,
+        76
+      ]
+    },
+    {
+      "id": "system",
+      "type": "backend",
+      "label": "github-showcase",
+      "sublabel": "Method + local tool processes",
+      "pos": [
+        340,
+        200
+      ],
+      "size": [
+        240,
+        76
+      ]
+    },
+    {
+      "id": "github",
+      "type": "cloud",
+      "label": "GitHub",
+      "sublabel": "External: repo, release, Pages",
+      "pos": [
+        740,
+        200
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "host",
+      "type": "frontend",
+      "label": "Agent host",
+      "sublabel": "External: files and tools",
+      "pos": [
+        350,
+        30
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "project",
+      "type": "database",
+      "label": "Target project",
+      "sublabel": "External: approved source files",
+      "pos": [
+        350,
+        410
+      ],
+      "size": [
+        220,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "request",
+      "from": "owner",
+      "to": "system",
+      "label": "sets scope"
+    },
+    {
+      "id": "load",
+      "from": "host",
+      "to": "system",
+      "label": "loads method"
+    },
+    {
+      "id": "read",
+      "from": "system",
+      "to": "project",
+      "label": "reads / exports"
+    },
+    {
+      "id": "publish",
+      "from": "system",
+      "to": "github",
+      "label": "authorized HTTPS"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "System boundary",
+      "items": [
+        "The Skill is instructions loaded by a file-capable Agent.",
+        "Local Python and Node tools provide checks and rendering."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Publication boundary",
+      "items": [
+        "Explicit authorization is required before remote writes.",
+        "Publication ends with actual remote byte and identity readback."
+      ]
+    }
+  ]
+}

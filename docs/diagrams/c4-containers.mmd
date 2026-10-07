@@ -1,0 +1,18 @@
+C4Container
+title github-showcase: Local Containers
+Container_Ext(host,"Agent host","Host-provided runtime","Loads Skill resources and judges meaning")
+System_Boundary(local,"Local tool execution") {
+Container(python,"Python tools","Python CLI","Routes, gates and packages")
+Container(node,"Node render runtime","Node.js","Archify, Snap-X and Mermaid")
+ContainerDb(git,"Git and filesystem","Git / local files","Committed source and packages")
+}
+Container_Ext(browser,"Browser","Chrome / Chromium","Checks and explores HTML")
+SystemDb_Ext(project,"Target project","Approved source and output tree")
+System_Ext(github,"GitHub","Authorized remote surfaces")
+Rel(host,python,"Invokes checks and packaging","CLI")
+Rel(host,node,"Invokes native rendering","CLI")
+Rel(node,browser,"Delivers and checks HTML","HTML / DevTools")
+Rel(python,project,"Checks original bytes","Filesystem")
+Rel(python,git,"Packages committed source","Git CLI")
+Rel(git,github,"Pushes only when authorized","Git / HTTPS")
+UpdateLayoutConfig($c4ShapeInRow="3",$c4BoundaryInRow="1")

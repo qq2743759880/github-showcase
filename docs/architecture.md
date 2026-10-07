@@ -1,82 +1,33 @@
-# 架构：契约 → 路由 → 子能力 → 验收 → 消费门 → 发布闸
+# 系统架构
 
-> F03 产物。渲染成品 [assets/architecture.svg](../assets/architecture.svg)；可编辑图源 [assets/architecture.mmd](../assets/architecture.mmd)（本文末尾同源内嵌）。
-> 验收：钉定版本 Mermaid 渲染器实跑 exit 0（首次渲染曾发现图源尾部围栏被误解析为孤儿节点，修复后复渲通过并复检无残留）。
+github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际可运行的 CLI 边界。vendor 方法资源不是独立服务。Context 面向项目使用者；Container 面向安装者和维护者。更深组件、部署或动态视图未因本次读者问题触发。
 
-![架构总览](../assets/architecture.svg)
+## 系统边界
 
-## 图例
+![C4 Context，说明用户、Agent、项目和远端的关系](./diagrams/context.svg)
 
-- **实线**：真实数据流 / 调用（任务书进契约、契约驱动路由、路由调子能力、产物过验收、组装过审查、打包过质量门）。
-- **虚线**：条件路由与门控关系（无获批演示素材 → F07 跳过；四门全过且授权未批准 → 零远程写入的本地包）。
+[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/context.html) · [本地 HTML](./diagrams/context.html) · [可编辑数据](./diagrams/context.json) · [C4 Mermaid 源码](./diagrams/c4-context.mmd) · [C4 原生渲染](./diagrams/c4-context.svg)
 
-## 逐节点事实映射（每格可回源到 Skill 契约原文）
-
-| 图中节点 | 事实出处（Skill 契约） | 说明 |
+| 从 → 到 | 动作与机制 | 当前依据 |
 |---|---|---|
-| 任务书 / 项目目录（只读） | 契约字段 `project_roots[]`（root_type ∈ code/docs/knowledge-base/design/mixed） | 只读取证范围，取证过程不改项目 |
-| adapter 契约字段 | 契约字段表：`facts_source / public_narrative / architecture_spec / workflow_spec / metrics / demo_scenario / publication_policy / source_release` | 未填字段=无数据，如实声明禁编造 |
-| 主编排 Skill（路由） | 需求解析→phase 路由表（F01-F10）；数据流边界；执行契约五条；发布闸 | 编排层只做编排，不承担专业能力 |
-| 冻结子能力实体（20 件） | 绑定权威文件（随包投影 [skill/references/bindings.json](../skill/references/bindings.json)）每槽 PRIMARY/FALLBACK + revision | 固定版本、显式加载、真实调用形态 |
-| F01 取证 / F02 叙事 | 无预核事实源 → F01 先行并回填 facts/narrative | 叙事只消费公开投影 |
-| F03 架构 / F04 流程 / F05 数据 / F06 视觉 | 渲染类 successCheck：真实渲染器验证、逐值核对、尺寸机检 | F05 仅在指标有证据时路由 |
-| F07 演示（仅获批素材时路由） | 演示素材=获批命令子集；不可用则跳过，禁伪造录制 | 三案例中两案即此跳过路径 |
-| 逐产物 successCheck | 「validate：逐产物跑 successCheck；验不过=不产出」 | 验收命令与结果全部写 trace |
-| F08 README 组装（Showcase Composition） | 必须消费 F02 叙事、F03/F04/F05(若路由)/F06/F07(若路由) 与 F09 边界 | 消费台账随包（[docs/verification/asset-consumption-ledger.md](verification/asset-consumption-ledger.md)） |
-| F09 公开范围审查 | secret / privacy / license / authorization 四轴；判 BLOCK 的内容 F10 对其 STOP | 拒绝不得绕过 |
-| F10 打包 | 隔离导出树 git 提交 + 压缩包 + 全新 clone 复检；代码项目另有 fresh-clone 硬规则 | 实测输出写 trace |
-| 质量门（四门） | 资产消费门 / 读者理解门 / 表层分 / 自展示门，由导出树收尾机检强制 | 任一 FAIL → 不得 READY_FOR_APPROVAL |
-| 本地展示成品包 | 授权未批准：零远程写入，止步 READY_FOR_APPROVAL | 「可发布」≠「已发布」 |
+| 项目使用者 → 方法 | 指定范围与批准公开，用户请求 | `SKILL.md`、项目契约 |
+| Agent host → 方法 | 读取 Skill 及按需资源，文件 | `SKILL.md` |
+| 方法 → 目标项目 | 读取事实并生成获批导出，文件系统 | `route-plan.py`、`package-project.py` |
+| 方法 → GitHub | 仅授权后公开与回读，Git/HTTPS | `references/publish-backends.md` |
 
-## 「不存在的边」禁令（未画出的关系）
+## 本地工具进程
 
-| 禁画边 | 理由 |
-|---|---|
-| 公开成品 → 私有事实源 | 数据流边界：私有事实仅供内部核验，不入公开面 |
-| F09 BLOCK → F10 打包 | 安全拒绝（secret/privacy/license/authorization）不得绕过 |
-| 编排层 → 远程 GitHub | 授权未批准 = 零远程写入 |
-| 任一质量门 FAIL → READY_FOR_APPROVAL | 门是硬闸：FAIL 即停，不存在「带病发布」 |
+![C4 Container，显示 Python、Node、浏览器和文件边界](./diagrams/containers.svg)
 
-## 图源（可编辑）
+[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/containers.html) · [本地 HTML](./diagrams/containers.html) · [可编辑数据](./diagrams/containers.json) · [C4 Mermaid 源码](./diagrams/c4-containers.mmd) · [C4 原生渲染](./diagrams/c4-containers.svg)
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Segoe UI, Microsoft YaHei, sans-serif", "fontSize": "14px"}, "flowchart": {"nodeSpacing": 36, "rankSpacing": 44}}}%%
-flowchart TB
-  subgraph IN["输入层（用户）"]
-    TASK["任务书 / 项目目录<br/>（只读）"]
-    ADP["adapter 契约字段<br/>project_roots · facts_source · public_narrative<br/>architecture_spec · workflow_spec · metrics<br/>demo_scenario · publication_policy · source_release"]
-  end
+| 从 → 到 | 动作与机制 | 当前依据 |
+|---|---|---|
+| Agent → Python | 调用 route、gate、packaging CLI | `SKILL.md`、`scripts/route-plan.py`、`scripts/release-gate.py` |
+| Agent → Node | 调用图像与图表工具 CLI | `scripts/snap-x.mjs`、`scripts/render-c4.mjs`、原 Archify CLI |
+| Node → 浏览器 | 交付 HTML，DevTools 检查 | Archify 原生 browser-check、Mermaid wrapper |
+| Python → 项目文件 | 核对字节和清单，文件系统 | `scripts/runtime-package.py` |
+| Python → Git/文件系统 | 打包已提交源码，Git CLI | `scripts/package-project.py` |
+| Git → GitHub | 授权后普通推送，Git/HTTPS | `references/publish-backends.md` |
 
-  subgraph ORCH["编排层（本 Skill 本体）"]
-    SKILL["主编排 Skill<br/>需求解析 → phase 路由<br/>数据流边界 · 执行契约 · 发布闸"]
-    GATE["质量门 release-gate<br/>① 资产消费门 ② 读者理解门<br/>③ 表层分 ④ 自展示门"]
-  end
-
-  subgraph CAP["能力层（20 件固定版本子实体，冻结于 vendor/）"]
-    F0102["F01 取证 · F02 叙事"]
-    F0306["F03 架构 · F04 流程<br/>F05 数据 · F06 视觉"]
-    F07["F07 演示<br/>（仅获批素材时路由）"]
-    F08C["F08 README 组装<br/>（Showcase Composition）"]
-  end
-
-  subgraph EXIT["验收与出口层"]
-    SC["逐产物 successCheck<br/>验不过 = 不产出"]
-    F09["F09 公开范围审查<br/>secret / privacy / license / authorization"]
-    F10["F10 打包<br/>git commit · zip · fresh clone 复检"]
-    PKG["本地展示成品包<br/>README + docs + assets + 台账<br/>READY_FOR_APPROVAL"]
-  end
-
-  TASK --> ADP
-  ADP --> SKILL
-  SKILL -->|"binding：PRIMARY/FALLBACK<br/>显式加载 · 真实调用形态"| F0102
-  SKILL --> F0306
-  SKILL -.->|"无获批素材 → 跳过"| F07
-  F0102 --> SC
-  F0306 --> SC
-  F07 -.-> SC
-  SC -->|"validated output<br/>全部被 README/docs 消费"| F08C
-  F08C --> F09
-  F09 -->|"PASS 才放行；<br/>BLOCK → F10 STOP"| F10
-  F10 --> GATE
-  GATE -->|"四门全过且授权未批准：<br/>零远程写入"| PKG
-```
+图例颜色沿原生 Viewer 类型显示，描述文字才是 C4 身份依据：方法不是服务，文件节点不表示运行了数据库。关系状态是源码定义的当前执行方法，不能把图中的连线理解为宿主强制策略。

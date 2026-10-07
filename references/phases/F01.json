@@ -1,0 +1,16 @@
+{
+  "phase": "F01",
+  "workflow": "references/workflows/facts.md",
+  "capabilities": [],
+  "runtime_dependencies": [],
+  "role": "internal",
+  "conditional_extension": {
+    "name": "codebase-knowledge-builder",
+    "role": "Optional",
+    "decision_point": "After bounded recon; unresolved consequential question within approved scope",
+    "workflow": "references/workflows/fact-escalation.md",
+    "registry": "references/extensions.json",
+    "default_load": false
+  },
+  "failure_policy": "STOP on safety rejection; BLOCKED on missing required runtime; no unrelated fallback"
+}
