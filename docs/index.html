@@ -1,11 +1,11 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>github-showcase — 项目说明</title><style>body{margin:0;background:#f7f9fc;color:#172033;font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px}a{color:#2251bb}h1,h2,h3{line-height:1.3}h2{margin-top:44px;padding-top:12px;border-top:1px solid #dae2ee}img{max-width:100%;height:auto}table{display:block;overflow:auto;border-collapse:collapse}td,th{padding:8px 12px;border:1px solid #dae2ee;text-align:left}pre{overflow:auto;background:#edf1f7;padding:16px;border-radius:8px}code{font-size:.9em}.anchor{display:none}@media(prefers-color-scheme:dark){body{background:#101722;color:#e6edf7}a{color:#9abaff}pre{background:#1b2738}td,th,h2{border-color:#334157}}</style><main><p align="center" dir="auto">
-  <a target="_blank" rel="noopener noreferrer" href="../assets/hero.png"><img src="../assets/hero.png" width="640" alt="github-showcase：真实源码、专业方法、验证后的交付" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="./diagrams/hero.png"><img src="./diagrams/hero.png" width="640" alt="github-showcase：真实源码、专业方法、验证后的交付" style="max-width: 100%;"></a>
 </p>
 <h1 align="center" dir="auto">github-showcase</h1>
 <p align="center" dir="auto"><strong>把一个本地项目，整理成陌生人看得懂、装得上、跑得通的 GitHub 项目。</strong></p>
 <p align="center" dir="auto">Agent 读取真实源码，按需生成 README、架构图、流程图和项目视觉，<br>并在发布前验证安装、链接、隐私、许可证与最终交付。</p>
 <p align="center" dir="auto">
-  <a href="https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a> · <a href="https://qq2743759880.github.io/github-showcase/" rel="nofollow">在线交互图</a> · <a href="../SKILL.md">查看 Skill</a>
+  <a href="https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a> · <a href="https://qq2743759880.github.io/github-showcase/" rel="nofollow">在线交互图</a> · <a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/SKILL.md">查看 Skill</a>
 </p>
 <h2 dir="auto">本页索引</h2>
 <p dir="auto"><a href="#user-content-gs-why">为什么需要它</a> · <a href="#user-content-gs-workflow">它是怎么工作的</a> · <a href="#user-content-gs-outputs">你会得到什么</a> · <a href="#user-content-gs-install">快速安装</a> · <a href="#user-content-gs-first-use">第一次使用</a> · <a href="#user-content-gs-architecture">架构与本地进程</a> · <a href="#user-content-gs-publication">发布与中断恢复</a> · <a href="#user-content-gs-limits">当前验证范围</a> · <a href="#user-content-gs-license">许可证</a></p>
@@ -27,7 +27,7 @@
 <p dir="auto">你提供<strong>项目目录、目标读者、可公开范围和交付目标</strong>。Agent 先读取事实，再按项目类型和任务选择真正需要的能力；生成的 README、架构图、流程图和主视觉都要经过相应的安全、引用、安装与交付验证。</p>
 <p dir="auto">布局、文案、环境等普通失败由 Agent 自主修复并重新验证；安全边界不绕过。缺少事实就保留未知，不编造功能或数字。远程发布需要明确授权。</p>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/showcase.svg"><img src="./diagrams/showcase.svg" alt="项目整理流程：发现事实、选择方法、生成资产、检查与交付" style="max-width: 100%;"></a></p>
-<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/showcase.html" rel="nofollow">打开完整交互流程图</a> · <a href="./diagrams/architecture-flow.mmd">查看总览的可编辑源码</a></p>
+<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/showcase.html" rel="nofollow">打开完整交互流程图</a> · <a href="./diagrams/architecture-flow.mmd">查看总览的可编辑源码</a> · <a href="./diagrams/hero.png">主视觉源文件</a></p>
 <p dir="auto"><a name="user-content-gs-outputs"></a></p>
 <h2 dir="auto">你会得到什么</h2>
 <markdown-accessiblity-table><table role="table">
@@ -194,7 +194,7 @@ Git ──[明确授权后的 HTTPS]──▶ GitHub
 <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/publication.svg"><img src="./diagrams/publication.svg" alt="从本地包到实际远端回读，包含授权拒绝、传输重试和身份不符" style="max-width: 100%;"></a></p>
 <p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/publication.html" rel="nofollow">打开交互图</a> · <a href="./diagrams/publication.html">本地 HTML</a> · <a href="./diagrams/publication.json">可编辑数据</a></p>
 <p dir="auto">先完成本地检查和干净导出。授权不足时保留本地结果；得到明确授权才普通推送，并将 tag 绑定实际公开 commit。Pre-release 上传固定安装包，随后回读 tag、Release、资产字节与 Pages，再从远端全新克隆和安装。</p>
-<p dir="auto">普通传输或展示问题应修复后重试；真实凭据不得公开，历史 tag 不得移动，未知用户内容不得覆盖。检查失败不能伪造 PASS。这个流程描述方法义务，不证明任意宿主无法绕过。具体机制见<a href="../references/publish-backends.md">发布契约</a>。</p>
+<p dir="auto">普通传输或展示问题应修复后重试；真实凭据不得公开，历史 tag 不得移动，未知用户内容不得覆盖。检查失败不能伪造 PASS。这个流程描述方法义务，不证明任意宿主无法绕过。具体机制见<a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/references/publish-backends.md">发布契约</a>。</p>
 <p dir="auto">中断后，先读取本轮的 route plan、已生成文件和检查记录，核对实际文件身份，再继续缺失步骤。旧 PASS 不能证明已变化的内容；普通失败修复后重跑对应检查。出现未知用户改动时保留当前文件和已有结果，先比较差异，不强行覆盖。没有发布授权、存在真实密钥或许可未解决时只保留本地交付，不能把失败写成已发布。</p>
 <p dir="auto">你可以明确请求：“继续上一次 github-showcase 任务；先核对本轮结果与记录，补齐缺失步骤，普通失败自主修复并复检，保留用户后续修改。”安装此 Skill 本身不会触发发布。</p>
 <p dir="auto"><a name="user-content-gs-limits"></a></p>
@@ -203,4 +203,4 @@ Git ──[明确授权后的 HTTPS]──▶ GitHub
 <p dir="auto">github-showcase 能检查文件、安装和发布链路，但最终业务语义仍需要 Agent 或维护者判断。它不提供跨宿主强制限制、自动密钥修复或性能提升保证。</p>
 <p dir="auto"><a name="user-content-gs-license"></a></p>
 <h2 dir="auto">许可证</h2>
-<p dir="auto">项目采用 <a href="../LICENSE"><code class="notranslate">MIT</code></a>。内置方法的许可见<a href="../THIRD_PARTY_NOTICES.md">第三方声明</a>；交互展示的代码和字体另见<a href="../licenses/showcase/archify/LICENSE">展示资产许可</a>与<a href="../licenses/showcase/archify/JetBrainsMono-OFL.txt">字体 OFL</a>。</p></main></html>
+<p dir="auto">项目采用 <a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/LICENSE"><code class="notranslate">MIT</code></a>。内置方法的许可见<a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/THIRD_PARTY_NOTICES.md">第三方声明</a>；交互展示的代码和字体另见<a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/licenses/showcase/archify/LICENSE">展示资产许可</a>与<a href="https://github.com/qq2743759880/github-showcase/blob/v1.0.0-rc4/licenses/showcase/archify/JetBrainsMono-OFL.txt">字体 OFL</a>。</p></main></html>

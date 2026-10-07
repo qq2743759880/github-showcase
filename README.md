@@ -44,7 +44,7 @@
 
 ![项目整理流程：发现事实、选择方法、生成资产、检查与交付](./docs/diagrams/showcase.svg)
 
-[打开完整交互流程图](https://qq2743759880.github.io/github-showcase/diagrams/showcase.html) · [查看总览的可编辑源码](./docs/diagrams/architecture-flow.mmd)
+[打开完整交互流程图](https://qq2743759880.github.io/github-showcase/diagrams/showcase.html) · [查看总览的可编辑源码](./docs/diagrams/architecture-flow.mmd) · [主视觉源文件](./docs/diagrams/hero.png)
 
 <a name="gs-outputs"></a>
 
