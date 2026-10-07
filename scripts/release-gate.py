@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import unicodedata
 from urllib.parse import unquote,urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -360,6 +361,65 @@ def check_distribution_surface(export,policy):
     errors=['build/repro evidence in Showcase: '+', '.join(noise)] if noise else []
     return errors+check_publication(export,policy,publication)
 
+def check_single_page(export,policy):
+    """Bounded README structure check, not semantic or universal renderer proof.
+
+    The first level-two section is the explanation index. Policy names the
+    task's required sections/previews; published GitHub anchors need readback.
+    """
+    try:
+        text=(export/'README.md').read_text(encoding='utf-8')
+        visible=[];fence=None
+        for line in text.splitlines(keepends=True):
+            marker=re.match(r'^ {0,3}(`{3,}|~{3,})',line)
+            if marker:
+                token=marker[1]
+                if fence is None:fence=token
+                elif token[0]==fence[0] and len(token)>=len(fence):fence=None
+                visible.append('\n');continue
+            visible.append('\n' if fence else line)
+        surface=re.sub(r'<!--.*?-->','', ''.join(visible),flags=re.S)
+        headings=list(re.finditer(r'^##\s+(.+?)\s*#*\s*$',surface,re.M))
+        if len(headings)<2:return ['single-page index and explanation sections required']
+        index=surface[headings[0].end():headings[1].start()]
+        links=re.findall(r'(?<!!)\[[^\]]+\]\(([^)\s]+)\)|<a\b[^>]*href=["\']([^"\']+)',index)
+        targets=[a or b for a,b in links]
+        if not targets:return ['first explanation section must be the same-page index']
+        errors=[];anchors={}
+        def add(name,position):anchors.setdefault(unquote(name),[]).append(position)
+        for match in re.finditer(r'<(?:a|[a-z][\w-]*)\b[^>]*\b(?:name|id)=["\']([^"\']+)["\'][^>]*>',surface,re.I):add(match[1],match.start())
+        for heading in re.finditer(r'^#{1,6}\s+(.+?)\s*#*\s*$',surface,re.M):
+            plain=re.sub(r'<[^>]*>|[*`_]', '', heading[1]).lower()
+            slug=''.join(c for c in plain if c in ' -' or unicodedata.category(c)[0] in 'LN').replace(' ','-')
+            add(slug,heading.start())
+        for target in targets:
+            if not target.startswith('#') or len(target)==1:errors.append('index explanation link must be a local fragment: '+target);continue
+            key=unquote(target[1:]);positions=anchors.get(key,[])
+            if len(positions)!=1:errors.append('index target missing or ambiguous: '+key)
+            elif positions[0]<headings[1].start() and not surface[positions[0]:headings[1].start()].strip().startswith('<a'):
+                errors.append('index target precedes explanation: '+key)
+        contract=policy.get('single_page',{})
+        required=contract.get('required_sections') or [unquote(t[1:]) for t in targets if t.startswith('#')]
+        for key in required:
+            positions=anchors.get(key,[])
+            if len(positions)!=1:errors.append('required section missing or ambiguous: '+key);continue
+            position=positions[0]
+            # Explicit anchors conventionally immediately precede the heading.
+            section=next((h for h in headings if h.start()>=position),None)
+            if section is None:errors.append('required anchor has no section: '+key);continue
+            following=next((h.start() for h in headings if h.start()>section.start()),len(surface))
+            body=surface[section.end():following]
+            remainder=re.sub(r'!?\[[^\]]*\]\([^)]*\)|<[^>]*>', '',body)
+            remainder=re.sub(r'详见|参见|^\s*见|\b(?:see|read|details|guide|documentation)\b', '',remainder,flags=re.I)
+            if not re.search(r'[\w\u4e00-\u9fff]',remainder):errors.append('required section is only a link stub: '+key)
+        images=re.findall(r'!\[[^\]]*\]\(([^)\s]+)',surface)+re.findall(r'<img\b[^>]*src=["\']([^"\']+)',surface,re.I)
+        normalized={os.path.normpath(unquote(p)).replace('\\','/') for p in images}
+        for preview in contract.get('required_previews',[]):
+            path=(export/preview).resolve()
+            if preview not in normalized or not path.is_relative_to(export.resolve()) or not path.is_file():errors.append('required preview must be embedded and exist in README: '+preview)
+        return sorted(set(errors))
+    except (OSError,TypeError,ValueError,re.error) as exc:return ['single-page contract invalid: '+str(exc)]
+
 def check_readme_profile(export,policy):
     profile=policy.get('readme_profile')
     if not profile:return ['Agent Skill README profile missing'] if policy.get('project_form')=='agent-skill' else []
@@ -449,7 +509,7 @@ def run_showcase_gate(export,policy,comprehension_receipt=None,self_dogfood_rece
     if copy_errors:gates.append('PUBLIC_COPY_FAIL')
     for name,failures in [('IMMUTABLE_ARTIFACT_FAIL',check_immutable_artifact(policy)),('RELEASE_CHANNEL_FAIL',check_release_channels(policy)),('LICENSE_IDENTIFIER_FAIL',check_license_integrity(export,policy))]:
         if failures:gates.append(name);result[name.lower()]=failures
-    for name,checker in [('DISTRIBUTION_SURFACE_FAIL',check_distribution_surface),('README_PROFILE_FAIL',check_readme_profile),('MINIMAL_RUNTIME_FAIL',check_minimal_runtime)]:
+    for name,checker in [('SINGLE_PAGE_FAIL',check_single_page),('DISTRIBUTION_SURFACE_FAIL',check_distribution_surface),('README_PROFILE_FAIL',check_readme_profile),('MINIMAL_RUNTIME_FAIL',check_minimal_runtime)]:
         failures=checker(export,policy)
         if failures:
             gates.append(name);result[name.lower()]=failures

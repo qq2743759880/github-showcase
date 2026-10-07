@@ -1,1 +1,206 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>github-showcase 项目图解</title><body><h1>github-showcase 项目图解</h1><p>从项目事实到可验证的交付。</p><ul><li><a href="diagrams/showcase.html">工作流程</a></li><li><a href="diagrams/context.html">系统边界</a></li><li><a href="diagrams/containers.html">本地工具进程</a></li><li><a href="diagrams/publication.html">发布流程</a></li></ul><p><a href="https://github.com/qq2743759880/github-showcase">阅读项目与安装说明</a></p></body></html>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>github-showcase — 项目说明</title><style>body{margin:0;background:#f7f9fc;color:#172033;font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px}a{color:#2251bb}h1,h2,h3{line-height:1.3}h2{margin-top:44px;padding-top:12px;border-top:1px solid #dae2ee}img{max-width:100%;height:auto}table{display:block;overflow:auto;border-collapse:collapse}td,th{padding:8px 12px;border:1px solid #dae2ee;text-align:left}pre{overflow:auto;background:#edf1f7;padding:16px;border-radius:8px}code{font-size:.9em}.anchor{display:none}@media(prefers-color-scheme:dark){body{background:#101722;color:#e6edf7}a{color:#9abaff}pre{background:#1b2738}td,th,h2{border-color:#334157}}</style><main><p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="../assets/hero.png"><img src="../assets/hero.png" width="640" alt="github-showcase：真实源码、专业方法、验证后的交付" style="max-width: 100%;"></a>
+</p>
+<h1 align="center" dir="auto">github-showcase</h1>
+<p align="center" dir="auto"><strong>把一个本地项目，整理成陌生人看得懂、装得上、跑得通的 GitHub 项目。</strong></p>
+<p align="center" dir="auto">Agent 读取真实源码，按需生成 README、架构图、流程图和项目视觉，<br>并在发布前验证安装、链接、隐私、许可证与最终交付。</p>
+<p align="center" dir="auto">
+  <a href="https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a> · <a href="https://qq2743759880.github.io/github-showcase/" rel="nofollow">在线交互图</a> · <a href="../SKILL.md">查看 Skill</a>
+</p>
+<h2 dir="auto">本页索引</h2>
+<p dir="auto"><a href="#user-content-gs-why">为什么需要它</a> · <a href="#user-content-gs-workflow">它是怎么工作的</a> · <a href="#user-content-gs-outputs">你会得到什么</a> · <a href="#user-content-gs-install">快速安装</a> · <a href="#user-content-gs-first-use">第一次使用</a> · <a href="#user-content-gs-architecture">架构与本地进程</a> · <a href="#user-content-gs-publication">发布与中断恢复</a> · <a href="#user-content-gs-limits">当前验证范围</a> · <a href="#user-content-gs-license">许可证</a></p>
+<p dir="auto"><a name="user-content-gs-why"></a></p>
+<h2 dir="auto">为什么需要它</h2>
+<p dir="auto">项目已经做出来了，别人却不知道为什么要用、怎么安装、第一步该做什么。你可能正遇到这些问题：</p>
+<ul dir="auto">
+<li>README 还是半成品，功能说明跟不上真实代码。</li>
+<li>代码在你本机能跑，陌生人却不知道怎么安装、怎么验证。</li>
+<li>想补架构图、流程图和项目主视觉，又不想让 AI 凭空编功能。</li>
+<li>准备开源，希望发布前检查密钥、隐私、许可证和断链。</li>
+<li>想让 Agent 把项目交付完，而不只是写一段漂亮文案。</li>
+</ul>
+<p dir="auto"><strong>从“代码能跑，但只能自己看懂”，到“别人能理解、能按说明开始用，也能核对发布结果”。</strong></p>
+<p dir="auto">普通 README generator 主要把项目变成文案。github-showcase 是 Agent 加载的 Skill：除了编写首页，还会按事实调用专业方法，验证安装与安全，并在获得发布授权后回读 GitHub 的真实结果。</p>
+<p dir="auto"><a name="user-content-gs-workflow"></a></p>
+<h2 dir="auto">它是怎么工作的</h2>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/architecture-flow.svg"><img src="./diagrams/architecture-flow.svg" alt="github-showcase 架构流程总览：从用户请求到按需生成、验证与公开交付" style="max-width: 100%;"></a></p>
+<p dir="auto">你提供<strong>项目目录、目标读者、可公开范围和交付目标</strong>。Agent 先读取事实，再按项目类型和任务选择真正需要的能力；生成的 README、架构图、流程图和主视觉都要经过相应的安全、引用、安装与交付验证。</p>
+<p dir="auto">布局、文案、环境等普通失败由 Agent 自主修复并重新验证；安全边界不绕过。缺少事实就保留未知，不编造功能或数字。远程发布需要明确授权。</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/showcase.svg"><img src="./diagrams/showcase.svg" alt="项目整理流程：发现事实、选择方法、生成资产、检查与交付" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/showcase.html" rel="nofollow">打开完整交互流程图</a> · <a href="./diagrams/architecture-flow.mmd">查看总览的可编辑源码</a></p>
+<p dir="auto"><a name="user-content-gs-outputs"></a></p>
+<h2 dir="auto">你会得到什么</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>你得到什么</th>
+<th>github-showcase 怎么做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>README</strong></td>
+<td>从真实源码和可验证命令出发，不编造功能和数字</td>
+</tr>
+<tr>
+<td><strong>架构 / 流程图</strong></td>
+<td>软件边界用 C4，交互图用 Archify；没有对应事实就不画</td>
+</tr>
+<tr>
+<td><strong>项目主视觉</strong></td>
+<td>Snap-X 完成设计、渲染，并实际检查最终图片</td>
+</tr>
+<tr>
+<td><strong>可安装源码包</strong></td>
+<td>对代码项目，在全新克隆和独立目录验证安装、首次运行与测试</td>
+</tr>
+<tr>
+<td><strong>安全发布</strong></td>
+<td>检查密钥、隐私、许可证和公开范围，发布后再回读远端</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">没有测量数据，就用能力分类而不编造收益图表；没有真实视频需求，就跳过视频。输出写入新的展示目录，检查记录留在私有目录。</p>
+<p dir="auto"><a name="user-content-gs-install"></a></p>
+<h2 dir="auto">快速安装</h2>
+<p dir="auto">需要可读文件、可执行命令的 Agent 和 Python。<a href="https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a>，解压后进入 <code class="notranslate">github-showcase/</code>：</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 1. 检查当前环境</span>
+python scripts<span class="pl-k">/</span>doctor.py
+
+<span class="pl-c"><span class="pl-c">#</span> 2. 需要图像 / 图表时安装锁定依赖（Node.js 24+）</span>
+npm ci <span class="pl-k">--</span>no<span class="pl-k">-</span>audit <span class="pl-k">--</span>fund<span class="pl-k">=</span>false
+
+<span class="pl-c"><span class="pl-c">#</span> 3. 验证内置资源</span>
+python scripts<span class="pl-k">/</span>verify<span class="pl-k">-</span>vendors.py</pre></div>
+<p dir="auto">把完整 <code class="notranslate">github-showcase</code> 目录放进 Agent 的 Skill 发现目录，或直接让 Agent 读取其中的 <code class="notranslate">SKILL.md</code>。不要只复制入口文件；方法、工具和许可证都包含在固定版本 ZIP 中。后续命令从解压的 <code class="notranslate">github-showcase/</code> 根目录运行。</p>
+<p dir="auto">Python 是基础要求；Node.js 24+ 和 Chrome/Chromium 用于图像、图表渲染，Git 用于源码打包。Doctor 会报告实际依赖，缺少不相关的可选能力不会阻塞本地文字任务。有 route plan 时，运行 <code class="notranslate">python scripts/doctor.py --plan &lt;plan.json&gt;</code> 核对本次所需工具。</p>
+<p dir="auto">已有本机浏览器时，安装前设置实际可执行文件路径，例如 PowerShell：</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate"><span class="pl-smi">$<span class="pl-c1">env:</span>PUPPETEER_SKIP_DOWNLOAD</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+<span class="pl-smi">$<span class="pl-c1">env:</span>ARCHIFY_CHROME</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>&lt;本机 Chrome 或 Chromium 可执行文件的完整路径&gt;<span class="pl-pds">"</span></span>
+<span class="pl-smi">$<span class="pl-c1">env:</span>PUPPETEER_EXECUTABLE_PATH</span> <span class="pl-k">=</span> <span class="pl-smi">$<span class="pl-c1">env:</span>ARCHIFY_CHROME</span>
+npm ci <span class="pl-k">--</span>no<span class="pl-k">-</span>audit <span class="pl-k">--</span>fund<span class="pl-k">=</span>false</pre></div>
+<p dir="auto">这里的路径需要替换成你的真实浏览器位置。也可用 <code class="notranslate">doctor.py --runtime-config &lt;json&gt;</code> 指定本机 node、git、browser；此配置留在本地。JSON routing 使用标准库；选择 YAML adapter 或检查公开 Actions 配置时，按需安装 <code class="notranslate">python -m pip install PyYAML==6.0.3</code>。没有视频需求就跳过视频，不需安装可选 ffmpeg。</p>
+<p dir="auto"><code class="notranslate">doctor.py</code> 应报告 <code class="notranslate">READY</code>，<code class="notranslate">verify-vendors.py</code> 应报告 <code class="notranslate">PASS</code>。安装完整检查：</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python <span class="pl-k">-</span>m unittest discover <span class="pl-k">-</span>s tests <span class="pl-k">-</span>p <span class="pl-s"><span class="pl-pds">"</span>test_*.py<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto">这些结果证明本机安装与锁定资源可用；具体项目仍需要自己的首次运行和检查。</p>
+<p dir="auto">RC4 是 <strong>Pre-release</strong>。安装使用固定版本 ZIP；克隆仓库用于阅读或开发。图片、展示文档和 Pages 配置不用放进 Skill 发现目录。</p>
+<p dir="auto"><a name="user-content-gs-first-use"></a></p>
+<h2 dir="auto">第一次使用</h2>
+<p dir="auto">把下面的请求交给已加载 Skill 的 Agent，并填入你的项目目录：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">使用 github-showcase，整理我指定的本地项目。
+目标读者是第一次接触项目的开发者。
+先读取真实源码，核对功能和首次使用命令；按需补架构图、流程图和项目主视觉。
+输出到新的独立目录，完成安全、链接、读者理解和源码包验证。
+普通失败请自主修复并重新验证，不覆盖未知用户改动。
+本次只准备本地结果，不发布到 GitHub。
+</code></pre>
+<p dir="auto">你应得到该任务需要的 README、图表、主视觉、源码包，以及说明哪些内容已验证、哪些仍未知的检查记录。需要发布时，再明确授权目标仓库和公开范围；安装这个 Skill 本身不会启动托管服务。</p>
+<h3 dir="auto">常见任务</h3>
+<ul dir="auto">
+<li><strong>补齐已有项目首页</strong>：指定项目目录、已认可文案和缺失内容；Agent 从源码核对，再在新导出目录生成简介、页内索引与完整说明。</li>
+<li><strong>补图和主视觉</strong>：指出要解释的架构或流程；Agent 只选择有事实依据的方法，README 直接展示所有必需静态预览，可选交互图作为补充。</li>
+<li><strong>准备公开交付</strong>：指定目标仓库、可公开文件范围和发布授权；完成安装、安全、许可及远端回读后再报告实际发布状态。</li>
+</ul>
+<p dir="auto">生成的完整展示默认在同一 README 讲清安装、使用、架构、流程与边界，不要求新读者先打开 docs 找答案。你明确要求局部文案或另一种布局时，Agent 按该范围交付并说明未覆盖项。</p>
+<p dir="auto"><a name="user-content-gs-architecture"></a></p>
+<h2 dir="auto">架构与本地进程</h2>
+<p dir="auto">github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际可运行的 CLI 边界。vendor 方法资源不是独立服务。Context 面向项目使用者；Container 面向安装者和维护者。更深组件、部署或动态视图未因本次读者问题触发。</p>
+<h3 dir="auto">系统边界</h3>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/context.svg"><img src="./diagrams/context.svg" alt="C4 Context，说明用户、Agent、项目和远端的关系" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/context.html" rel="nofollow">打开交互图</a> · <a href="./diagrams/context.html">本地 HTML</a> · <a href="./diagrams/context.json">可编辑数据</a> · <a href="./diagrams/c4-context.mmd">C4 Mermaid 源码</a> · <a href="./diagrams/c4-context.svg">C4 原生渲染</a></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>从 → 到</th>
+<th>动作与机制</th>
+<th>当前依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目使用者 → 方法</td>
+<td>指定范围与批准公开，用户请求</td>
+<td><code class="notranslate">SKILL.md</code>、项目契约</td>
+</tr>
+<tr>
+<td>Agent host → 方法</td>
+<td>读取 Skill 及按需资源，文件</td>
+<td><code class="notranslate">SKILL.md</code></td>
+</tr>
+<tr>
+<td>方法 → 目标项目</td>
+<td>读取事实并生成获批导出，文件系统</td>
+<td><code class="notranslate">route-plan.py</code>、<code class="notranslate">package-project.py</code></td>
+</tr>
+<tr>
+<td>方法 → GitHub</td>
+<td>仅授权后公开与回读，Git/HTTPS</td>
+<td><code class="notranslate">references/publish-backends.md</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3 dir="auto">本地工具进程</h3>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/containers.svg"><img src="./diagrams/containers.svg" alt="C4 Container，显示 Python、Node、浏览器和文件边界" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/containers.html" rel="nofollow">打开交互图</a> · <a href="./diagrams/containers.html">本地 HTML</a> · <a href="./diagrams/containers.json">可编辑数据</a> · <a href="./diagrams/c4-containers.mmd">C4 Mermaid 源码</a> · <a href="./diagrams/c4-containers.svg">C4 原生渲染</a></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>从 → 到</th>
+<th>动作与机制</th>
+<th>当前依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent → Python</td>
+<td>调用 route、gate、packaging CLI</td>
+<td><code class="notranslate">SKILL.md</code>、<code class="notranslate">scripts/route-plan.py</code>、<code class="notranslate">scripts/release-gate.py</code></td>
+</tr>
+<tr>
+<td>Agent → Node</td>
+<td>调用图像与图表工具 CLI</td>
+<td><code class="notranslate">scripts/snap-x.mjs</code>、<code class="notranslate">scripts/render-c4.mjs</code>、原 Archify CLI</td>
+</tr>
+<tr>
+<td>Node → 浏览器</td>
+<td>交付 HTML，DevTools 检查</td>
+<td>Archify 原生 browser-check、Mermaid wrapper</td>
+</tr>
+<tr>
+<td>Python → 项目文件</td>
+<td>核对字节和清单，文件系统</td>
+<td><code class="notranslate">scripts/runtime-package.py</code></td>
+</tr>
+<tr>
+<td>Python → Git/文件系统</td>
+<td>打包已提交源码，Git CLI</td>
+<td><code class="notranslate">scripts/package-project.py</code></td>
+</tr>
+<tr>
+<td>Git → GitHub</td>
+<td>授权后普通推送，Git/HTTPS</td>
+<td><code class="notranslate">references/publish-backends.md</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">图例颜色沿原生 Viewer 类型显示，描述文字才是 C4 身份依据：方法不是服务，文件节点不表示运行了数据库。关系状态是源码定义的当前执行方法，不能把图中的连线理解为宿主强制策略。</p>
+<pre lang="text" class="notranslate"><code class="notranslate">项目使用者 ──▶ Agent Host ──[加载方法]──▶ github-showcase
+                       ├──[执行]──▶ Python CLI ──▶ 项目文件 / Git
+                       └──[执行]──▶ Node CLI ──▶ Chrome / 图像与图表
+Git ──[明确授权后的 HTTPS]──▶ GitHub
+</code></pre>
+<p dir="auto"><a name="user-content-gs-publication"></a></p>
+<h2 dir="auto">发布与中断恢复</h2>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="./diagrams/publication.svg"><img src="./diagrams/publication.svg" alt="从本地包到实际远端回读，包含授权拒绝、传输重试和身份不符" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://qq2743759880.github.io/github-showcase/diagrams/publication.html" rel="nofollow">打开交互图</a> · <a href="./diagrams/publication.html">本地 HTML</a> · <a href="./diagrams/publication.json">可编辑数据</a></p>
+<p dir="auto">先完成本地检查和干净导出。授权不足时保留本地结果；得到明确授权才普通推送，并将 tag 绑定实际公开 commit。Pre-release 上传固定安装包，随后回读 tag、Release、资产字节与 Pages，再从远端全新克隆和安装。</p>
+<p dir="auto">普通传输或展示问题应修复后重试；真实凭据不得公开，历史 tag 不得移动，未知用户内容不得覆盖。检查失败不能伪造 PASS。这个流程描述方法义务，不证明任意宿主无法绕过。具体机制见<a href="../references/publish-backends.md">发布契约</a>。</p>
+<p dir="auto">中断后，先读取本轮的 route plan、已生成文件和检查记录，核对实际文件身份，再继续缺失步骤。旧 PASS 不能证明已变化的内容；普通失败修复后重跑对应检查。出现未知用户改动时保留当前文件和已有结果，先比较差异，不强行覆盖。没有发布授权、存在真实密钥或许可未解决时只保留本地交付，不能把失败写成已发布。</p>
+<p dir="auto">你可以明确请求：“继续上一次 github-showcase 任务；先核对本轮结果与记录，补齐缺失步骤，普通失败自主修复并复检，保留用户后续修改。”安装此 Skill 本身不会触发发布。</p>
+<p dir="auto"><a name="user-content-gs-limits"></a></p>
+<h2 dir="auto">当前验证范围</h2>
+<p dir="auto">RC4 已在 Windows + Python 3.14 + Node.js 24 + Chrome 环境完成安装、渲染和远端回读验证。Linux/macOS 和其他 Agent 宿主尚未做同等级实测，目前不宣称跨平台完全验证。</p>
+<p dir="auto">github-showcase 能检查文件、安装和发布链路，但最终业务语义仍需要 Agent 或维护者判断。它不提供跨宿主强制限制、自动密钥修复或性能提升保证。</p>
+<p dir="auto"><a name="user-content-gs-license"></a></p>
+<h2 dir="auto">许可证</h2>
+<p dir="auto">项目采用 <a href="../LICENSE"><code class="notranslate">MIT</code></a>。内置方法的许可见<a href="../THIRD_PARTY_NOTICES.md">第三方声明</a>；交互展示的代码和字体另见<a href="../licenses/showcase/archify/LICENSE">展示资产许可</a>与<a href="../licenses/showcase/archify/JetBrainsMono-OFL.txt">字体 OFL</a>。</p></main></html>

@@ -28,7 +28,7 @@ class ProjectPackageTests(unittest.TestCase):
         return subprocess.run(['git','-C',str(self.export),*args],capture_output=True,check=True)
     def commit(self,content):
         (self.export/'guide.txt').write_text(content,encoding='utf-8')
-        text='# Guide\n\nA guide for reading project instructions.\n\n## Quick Start\n\nRead guide.txt for the useful result.\n'
+        text='# Guide\n\nA guide for reading project instructions.\n\n## Contents\n\n[Start](#quick-start)\n\n## Quick Start\n\nRead guide.txt for the useful result.\n'
         (self.export/'README.md').write_text(text,encoding='utf-8')
         self.receipt.write_text(json.dumps({'kind':'reader-comprehension','status':'PASS','independent':True,
             'reviewer':'fixture','readme_sha256':module.hashlib.sha256((self.export/'README.md').read_bytes()).hexdigest(),

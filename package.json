@@ -1,7 +1,7 @@
 {
   "name": "github-showcase-runtime",
   "private": true,
-  "version": "1.0.0-rc3",
+  "version": "1.0.0-rc4",
   "description": "Optional pinned rendering runtime; npm ci installs external packages, no binaries vendored",
   "dependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",

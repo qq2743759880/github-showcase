@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "github-showcase",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0-rc4",
   "execution": [
     "SKILL.md",
     "adapters/template/adapter.md",
@@ -28,6 +28,7 @@
     "references/project-contract.md",
     "references/public-copy.md",
     "references/publish-backends.md",
+    "references/single-page-showcase.md",
     "references/workflows/archify.md",
     "references/workflows/capabilities.md",
     "references/workflows/delivery.md",
@@ -231,6 +232,7 @@
     "references/project-contract.md",
     "references/public-copy.md",
     "references/publish-backends.md",
+    "references/single-page-showcase.md",
     "references/workflows/archify.md",
     "references/workflows/capabilities.md",
     "references/workflows/delivery.md",
@@ -268,6 +270,7 @@
     "tests/test_publication_integrity.py",
     "tests/test_rc2.py",
     "tests/test_release_gate.py",
+    "tests/test_single_page.py",
     "tests/test_skill_distribution.py",
     "tests/test_vendor_integrity.py",
     "tests/test_vnext.py",
@@ -437,6 +440,7 @@
     "tests/test_publication_integrity.py",
     "tests/test_rc2.py",
     "tests/test_release_gate.py",
+    "tests/test_single_page.py",
     "tests/test_skill_distribution.py",
     "tests/test_vendor_integrity.py",
     "tests/test_vnext.py"
@@ -547,6 +551,10 @@
       "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
     },
     "references/publish-backends.md": {
+      "classification": "PHASE_RUNTIME",
+      "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
+    },
+    "references/single-page-showcase.md": {
       "classification": "PHASE_RUNTIME",
       "consumer": "Selected phase instructions, adapter, wrapper, gate, packaging or pinned dependency installation"
     },
@@ -695,6 +703,10 @@
       "consumer": "Clean-install unittest discovery; not generation execution"
     },
     "tests/test_release_gate.py": {
+      "classification": "VERIFICATION_ONLY",
+      "consumer": "Clean-install unittest discovery; not generation execution"
+    },
+    "tests/test_single_page.py": {
       "classification": "VERIFICATION_ONLY",
       "consumer": "Clean-install unittest discovery; not generation execution"
     },
@@ -1346,8 +1358,8 @@
     },
     {
       "path": "SKILL.md",
-      "bytes": 6304,
-      "sha256": "e8d1f4bd2afddc02a3c85bf8cac9b7fe806f476f50d45f9250e64b2b5ab6ca7a"
+      "bytes": 7489,
+      "sha256": "6fc17e61fceaafb384fc75768836bfad0a032bd4587c6dcfbb724388afcc388e"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1367,17 +1379,17 @@
     {
       "path": "package-lock.json",
       "bytes": 120649,
-      "sha256": "3841ed653baf47a5422ec24406f23e8de12cdb8ceceb7c83f90aaa01a420e002"
+      "sha256": "e70656bfe7480228ed03d3c55fa6c448715444484a9b69a302c9bbd98828c11a"
     },
     {
       "path": "package.json",
       "bytes": 402,
-      "sha256": "1485bf8ef3b05252ddba36b8b0e43900e8f6758e8422bfc97977e2f5f5f6823d"
+      "sha256": "f211470d87d70bfd9fbe35a7e8fb80a7e976dd0ef8422d560c7d0d60b4b6eb5c"
     },
     {
       "path": "references/agent-skill-readme-profile.md",
-      "bytes": 5253,
-      "sha256": "834b5548b7192bd6cf46e47bbf6d00875ffce4483ab4f755bcf58af05ad53d0f"
+      "bytes": 6062,
+      "sha256": "100debf9b7ee3da66f4266c5fb1b1565c60a6540839ffec0b341786930e18e0c"
     },
     {
       "path": "references/bindings.json",
@@ -1461,8 +1473,8 @@
     },
     {
       "path": "references/project-contract.md",
-      "bytes": 10537,
-      "sha256": "3ba9e96db2c1957afc96d81c4372719318553760f9fb1d8a61398b788f33c152"
+      "bytes": 12527,
+      "sha256": "a0a76acdab1000a2f3dd268cb82fa8842a76d91315cbc53635b5cc84885812c6"
     },
     {
       "path": "references/public-copy.md",
@@ -1473,6 +1485,11 @@
       "path": "references/publish-backends.md",
       "bytes": 4149,
       "sha256": "425de3e7f0610c868254411e435da86cdd68afb9f190823d7272438a13a4a8eb"
+    },
+    {
+      "path": "references/single-page-showcase.md",
+      "bytes": 9833,
+      "sha256": "e080d924bf9a95185aab2460d19a6443c4ed1a73b6bfa1628aee48b0591f9efe"
     },
     {
       "path": "references/workflows/archify.md",
@@ -1516,8 +1533,8 @@
     },
     {
       "path": "references/workflows/readme.md",
-      "bytes": 11751,
-      "sha256": "c458f5f6e59ec5ae3c3ae3b31a06eaf5bf8f19f368d384f8cc9714c98fa056a0"
+      "bytes": 14948,
+      "sha256": "5eed05e3cf172663b2078db1b8c0acdc4d490ee05cf4d4dd28f0d55b9aea4e49"
     },
     {
       "path": "references/workflows/visual.md",
@@ -1576,8 +1593,8 @@
     },
     {
       "path": "scripts/release-gate.py",
-      "bytes": 36285,
-      "sha256": "6cd6af078eb3d69d74e5ea5229d0d9d6b4d76eadd7544983c4e8df425ec2b02f"
+      "bytes": 40429,
+      "sha256": "a6f2da3237ff71ce18677bc3d9a52cc84a5821e505e590ddff4912265d3c347a"
     },
     {
       "path": "scripts/render-c4.mjs",
@@ -1636,8 +1653,8 @@
     },
     {
       "path": "tests/test_project_package.py",
-      "bytes": 5599,
-      "sha256": "8e0433011bf18879de510cd90e97f955fe6de7fb2d891e806e6b19ef1b15ae5f"
+      "bytes": 5639,
+      "sha256": "a7a9db28c3844c35e952827c5413746f929f34e3eebe4e63452879550f9e1337"
     },
     {
       "path": "tests/test_public_copy.py",
@@ -1658,6 +1675,11 @@
       "path": "tests/test_release_gate.py",
       "bytes": 7010,
       "sha256": "6e930f1fe4eb402bdb9a777e3a5d9abcdaf0189a5da161c29fa42f123972cef5"
+    },
+    {
+      "path": "tests/test_single_page.py",
+      "bytes": 3558,
+      "sha256": "2e640302cf22a44d163bc43d0b21812a8573860a5c992c4efc1de3f4fdb98cb8"
     },
     {
       "path": "tests/test_skill_distribution.py",
