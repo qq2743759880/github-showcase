@@ -1,0 +1,15 @@
+flowchart TB
+  request["用户请求 + 目标项目<br/>目录 · 目标读者 · 可公开范围 · 交付目标 · 发布授权"]
+  agent["Agent Host 加载 github-showcase<br/>事实取证 → 按需编排 → 只加载需要的能力"]
+  c4["C4 Architecture<br/>真实软件边界 · Context / Container"]
+  archify["Archify<br/>交互架构 / 流程图 · 本地项目也可生成"]
+  snap["Snap-X<br/>项目主视觉 · 设计 / 检查 / 渲染 / 看图"]
+  readme["README Skill<br/>事实与命令 · 首次使用 · 文档与图像整合"]
+  check["验证与审查<br/>密钥 / 隐私 / 许可证 · 链接 / 原生交付<br/>独立安装 / 测试 · 读者理解 / 包身份"]
+  result["交付结果<br/>README + 图表 + 项目主视觉 + 源码包<br/>获授权后发布到 GitHub，并下载和回读验证"]
+  request --> agent
+  agent -->|按需| c4 & archify & snap & readme
+  c4 & archify & snap & readme --> check
+  check --> result
+  note["普通布局、文案、环境失败由 Agent 自主修复并重新验证；安全边界不绕过"]
+  note -.-> check

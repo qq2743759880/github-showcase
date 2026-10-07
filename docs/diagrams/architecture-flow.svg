@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+<title id="title">github-showcase 架构流程总览</title>
+<desc id="desc">从用户请求、按需编排和四种专业方法，到验证审查和获授权的交付。所有产物经过验证；普通失败自主修复，安全边界不绕过。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#475569"/></marker></defs>
+<rect width="1600" height="1040" fill="#f7f9fc"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="80" y="72" font-size="40" fill="#0f172a" font-weight="700" text-anchor="start">github-showcase 架构流程总览</text>
+<text x="80" y="108" font-size="20" fill="#475569" font-weight="400" text-anchor="start">从项目事实出发，按需调用专业能力，经过验证后交付可公开的 GitHub 项目</text>
+<text x="80" y="157" font-size="16" fill="#334155" font-weight="700" text-anchor="start">01 · 输入</text>
+<rect x="80" y="182" width="1440" height="112" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="120" y="222" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">用户请求 + 目标项目</text>
+<text x="120" y="253" font-size="16" fill="#475569" font-weight="400" text-anchor="start">项目目录 · 目标读者 · 可公开范围 · 交付目标 · 是否允许远端发布</text>
+<rect x="1090" y="212" width="390" height="48" rx="16" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="1285" y="243" font-size="15" fill="#334155" font-weight="700" text-anchor="middle">原则：事实不足就保留未知，不编造</text>
+<path d="M800 294V356" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="80" y="344" font-size="16" fill="#334155" font-weight="700" text-anchor="start">02 · Agent 编排层</text>
+<rect x="80" y="368" width="1440" height="132" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="120" y="409" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">Agent Host 加载 github-showcase Skill</text>
+<text x="120" y="440" font-size="16" fill="#475569" font-weight="400" text-anchor="start">读取项目事实 → 建立依据 → 判断项目形态 → 按需编排 → 只加载本次真正需要的能力</text>
+<rect x="1110" y="404" width="370" height="54" rx="16" fill="#ecfeff" stroke="#a5f3fc"/>
+<text x="1295" y="429" font-size="16" fill="#334155" font-weight="700" text-anchor="middle">按需调用</text>
+<text x="1295" y="450" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">不需要的能力直接跳过</text>
+<text x="80" y="553" font-size="16" fill="#334155" font-weight="700" text-anchor="start">03 · 专业能力层</text>
+<path d="M800 500V540" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M240 570V540H1325V570" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M240 540V570" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M590 540V570" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M940 540V570" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M1325 540V570" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="80" y="578" width="320" height="154" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="240.0" y="620" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">C4 Architecture</text>
+<text x="240.0" y="651" font-size="16" fill="#475569" font-weight="400" text-anchor="middle">Context / Container</text>
+<text x="240.0" y="676" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">只画真实软件边界</text>
+<text x="240.0" y="701" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">不把文件和 Skill 假装成服务</text>
+<rect x="430" y="578" width="320" height="154" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="590.0" y="620" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Archify</text>
+<text x="590.0" y="651" font-size="16" fill="#475569" font-weight="400" text-anchor="middle">交互架构 / 流程图</text>
+<text x="590.0" y="676" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">本地项目也可生成</text>
+<text x="590.0" y="701" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">复杂呈现保留全部语义</text>
+<rect x="780" y="578" width="320" height="154" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="940.0" y="620" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Snap-X</text>
+<text x="940.0" y="651" font-size="16" fill="#475569" font-weight="400" text-anchor="middle">项目主视觉</text>
+<text x="940.0" y="676" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">调查 → 设计 → 检查 → 渲染</text>
+<text x="940.0" y="701" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">最终结果必须实际看图</text>
+<rect x="1130" y="578" width="390" height="154" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="1325.0" y="620" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">README Skill</text>
+<text x="1325.0" y="651" font-size="16" fill="#475569" font-weight="400" text-anchor="middle">面向陌生用户的项目首页</text>
+<text x="1325.0" y="676" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">真实事实 · 首次使用 · 实际文件 QA</text>
+<text x="1325.0" y="701" font-size="15" fill="#64748b" font-weight="400" text-anchor="middle">整合最终图像和文档资产</text>
+<path d="M240 732V780" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M590 732V780" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M940 732V780" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M1325 732V780" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M240 780H1325" fill="none" stroke="#475569" stroke-width="2.4"/>
+<path d="M540 780V805" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="80" y="798" font-size="16" fill="#334155" font-weight="700" text-anchor="start">04 · 验证与交付</text>
+<rect x="80" y="812" width="920" height="150" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<rect x="1030" y="812" width="490" height="150" rx="20" fill="#fff" stroke="#cbd5e1"/>
+<text x="120" y="852" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">验证与审查</text>
+<text x="120" y="882" font-size="16" fill="#475569" font-weight="400" text-anchor="start">密钥 / 隐私 / 许可证 · 公开文案 / 链接 · 原生交付</text>
+<text x="120" y="911" font-size="16" fill="#475569" font-weight="400" text-anchor="start">独立安装 / 测试 · 读者理解 · 安装包身份</text>
+<text x="120" y="941" font-size="15" fill="#64748b" font-weight="400" text-anchor="start">普通布局、文案、环境失败自主修复并重新验证；安全边界不绕过。</text>
+<path d="M1000 887H1022" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="1070" y="852" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">交付结果</text>
+<text x="1070" y="882" font-size="16" fill="#475569" font-weight="400" text-anchor="start">README + 图表 + 项目主视觉 + 源码包</text>
+<text x="1070" y="911" font-size="16" fill="#475569" font-weight="400" text-anchor="start">获授权后：GitHub Release / Pages</text>
+<text x="1070" y="941" font-size="15" fill="#64748b" font-weight="400" text-anchor="start">远端写入后重新下载和回读验证</text>
+<text x="80" y="1010" font-size="16" fill="#64748b" font-weight="400" text-anchor="start">从“只有代码和文案”，到项目事实、专业方法、验证和公开交付组成的完整链路。</text>
+</g></svg>
