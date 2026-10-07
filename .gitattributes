@@ -1,0 +1,2 @@
+# Preserve locked original file bytes across Windows and Unix checkouts.
+* -text
