@@ -6,7 +6,7 @@ github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际
 
 ![C4 Context，说明用户、Agent、项目和远端的关系](./diagrams/context.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/context.html) · [本地 HTML](./diagrams/context.html) · [可编辑数据](./diagrams/context.json) · [C4 Mermaid 源码](./diagrams/c4-context.mmd) · [C4 原生渲染](./diagrams/c4-context.svg)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/context.html) · [本地 HTML](./diagrams/context.html) · [可编辑数据](./diagrams/context.json) · [C4 Mermaid 源码](./diagrams/c4-context.mmd) · [C4 原生渲染](./diagrams/c4-context.svg)
 
 | 从 → 到 | 动作与机制 | 当前依据 |
 |---|---|---|
@@ -19,7 +19,7 @@ github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际
 
 ![C4 Container，显示 Python、Node、浏览器和文件边界](./diagrams/containers.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/containers.html) · [本地 HTML](./diagrams/containers.html) · [可编辑数据](./diagrams/containers.json) · [C4 Mermaid 源码](./diagrams/c4-containers.mmd) · [C4 原生渲染](./diagrams/c4-containers.svg)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/containers.html) · [本地 HTML](./diagrams/containers.html) · [可编辑数据](./diagrams/containers.json) · [C4 Mermaid 源码](./diagrams/c4-containers.mmd) · [C4 原生渲染](./diagrams/c4-containers.svg)
 
 | 从 → 到 | 动作与机制 | 当前依据 |
 |---|---|---|

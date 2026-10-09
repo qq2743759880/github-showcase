@@ -45,7 +45,7 @@ class Provenance(unittest.TestCase):
     def test_A3_real_git_origin_and_commit(self):
         with tempfile.TemporaryDirectory() as d:
             r=Path(d);(r/'app.py').write_text('print("fixture")\n')
-            for args in [['init','-q'],['add','app.py'],['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','fixture'],['remote','add','origin','https://github.com/qq2743759880/jevtest']]:subprocess.run(['git','-C',d,*args],check=True,capture_output=True)
+            for args in [['init','-q'],['add','app.py'],['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','fixture'],['remote','add','origin','https://github.com/SHlTbro/jevtest']]:subprocess.run(['git','-C',d,*args],check=True,capture_output=True)
             a=adapter(r);a['publication_policy']['authorization']='APPROVED';a['archify_provenance']={'repository_evidence_required':True,'origin_approved':True}
             p=route.plan(a,['F04']);self.assertEqual(p['phases'][0].get('provenance_mode'),'REPOSITORY_BACKED')
             self.assertEqual(len(p['phases'][0]['repository']['revision']),40)

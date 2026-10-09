@@ -9,7 +9,7 @@
 <p align="center">Agent 读取真实源码，按需生成 README、架构图、流程图和项目视觉，<br>并在发布前验证安装、链接、隐私、许可证与最终交付。</p>
 
 <p align="center">
-  <a href="https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a> · <a href="https://qq2743759880.github.io/github-showcase/">在线交互图</a> · <a href="./SKILL.md">查看 Skill</a>
+  <a href="https://github.com/SHlTbro/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip">下载 RC4</a> · <a href="https://shltbro.github.io/github-showcase/">在线交互图</a> · <a href="./SKILL.md">查看 Skill</a>
 </p>
 
 ## 本页索引
@@ -44,7 +44,7 @@
 
 ![项目整理流程：发现事实、选择方法、生成资产、检查与交付](./docs/diagrams/showcase.svg)
 
-[打开完整交互流程图](https://qq2743759880.github.io/github-showcase/diagrams/showcase.html) · [查看总览的可编辑源码](./docs/diagrams/architecture-flow.mmd) · [主视觉源文件](./docs/diagrams/hero.png)
+[打开完整交互流程图](https://shltbro.github.io/github-showcase/diagrams/showcase.html) · [查看总览的可编辑源码](./docs/diagrams/architecture-flow.mmd) · [主视觉源文件](./docs/diagrams/hero.png)
 
 <a name="gs-outputs"></a>
 
@@ -64,7 +64,7 @@
 
 ## 快速安装
 
-需要可读文件、可执行命令的 Agent 和 Python。[下载 RC4](https://github.com/qq2743759880/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip)，解压后进入 `github-showcase/`：
+需要可读文件、可执行命令的 Agent 和 Python。[下载 RC4](https://github.com/SHlTbro/github-showcase/releases/download/v1.0.0-rc4/github-showcase-v1.0.0-rc4.zip)，解压后进入 `github-showcase/`：
 
 ```powershell
 # 1. 检查当前环境
@@ -137,7 +137,7 @@ github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际
 
 ![C4 Context，说明用户、Agent、项目和远端的关系](./docs/diagrams/context.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/context.html) · [本地 HTML](./docs/diagrams/context.html) · [可编辑数据](./docs/diagrams/context.json) · [C4 Mermaid 源码](./docs/diagrams/c4-context.mmd) · [C4 原生渲染](./docs/diagrams/c4-context.svg)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/context.html) · [本地 HTML](./docs/diagrams/context.html) · [可编辑数据](./docs/diagrams/context.json) · [C4 Mermaid 源码](./docs/diagrams/c4-context.mmd) · [C4 原生渲染](./docs/diagrams/c4-context.svg)
 
 | 从 → 到 | 动作与机制 | 当前依据 |
 |---|---|---|
@@ -150,7 +150,7 @@ github-showcase 的方法文件由 Agent host 加载；Python 和 Node 是实际
 
 ![C4 Container，显示 Python、Node、浏览器和文件边界](./docs/diagrams/containers.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/containers.html) · [本地 HTML](./docs/diagrams/containers.html) · [可编辑数据](./docs/diagrams/containers.json) · [C4 Mermaid 源码](./docs/diagrams/c4-containers.mmd) · [C4 原生渲染](./docs/diagrams/c4-containers.svg)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/containers.html) · [本地 HTML](./docs/diagrams/containers.html) · [可编辑数据](./docs/diagrams/containers.json) · [C4 Mermaid 源码](./docs/diagrams/c4-containers.mmd) · [C4 原生渲染](./docs/diagrams/c4-containers.svg)
 
 | 从 → 到 | 动作与机制 | 当前依据 |
 |---|---|---|
@@ -176,7 +176,7 @@ Git ──[明确授权后的 HTTPS]──▶ GitHub
 
 ![从本地包到实际远端回读，包含授权拒绝、传输重试和身份不符](./docs/diagrams/publication.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/publication.html) · [本地 HTML](./docs/diagrams/publication.html) · [可编辑数据](./docs/diagrams/publication.json)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/publication.html) · [本地 HTML](./docs/diagrams/publication.html) · [可编辑数据](./docs/diagrams/publication.json)
 
 先完成本地检查和干净导出。授权不足时保留本地结果；得到明确授权才普通推送，并将 tag 绑定实际公开 commit。Pre-release 上传固定安装包，随后回读 tag、Release、资产字节与 Pages，再从远端全新克隆和安装。
 

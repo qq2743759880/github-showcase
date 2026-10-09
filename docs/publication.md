@@ -2,7 +2,7 @@
 
 ![从本地包到实际远端回读，包含授权拒绝、传输重试和身份不符](./diagrams/publication.svg)
 
-[打开交互图](https://qq2743759880.github.io/github-showcase/diagrams/publication.html) · [本地 HTML](./diagrams/publication.html) · [可编辑数据](./diagrams/publication.json)
+[打开交互图](https://shltbro.github.io/github-showcase/diagrams/publication.html) · [本地 HTML](./diagrams/publication.html) · [可编辑数据](./diagrams/publication.json)
 
 先完成本地检查和干净导出。授权不足时保留本地结果；得到明确授权才普通推送，并将 tag 绑定实际公开 commit。Pre-release 上传固定安装包，随后回读 tag、Release、资产字节与 Pages，再从远端全新克隆和安装。
 
